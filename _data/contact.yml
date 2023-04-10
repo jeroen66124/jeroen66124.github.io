@@ -7,6 +7,10 @@
 - type: linkedin
   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
   url:  'https://www.linkedin.com/in/jkou/'                  # Fill with your Linkedin homepage
+  
+- type: keybase
+  icon: 'fab fa-keybase'   # icons powered by <https://fontawesome.com/>
+  url:  'https://keybase.io/jeroen66124'                  # Fill with your Keybase homepage
 
 # - type: github
 #   icon: "fab fa-github"
