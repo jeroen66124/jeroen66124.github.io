@@ -8,10 +8,14 @@
   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
   url:  'https://www.linkedin.com/in/jkou/'                  # Fill with your Linkedin homepage
   
-- type: keybase
-  icon: 'fab fa-keybase'   # icons powered by <https://fontawesome.com/>
+- type: linkedin
+  icon: 'fa-brands fa-keybase'   # icons powered by <https://fontawesome.com/>
   url:  'https://keybase.io/jeroen66124'                  # Fill with your Keybase homepage
 
+- type: linkedin
+  icon: 'fa-brands fa-bitcoin'   # icons powered by <https://fontawesome.com/>
+  url:  'bitcoin:bc1qj5r2afsfld72y3l3l0djyhzk2r8kn3v275efqh'                  # Fill with your Bitcoin address
+  
 # - type: github
 #   icon: "fab fa-github"
 
