@@ -6,7 +6,7 @@ order: 4
 
 ### Hi 👋
 
-I'm Jeroen, a **System Administrator** currently working at [ITQ](https://itq.eu) 🧡 I have a passion for all things IT, but currently focused on Virtualization (mainly [VMware](https://www.vmware.com/products.html?resource=product-listing%3Aanywhere-workspace)), scripting and Internal IT 👨‍💻 I spend my free time developing websites and small do-it-yourself side projects, such as self-hosting, IoT and Bitcoin 🤓
+I'm Jeroen, a **System Administrator** currently working at [ITQ](https://itq.eu) 🧡 I have a passion for all things IT, but currently focused on Virtualization (mainly [VMware](https://www.vmware.com/products.html?resource=product-listing%3Aanywhere-workspace)), scripting and Internal IT 👨‍💻 I spend my free time developing websites and small do-it-yourself side projects, such as self-hosting, IoT and Bitcoin related stuff 🤓
 
 Feel free to check out my past side projects by exploring the [archives](https://vskills.nl/archives/) section 🗃️ 
 
