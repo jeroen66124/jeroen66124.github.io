@@ -12,6 +12,6 @@ Feel free to check out my side projects by exploring the [archive](https://vskil
 
 _Ways of contacting me:_
 
-[Email 📬](mailto:hallo@dannyverpoort.nl)
+[Email 📬](mailto:jeroen66124@gmail.com)
 
-[LinkedIn 💼](https://linkedin.com/in/dannyverpoort)
+[LinkedIn 💼](https://linkedin.com/in/jkou)
