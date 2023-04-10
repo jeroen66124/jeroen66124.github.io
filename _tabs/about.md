@@ -4,5 +4,14 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+### Hi 👋
+
+I'm Jeroen, a **System Administrator** currently working at [ITQ](https://itq.eu) 🤓🧡 I have a passion for all things IT, but currently focused on Virtualization (mainly [VMware](https://www.vmware.com/products.html?resource=product-listing%3Aanywhere-workspace)), scripting and Internal IT 💻 
+
+Feel free to check out my side projects by exploring the [archive](https://vskills.nl/archives/) tab on the left 📑
+
+_Ways of contacting me:_
+
+[Email 📬](mailto:hallo@dannyverpoort.nl)
+
+[LinkedIn 💼](https://linkedin.com/in/dannyverpoort)
