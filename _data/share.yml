@@ -10,12 +10,14 @@ platforms:
     icon: "fab fa-facebook-square"
     link: "https://www.facebook.com/sharer/sharer.php?title=TITLE&u=URL"
 
+  - type: WhatsApp
+    icon: "fab fa-whatsapp"
+    link: "whatsapp://send?text=Check out this blog post!"
+
   - type: Telegram
     icon: "fab fa-telegram"
     link: "https://t.me/share/url?url=URL&text=TITLE"
 
-  # Uncomment below if you need to.
-  #
   - type: Linkedin
     icon: "fab fa-linkedin"
     link: "https://www.linkedin.com/sharing/share-offsite/?url=URL"
