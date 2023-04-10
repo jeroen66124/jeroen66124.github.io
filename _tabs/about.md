@@ -8,7 +8,7 @@ order: 4
 
 I'm Jeroen, a **System Administrator** currently working at [ITQ](https://itq.eu) 🤓🧡 I have a passion for all things IT, but currently focused on Virtualization (mainly [VMware](https://www.vmware.com/products.html?resource=product-listing%3Aanywhere-workspace)), scripting and Internal IT 💻 
 
-Feel free to check out my side projects by exploring the [archive](https://vskills.nl/archives/) tab on the left 📑
+Feel free to check out my past side projects by exploring the [archive](https://vskills.nl/archives/) tab on the left 📑
 
 _Ways of contacting me:_
 
