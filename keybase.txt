@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/jeroen66124
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://vskills.nl
+  * I am jeroen66124 (https://keybase.io/jeroen66124) on keybase.
+  * I have a public key with fingerprint 5327 FECD F828 ABB2 2DE8  E913 1EE8 C974 ABBA F32A
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01018404295e76dd4032201ebad162c95b72ebb6bd999019622ae82d820347b1fdbb0a",
+      "fingerprint": "5327fecdf828abb22de8e9131ee8c974abbaf32a",
+      "host": "keybase.io",
+      "key_id": "1ee8c974abbaf32a",
+      "kid": "01018404295e76dd4032201ebad162c95b72ebb6bd999019622ae82d820347b1fdbb0a",
+      "uid": "ac37528a8958dff0a90171b64895b619",
+      "username": "jeroen66124"
+    },
+    "service": {
+      "hostname": "vskills.nl",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1681154491,
+  "expire_in": 157680000,
+  "prev": "bf8a0cf2e5a1a2a314a954f30d9f338975eaa93ebc015e2f3ee11c01342bf8df",
+  "seqno": 3,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMIjAnicrVJbSFRBGN5NLbQ2hYp6MeRUD9IiZ+bcl8gkrCiixAItZZk5M2c96+45
+u+cc1xuCRnbVqCcziB7MtBv1EGIo2cWslPChojJ6KCqphyCSeoioOVJvPTYvM/PN
+933z/T//eCgrkBcM5zgXwGC4Ozh153RDgIhopJXDNmnmIq1cPZ3faIJQ14vWm4SL
+cDzggSryItQkqsiEiLwAIQ8oRgTIUNckrECKsYyJpmk80GQIEVUhUSEviAoGBsGY
+R1yYM0wrRp2UY1oes5UEqBhUJ4YKVYQxhISqVAMCoFTVNUVkGDIE6AvrbNdXsHAY
+ubTEtBnGLtH5eP/g/+fcDfN2SBcUiUVVNUklhsEjplEAlkUGYBloPtGljoWSlLHj
+1LGpJcsAilxbmGMPGVOnfm/9Yv6QMm69mUi4JVaCiVOO7dm6nWB4neel3Iiv85pT
+PrGR4ugfiyg2LcIayRQZ6rimbXERwJi6Z/qeQFYBkERRA2GONqVMh0ZNnyEpssqz
+5f9DM8wSGyridQNSCQEEkQBEpEmiIfBEMwRB1RSJIqQJFOs8kCg0BEoBYGdBhExK
+DM4vKm3ZXERgMVGMWbpmzEJeg0O5tru3a7IDwbzAwpwF/oAF8nIL/o6dfX3Rz4Jx
+ZS4dDFb1lf/qDq3hK8s2rv3wMX/Xj6ml/a/yhztzzbG2prMz7YvfWTUvwjUjyf0a
+d7+373wwa/zK9pckPjpaVbSx45gwPISzD5Z3TF4aKuvasnW09Mj07cpE6RKcXr2i
+5dBsPPa0a/rawyevj/Rlv/eqps6v31e+Lt386Nbzydl2/suGJmXn5I1fxbVT3WOm
+sTs0/X1opnBwAobEYjFQu3zgVLZeKH5MXqZvBu5WnIwUXBh72bNtx+O3cyeWRZJF
+6YpN/T17v8a/rey/d6DxWWH1p9Tx3qMbhOFVneeqa2YmVs72f1hjcHM9ocGLfS2x
+PVcrS9obNz/4fvjzzfjXM78B9XY+FA==
+=jEj3
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jeroen66124
+
+==================================================================
