@@ -3,21 +3,22 @@
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
+  
+- type: github
+  icon: "fab fa-github"
+  url:  'https://www.github.com/jeroen66124'
 
 - type: linkedin
-  icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-  url:  'https://www.linkedin.com/in/jkou/'                  # Fill with your Linkedin homepage
+  icon: 'fab fa-linkedin'
+  url:  'https://www.linkedin.com/in/jkou/'
   
 - type: linkedin
-  icon: 'fa-brands fa-keybase'   # icons powered by <https://fontawesome.com/>
-  url:  'https://keybase.io/jeroen66124'                  # Fill with your Keybase homepage
+  icon: 'fa-brands fa-keybase'
+  url:  'https://keybase.io/jeroen66124'
 
 - type: linkedin
-  icon: 'fa-brands fa-bitcoin'   # icons powered by <https://fontawesome.com/>
-  url:  'bitcoin:bc1qj5r2afsfld72y3l3l0djyhzk2r8kn3v275efqh'                  # Fill with your Bitcoin address
-  
-# - type: github
-#   icon: "fab fa-github"
+  icon: 'fa-brands fa-bitcoin'
+  url:  'bitcoin:bc1qj5r2afsfld72y3l3l0djyhzk2r8kn3v275efqh'
 
 # - type: rss
 #   icon: "fas fa-rss"
