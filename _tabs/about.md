@@ -13,10 +13,9 @@ Feel free to check out my past side projects by exploring the [archives](https:/
 Contact me by [email](mailto:jeroen66124@gmail.com) or send a message on [GitHub](https://github.com/jeroen66124), [LinkedIn](https://linkedin.com/in/jkou) or [Keybase](https://keybase.io/jeroen66124) 💬
 
  
-<p align="center">
-  🔑 <b>PGP</b>: 5327 FECD F828 ABB2 2DE8 E913 1EE8 C974 ABBA F32A
-</p>
+ 
+  🔑 **PGP**: 5327 FECD F828 ABB2 2DE8 E913 1EE8 C974 ABBA F32A
+
  
-<p align="center">
-  <img src="/assets/bitcoin.png">
-</p>
+ 
+![Bitcoin](/assets/bitcoin.png)
