@@ -12,8 +12,6 @@ Feel free to check out my past side projects by exploring the [archives](https:/
 
 Contact me by [email](mailto:jeroen66124@gmail.com) or send a message on [GitHub](https://github.com/jeroen66124), [LinkedIn](https://linkedin.com/in/jkou) or [Keybase](https://keybase.io/jeroen66124) 💬
 
- 
-
 🔑 **PGP**: 5327 FECD F828 ABB2 2DE8 E913 1EE8 C974 ABBA F32A
 
  
