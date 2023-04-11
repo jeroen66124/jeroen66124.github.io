@@ -18,4 +18,4 @@ Contact me by [email](mailto:jeroen66124@gmail.com) or send a message on [GitHub
 
  
 
-![Bitcoin](/assets/bitcoin.png)
+![Bitcoin](/assets/bitcoin.png){: .left }
