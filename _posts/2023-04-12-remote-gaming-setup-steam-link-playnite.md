@@ -10,7 +10,7 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-> This guide can also be applied to an Android TV instead of the Raspberry Pi.
+> This guide can also be applied to an Android TV instead of the Raspberry Pi
 {: .prompt-tip }
 
 ## Introduction
