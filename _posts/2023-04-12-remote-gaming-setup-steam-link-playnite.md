@@ -10,10 +10,10 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-### Introduction
-
 > This guide can also be applied to an Android TV instead of the Raspberry Pi.
 {: .prompt-tip }
+
+## Introduction
 
 In the last couple of weeks, I had the sudden urge of wanting to be able to play games from the couch again. Having owned both the Playstation 2 and 3 throughout my childhood introduced me to the simplicity of console gaming, just pick up the controller and play. To be able to do this with a desktop, requires some setting up however. This guide will you show you how to set this up and more.
 
@@ -38,11 +38,11 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
 
 - [x] Raspberry Pi 3 or better
   + [x] [Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#:~:text=Archive-,Raspberry%20Pi%20OS%20(Legacy),-A%20stable%20legacy) Installed
-  + [x] Wired connection for stability
   + [x] [Supported Input/Controller](https://help.steampowered.com/en/faqs/view/6424-467A-31D9-C6CB#:~:text=Supported%20Input/Controllers)
   + [x] Display or TV with HDMI support
+  + [x] Wired connection for stability
 
-### Description list
+## Preparing the Raspberry Pi
 
 Sun
 : the star around which the earth orbits
