@@ -1,5 +1,5 @@
 ---
-title: Creating a Remote Gaming Setup through Steam Link and Playnite with a Raspberry Pi
+title: DRAFT - Creating a Remote Gaming Console-like Setup through Steam Link and Playnite with a Raspberry Pi
 date: 2023-04-12 12:04:00 +0200
 categories: [Gaming]
 tags: [remote, gaming, steam, playnite, console, controller, Pi, Raspberry Pi, IoT, Internet of Things, ARM]
@@ -10,32 +10,22 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-This post is to show Markdown syntax rendering on [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork), you can also use it as an example of writing. Now, let's start looking at text and typography.
+## Introduction
 
-## Titles
----
-# H1 - heading
+In the last couple of weeks, I had the sudden urge of wanting to be able to play games from the couch again. Having owned both the Playstation 2 and 3 throughout my childhood introduced me to the simplicity of console gaming, just pick up the controller and play. To be able to do this with a desktop, requires some setting up however. This guide will you show you how to set this up and more.
 
-<h2 data-toc-skip>H2 - heading</h2>
+### Steam Link
 
-<h3 data-toc-skip>H3 - heading</h3>
+Steam already provides a really good solution to this problem, and it is called [Steam Link](https://en.wikipedia.org/wiki/Steam_Link). This used to be a piece of hardware that would allow you to stream your desktop games to a little box through either a cabled or wireless internet connection. The Steam Link hardware sadly got discontinued in 2018. Valve did actively continue the development of the software though and it suppports all major platforms. It is available for Windows, macOS, Linux, Android and iOS. We are going to focus on the Linux version because it's compatible with the Raspberry Pi.
 
-<h4>H4 - heading</h4>
----
+### Playnite
 
-## Paragraph
+Downloading the Steam Link app, connecting it your PC and play remotely would satisfy your needs if all your games were purchased on Steam. For me, this is not the case since every major game publisher has their own launcher nowadays (which is really annoying). Adding non-steam games to your Steam Library can work, but this does not work when the game goes through another launcher before executing. This is where Playnite comes in, it is an open source video game library manager with one simple goal: To provide a unified interface for all of your games. It also supports custom themes which we are going to use to create that console-like experience.
 
-Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas interdum malesuada egestas. Duis consectetur porta risus, sit amet vulputate urna facilisis ac. Phasellus semper dui non purus ultrices sodales. Aliquam ante lorem, ornare a feugiat ac, finibus nec mauris. Vivamus ut tristique nisi. Sed vel leo vulputate, efficitur risus non, posuere mi. Nullam tincidunt bibendum rutrum. Proin commodo ornare sapien. Vivamus interdum diam sed sapien blandit, sit amet aliquam risus mattis. Nullam arcu turpis, mollis quis laoreet at, placerat id nibh. Suspendisse venenatis eros eros.
+### Raspberry Pi
 
-## Lists
+The Raspberry Pi is a debit card-sized low-cost computer that you can use for all sorts of stuff. It mainly runs Linux and is perfect for projects like this, because it only draws 5 watts of power. A regular smartphone charging cable should be enough and it also makes it portable friendly. I had an unused Raspberry Pi 3B laying around that was only used for collecting dust. When I started this project, I was able to give breath some life into it again!
 
-### Ordered list
-
-1. Firstly
-2. Secondly
-3. Thirdly
-
-### Unordered list
 
 - Chapter
   + Section
