@@ -10,7 +10,10 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-## Introduction
+### Introduction
+
+> This guide can also be applied to an Android TV instead of the Raspberry Pi.
+{: .prompt-tip }
 
 In the last couple of weeks, I had the sudden urge of wanting to be able to play games from the couch again. Having owned both the Playstation 2 and 3 throughout my childhood introduced me to the simplicity of console gaming, just pick up the controller and play. To be able to do this with a desktop, requires some setting up however. This guide will you show you how to set this up and more.
 
@@ -20,23 +23,24 @@ Steam already provides a really good solution to this problem, and it is called 
 
 ### Playnite
 
-Downloading the Steam Link app, connecting it your PC and play remotely would satisfy your needs if all your games were purchased on Steam. For me, this is not the case since every major game publisher has their own launcher nowadays (which is really annoying). Adding non-steam games to your Steam Library can work, but this does not work when the game goes through another launcher before executing. This is where Playnite comes in, it is an open source video game library manager with one simple goal: To provide a unified interface for all of your games. It also supports custom themes which we are going to use to create that console-like experience.
+Downloading the Steam Link app, connecting it your PC and play remotely would satisfy your needs if all your games were purchased on Steam. For me, this is not the case since every major game publisher has their own launcher nowadays (which is really annoying). Adding non-steam games to your Steam Library can work, but this does not work when the game goes through another launcher before executing. This is where Playnite comes in, it is an open source video game library manager with one simple goal: To provide a unified interface for all of your games. Custom Themes are also supported which we are going to use to create the console-like experience.
 
 ### Raspberry Pi
 
-The Raspberry Pi is a debit card-sized low-cost computer that you can use for all sorts of stuff. It mainly runs Linux and is perfect for projects like this, because it only draws 5 watts of power. A regular smartphone charging cable should be enough and it also makes it portable friendly. I had an unused Raspberry Pi 3B laying around that was only used for collecting dust. When I started this project, I was able to give breath some life into it again!
+The Raspberry Pi is a debit card-sized low-cost computer that you can use for all sorts of stuff. It mainly runs Linux and is perfect for projects like this, because it only draws 5 watts of power. A regular smartphone charging cable should be enough and it also makes it portable friendly. I had an unused Raspberry Pi 3B laying around that was only used for collecting dust. When I started this project, I was able to breath back some life into it!
 
+### Prerequisites
 
-- Chapter
-  + Section
-    * Paragraph
+- [x] Desktop Computer
+  + [x] Powerful enough for games
+  + [x] Powerful enough for streaming
+  + [x] Wired connection for stability
 
-### ToDo list
-
-- [ ] Job
-  + [x] Step 1
-  + [x] Step 2
-  + [ ] Step 3
+- [x] Raspberry Pi 3 or better
+  + [x] [Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#:~:text=Archive-,Raspberry%20Pi%20OS%20(Legacy),-A%20stable%20legacy) Installed
+  + [x] Wired connection for stability
+  + [x] [Supported Input/Controller](https://help.steampowered.com/en/faqs/view/6424-467A-31D9-C6CB#:~:text=Supported%20Input/Controllers)
+  + [x] Display or TV with HDMI support
 
 ### Description list
 
