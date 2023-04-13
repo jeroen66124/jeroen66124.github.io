@@ -2,7 +2,7 @@
 title: Creating a Remote Gaming Console-like Setup through Steam Link and Playnite with a Raspberry Pi
 date: 2023-04-12 12:04:00 +0200
 categories: [Gaming]
-tags: [remote, gaming, steam, playnite, console, controller, Pi, Raspberry Pi, IoT, Internet of Things, ARM, Android, Apple, TV]
+tags: [remote, gaming, Steam, Playnite, console, controller, Pi, Raspberry Pi, IoT, Internet of Things, ARM, Android, Apple, TV, PlayStation]
 math: true
 mermaid: true
 image:
@@ -10,7 +10,8 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-> This guide can also be applied to an Android / Apple TV instead of the Raspberry Pi, install the Steam Link app from the Play Store or App Store. When installed, continue the guide from the Setting up Playnite section.
+> This guide can also be applied to an Android / Apple TV instead of the Raspberry Pi, by installing the Steam Link app from the Play Store or App Store. When installed, continue the guide from the [Setting up Playnite section](https://google.com)
+{: .prompt-tip }
 
 ## Introduction
 
@@ -45,7 +46,31 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
 
 1. Setup the Raspberry Pi according to the video below
 
-> Make sure to select Raspberry Pi OS (Legacy) in the Imager
+> Make sure to select Raspberry Pi OS (Legacy) in the Imager, Steam Link is not compatible with bullseye builds
 {: .prompt-warning }
 
 {% include embed/youtube.html id='CQtliTJ41ZE' %}
+
+Once you are done with the basic Raspberry Pi OS setup prompts, continue with step 2.
+
+2. Install Steam Link by running the following commands in your terminal
+
+```
+sudo apt update
+sudo apt install steamlink
+```
+
+3. Make Steam Link start automatically at boot 
+
+```
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+```
+Add the following line to the bottom of this file:
+```
+@steamlink
+```
+Press **CTRL + O** to save, **CTRL +X** to exit Nano
+
+4. Additional things to setup 
+- Wait until network boot (prevent Steam Link crash)
+- Video memory 128 MB (Best practice for streaming)
