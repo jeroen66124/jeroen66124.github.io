@@ -37,7 +37,6 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
   + [x] Wired connection for stability
 
 - [x] Raspberry Pi 3 or better
-  + [x] [Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#:~:text=Archive-,Raspberry%20Pi%20OS%20(Legacy),-A%20stable%20legacy) Installed
   + [x] Display or TV with HDMI support
   + [x] [Supported Input/Controller](https://help.steampowered.com/en/faqs/view/6424-467A-31D9-C6CB#:~:text=Supported%20Input/Controllers)
   + [x] Wired connection for stability
@@ -46,7 +45,7 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
 
 - Setup the Raspberry Pi according to the video below
 
-> Make sure to select Raspberry Pi OS (Legacy) in the Imager, Steam Link is not compatible with bullseye builds
+> Make sure to select [Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#:~:text=Archive-,Raspberry%20Pi%20OS%20(Legacy),-A%20stable%20legacy) in the Imager, Steam Link is not compatible with bullseye builds
 {: .prompt-warning }
 
 {% include embed/youtube.html id='CQtliTJ41ZE' %}
