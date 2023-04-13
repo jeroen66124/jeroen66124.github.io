@@ -2,7 +2,7 @@
 title: Creating a Remote Gaming Console-like Setup through Steam Link and Playnite with a Raspberry Pi
 date: 2023-04-12 12:04:00 +0200
 categories: [Gaming]
-tags: [remote, gaming, steam, playnite, console, controller, Pi, Raspberry Pi, IoT, Internet of Things, ARM]
+tags: [remote, gaming, steam, playnite, console, controller, Pi, Raspberry Pi, IoT, Internet of Things, ARM, Android, Apple, TV]
 math: true
 mermaid: true
 image:
@@ -10,7 +10,7 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-> This guide can also be applied to an Android / Apple TV instead of the Raspberry Pi, install the Steam Link app from the [Play Store](https://play.google.com/store/apps/details?id=com.valvesoftware.steamlink) or [App Store](https://apps.apple.com/app/steam-link/id1246969117)
+> This guide can also be applied to an Android / Apple TV instead of the Raspberry Pi, install the Steam Link app from the [Play Store](https://play.google.com/store/apps/details?id=com.valvesoftware.steamlink) or [App Store](https://apps.apple.com/app/steam-link/id1246969117). When installed, continue the guide from the [Setting up Playnite](https://www.google.com/) section.
 
 ## Introduction
 
@@ -41,7 +41,7 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
   + [x] [Supported Input/Controller](https://help.steampowered.com/en/faqs/view/6424-467A-31D9-C6CB#:~:text=Supported%20Input/Controllers)
   + [x] Wired connection for stability
 
-### Preparing the Raspberry Pi
+### Setting up the Raspberry Pi
 
 1. Setup the Raspberry Pi according to the video below
 
