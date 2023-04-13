@@ -44,7 +44,7 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
 
 ### Setting up the Raspberry Pi
 
-1. Setup the Raspberry Pi according to the video below
+- Setup the Raspberry Pi according to the video below
 
 > Make sure to select Raspberry Pi OS (Legacy) in the Imager, Steam Link is not compatible with bullseye builds
 {: .prompt-warning }
@@ -53,24 +53,24 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
 
 Once you are done with the basic Raspberry Pi OS setup prompts, continue with step 2.
 
-2. Install Steam Link by running the following commands in your terminal
+- Install Steam Link by running the following commands in your terminal
 
-```
+```bash
 sudo apt update
 sudo apt install steamlink
 ```
 
-3. Make Steam Link start automatically at boot 
+- Make Steam Link start automatically at boot 
 
-```
+```bash
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 ```
 Add the following line to the bottom of this file:
-```
+```bash
 @steamlink
 ```
 Press **CTRL + O** to save, **CTRL +X** to exit Nano
 
-4. Additional things to setup 
-- Wait until network boot (prevent Steam Link crash)
-- Video memory 128 MB (Best practice for streaming)
+- Additional things to setup 
+~ Wait until network boot (prevent Steam Link crash)
+~ Video memory 128 MB (Best practice for streaming)
