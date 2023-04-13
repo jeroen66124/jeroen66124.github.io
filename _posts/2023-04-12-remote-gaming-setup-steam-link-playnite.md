@@ -10,7 +10,7 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-> This guide can also be applied to an Android / Apple TV instead of the Raspberry Pi, install the Steam Link app from the Play Store or App Store. When installed, continue the guide from the "Setting up Playnite" section.
+> This guide can also be applied to an Android / Apple TV instead of the Raspberry Pi, install the Steam Link app from the Play Store or App Store. When installed, continue the guide from the Setting up Playnite section.
 
 ## Introduction
 
@@ -43,7 +43,7 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
 
 ### Setting up the Raspberry Pi
 
-1. Setup the **Raspberry Pi according** to the video below
+1. Setup the Raspberry Pi according to the video below
 
 > Make sure to select Raspberry Pi OS (Legacy) in the Imager
 {: .prompt-warning }
