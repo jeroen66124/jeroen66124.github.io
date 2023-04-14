@@ -1,5 +1,5 @@
 ---
-title: Creating a Remote Gaming Console-like Setup through Steam Link and Playnite with a Raspberry Pi
+title: How to create a remote gaming console-like setup through Steam Link and Playnite with a Raspberry Pi
 date: 2023-04-12 12:04:00 +0200
 categories: [Gaming]
 tags: [remote, gaming, Steam, Playnite, console, controller, Pi, Raspberry Pi, IoT, Internet of Things, ARM, Android, Apple, TV, PlayStation]
@@ -10,7 +10,7 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-> This guide can also be applied to an Android / Apple TV instead of the Raspberry Pi, by installing the Steam Link app from the Play Store or App Store. When installed, continue the guide from the [Setting up Playnite section](https://google.com)
+> This guide can also be applied to an Android / Apple TV instead. Install the Steam Link app from the [Play Store](https://play.google.com/store/apps/details?id=com.valvesoftware.steamlink) or [App Store](https://apps.apple.com/us/app/steam-link/id1246969117). When installed, continue the guide from the [Setting up Playnite section](https://google.com)
 {: .prompt-tip }
 
 ## Introduction
@@ -43,7 +43,7 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
 
 ### Setting up the Raspberry Pi
 
-- Setup the Raspberry Pi according to the video below
+**1** - Setup the Raspberry Pi according to the video below
 
 > Make sure to select [Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#:~:text=Archive-,Raspberry%20Pi%20OS%20(Legacy),-A%20stable%20legacy) in the Imager, Steam Link is not compatible with bullseye builds
 {: .prompt-warning }
@@ -52,14 +52,14 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
 
 Once you are done with the basic Raspberry Pi OS setup prompts, continue with step 2.
 
-- Install Steam Link by running the following commands in your terminal
+**2** - Install Steam Link by running the following commands in your terminal
 
 ```bash
 sudo apt update
 sudo apt install steamlink
 ```
 
-- Make Steam Link start automatically at boot 
+**3** Make Steam Link start automatically at boot 
 
 ```bash
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
@@ -70,6 +70,7 @@ Add the following line to the bottom of this file:
 ```
 Press **CTRL + O** to save, **CTRL +X** to exit Nano
 
-- Additional things to setup 
+**4** Additional things to setup for improved performance
+
 ~ Wait until network boot (prevent Steam Link crash)
-~ Video memory 128 MB (Best practice for streaming)
+~ Video memory 128 MB (best practice for streaming)
