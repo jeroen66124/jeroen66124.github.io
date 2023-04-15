@@ -74,4 +74,5 @@ Press **CTRL + O** to save, **CTRL + X** to exit Nano
 
 - Enable Network at Boot (prevent Steam Link crash)
 - Disable Splash Screen (recognize errors)
+- Enable SSH (remote access)
 - Video memory 128 MB (best practice for streaming)
