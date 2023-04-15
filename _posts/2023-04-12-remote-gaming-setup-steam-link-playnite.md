@@ -72,5 +72,6 @@ Press **CTRL + O** to save, **CTRL + X** to exit Nano
 
 **4** - Additional things to setup for improved performance
 
-- Wait until network boot (prevent Steam Link crash)
+- Enable Network at Boot (prevent Steam Link crash)
+- Disable Splash Screen (recognize errors)
 - Video memory 128 MB (best practice for streaming)
