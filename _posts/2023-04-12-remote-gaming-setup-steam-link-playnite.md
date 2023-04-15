@@ -59,7 +59,7 @@ sudo apt update
 sudo apt install steamlink
 ```
 
-**3** Make Steam Link start automatically at boot 
+**3** - Make Steam Link start automatically at boot 
 
 ```bash
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
@@ -68,9 +68,9 @@ Add the following line to the bottom of this file:
 ```bash
 @steamlink
 ```
-Press **CTRL + O** to save, **CTRL +X** to exit Nano
+Press **CTRL + O** to save, **CTRL + X** to exit Nano
 
-**4** Additional things to setup for improved performance
+**4** - Additional things to setup for improved performance
 
-~ Wait until network boot (prevent Steam Link crash)
-~ Video memory 128 MB (best practice for streaming)
+- Wait until network boot (prevent Steam Link crash)
+- Video memory 128 MB (best practice for streaming)
