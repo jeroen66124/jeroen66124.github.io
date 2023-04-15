@@ -50,7 +50,7 @@ The Raspberry Pi is a debit card-sized low-cost computer that you can use for al
 
 {% include embed/youtube.html id='CQtliTJ41ZE' %}
 
-Once you are done with the basic Raspberry Pi OS setup prompts, continue with step 2.
+Once you are done with the basic Raspberry Pi OS setup wizard, continue with step 2.
 
 **2** - Install Steam Link by running the following commands in your terminal
 
