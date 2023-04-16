@@ -70,7 +70,7 @@ Add the following line to the bottom of this file:
 ```
 Press **CTRL + O** to save, **CTRL + X** to exit Nano
 
-**4** - Additional things to setup for improved performance and easier troublwshooting
+**4** - Additional things to setup for improved stability, performance and easier troubleshooting
 
 Go to Menu > Preferences > Raspberry Pi Configuration
 
