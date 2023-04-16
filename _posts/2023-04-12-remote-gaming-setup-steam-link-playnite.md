@@ -70,7 +70,7 @@ Add the following line to the bottom of this file:
 ```
 Press **CTRL + O** to save, **CTRL + X** to exit Nano
 
-**4** - Additional things to setup for improved performance
+**4** - Additional things to setup for improved performance and easier troublwshooting
 
 - Enable Network at Boot (prevent Steam Link crash)
 - Disable Splash Screen (recognize errors)
