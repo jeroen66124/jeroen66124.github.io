@@ -73,3 +73,19 @@ Press **CTRL + O** to save, **CTRL + X** to exit Nano
 **4** - Additional things to setup for improved stability, performance and easier troubleshooting
 
 Go to Menu > Preferences > Raspberry Pi Configuration
+
+![1](/assets/public-1/8.png){: width="972" height="589" }
+
+- Enable Network at Boot ~ this pauses the boot process until there is an active internet connection, which is needed for Steam Link at startup or else it crashes
+- Disable Splash Screen ~ this is **optional**, but can come in handy when recognizing errors if they occure during boot time
+
+![1](/assets/public-1/9.png){: width="972" height="589" }
+
+- Enable SSH ~ also **optional**, but makes your life alot easier when things need to be setup later and you don't have a keyboard or mouse connected to the Pi
+
+![1](/assets/public-1/10.png){: width="972" height="589" }
+
+- Video memory 128 MB ~ this is the recommended amount of allocated video memory needed for Steam Link to run smoothly during a streaming session
+
+![1](/assets/public-1/11.png){: width="972" height="589" }
+
