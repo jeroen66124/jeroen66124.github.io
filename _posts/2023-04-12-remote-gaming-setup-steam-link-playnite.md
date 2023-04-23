@@ -2,7 +2,7 @@
 title: How to create a remote gaming console-like setup through Steam Link and Playnite with a Raspberry Pi
 date: 2023-04-12 12:04:00 +0200
 categories: [Gaming]
-tags: [remote, gaming, Steam, Playnite, console, controller, Raspberry Pi, IoT, Internet of Things, ARM, Android, Apple, TV, PlayStation, Xbox]
+tags: [remote, gaming, Steam, Playnite, console, controller, do-it-yourself, DIY, project, Raspberry Pi, IoT, Internet of Things, ARM, Android, Apple, TV, PlayStation, Xbox]
 math: false
 mermaid: false
 image:
