@@ -6,9 +6,15 @@ tags: [remote, gaming, Steam, Playnite, console, controller, Raspberry Pi, IoT, 
 math: false
 mermaid: false
 image:
-  path: /assets/steam-link-pi.jpg
+  path: /assets/public-1/5.jpg
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
+
+### Project Showcase
+
+![1](/assets/public-1/6.png)
+
+![1](/assets/public-1/7.png)
 
 > This guide can also be applied to an Android / Apple TV. Install the Steam Link app from the [Play Store](https://play.google.com/store/apps/details?id=com.valvesoftware.steamlink) or [App Store](https://apps.apple.com/us/app/steam-link/id1246969117). When installed, continue the guide from the [Set up Playnite](https://vskills.nl/posts/remote-gaming-setup-steam-link-playnite/#step-3-set-up-playnite) section
 {: .prompt-tip }
@@ -84,7 +90,7 @@ To install Playnite on your PC, follow these steps:
 
 1.  Go to the Playnite website and download the latest version of Playnite
 2.  Once the download is complete, run the Playnite installer and follow the on-screen instructions to install it on your PC
-3.  After installation is complete, launch Playnite and add your games library to the app. You can do this by opening the menu on the top left and clicking on "Add Game" and selecting the folders where your games are stored
+3.  After installation is complete, launch Playnite and add your games library to the app. You can do this by opening the menu on the top left and clicking on "Add Game" and selecting the folders where your games are stored. Games can be added which are from any modern launcher, it even supports pirated copies.
 
 ### Step 4: Install the Playnite PS5ish theme
 
@@ -95,21 +101,22 @@ To install the Playnite PS5ish theme, follow these steps:
 1.  Go to the Playnite menu by clicking on the icon in the top left
 2.  Go to Add-ons > Browse > Themes Fullscreen
 3.  Type PS5ish in the search bar and press Enter
-4.  Click on the PS5ish Theme and click on "Install"
-5.  Click on "Save" in the bottom right
-6.  Click on "Yes" when asked if you want to restart Playnite
+4.  Click on the PS5ish Theme and click on Install
+5.  Click on Save in the bottom right
+6.  Click on Yes when asked if you want to restart Playnite
 7.  After Playnite has restarted, switch to Fullscreen Mode by pressing F11
-8.  Go to the Playnite menu > Settings > General > Enable "Launch in Fullscreen Mode"
-9.  Also change both the "When game starts:" and "After game closes:" option to "Do Nothing"
+8.  Go to the Playnite menu > Settings > General > Enable Launch in Fullscreen Mode
+9.  Also change both the When game starts: & After game closes: option to Do Nothing
 
-If you want to further utitlize the Playnite Fullscreen Mode experience, I suggest you watch the following video:
+If you want to further utitlize and or tweak the Playnite PS5ish Fullscreen Mode experience, I suggest you watch the following video and check out the [official thread on the Playnite forum](https://playnite.link/forum/thread-492.html)
 {% include embed/youtube.html id='Xurs63Ccnlo' %}
 
 The Playnite PS5ish theme should now be applied to your Playnite library, giving it a sleek, modern look that's similar to the PlayStation 5's UI.
+Make sure to add Playnite as a non-Steam game to your library, so you can launch it easily from within the remote play session.
 
 ### Step 5: Connect Raspberry Pi to your PC
 
-Now that Steam Link and Playnite are installed, you'll need to connect your Raspberry Pi to your PC or console. Follow these steps:
+Now that Steam Link and Playnite are installed, you'll need to connect your Raspberry Pi to your PC. Follow these steps:
 
 1.  Make sure your Raspberry Pi is connected to your network (either via Ethernet or Wi-Fi)
 2.  Launch Steam on your PC
