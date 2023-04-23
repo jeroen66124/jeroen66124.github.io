@@ -10,7 +10,7 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-### Project Showcase
+## Project Showcase
 
 ![1](/assets/public-1/6.png)
 
@@ -108,7 +108,7 @@ To install the Playnite PS5ish theme, follow these steps:
 8.  Go to the Playnite menu > Settings > General > Enable Launch in Fullscreen Mode
 9.  Also change both the When game starts: & After game closes: option to Do Nothing
 
-If you want to further utitlize and or tweak the Playnite PS5ish Fullscreen Mode experience, I suggest you watch the following video and check out the [official thread on the Playnite forum](https://playnite.link/forum/thread-492.html)
+If you want to further utitlize and or tweak the Playnite PS5ish Fullscreen Mode experience, I suggest you watch the following video and check out the [official thread on the Playnite forum](https://playnite.link/forum/thread-492.html).
 {% include embed/youtube.html id='Xurs63Ccnlo' %}
 
 The Playnite PS5ish theme should now be applied to your Playnite library, giving it a sleek, modern look that's similar to the PlayStation 5's UI.
@@ -135,21 +135,22 @@ These are for improved stability, performance and easier troubleshooting.
 
 Go to Menu > Preferences > Raspberry Pi Configuration
 
-![1](/assets/public-1/8.png){: width="972" height="589" }
+![1](/assets/public-1/8.png)
 
 - Enable Network at Boot ~ this pauses the boot process until there is an active internet connection, which is needed for Steam Link at startup or else it crashes
 - Disable Splash Screen ~ this is **optional**, but can come in handy when recognizing errors if they occure during boot time
 
-![1](/assets/public-1/9.png){: width="972" height="589" }
+![1](/assets/public-1/9.png)
 
 - Enable SSH ~ also **optional**, but makes your life alot easier when things need to be setup later and you don't have a keyboard or mouse connected to the Pi
 
-![1](/assets/public-1/10.png){: width="972" height="589" }
+![1](/assets/public-1/10.png)
 
 - Video memory 128 MB ~ this is the recommended amount of allocated video memory needed for Steam Link to run smoothly during a streaming session
 
-![1](/assets/public-1/11.png){: width="972" height="589" }
+![1](/assets/public-1/11.png)
 
 ### Closing
+
 And that's it! With these steps, you can set up your own remote gaming setup using Steam Link, Playnite, and a Raspberry Pi. Enjoy your gaming sessions from the comfort of your couch or bed, without having to be right in front of your PC. Whether you want to play your favorite games on a larger screen, or just want the flexibility to game from anywhere in your home, this project is a great way to achieve both. So, grab your Raspberry Pi, install Steam Link and Playnite, and start gaming!
 
