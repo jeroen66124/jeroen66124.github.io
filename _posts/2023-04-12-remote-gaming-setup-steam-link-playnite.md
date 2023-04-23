@@ -10,7 +10,7 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-> This guide can also be applied to an Android / Apple TV. Install the Steam Link app from the [Play Store](https://play.google.com/store/apps/details?id=com.valvesoftware.steamlink) or [App Store](https://apps.apple.com/us/app/steam-link/id1246969117). When installed, continue the guide from the [Setting up Playnite section](https://vskills.nl/posts/remote-gaming-setup-steam-link-playnite/#set-up-steam-link)
+> This guide can also be applied to an Android / Apple TV. Install the Steam Link app from the [Play Store](https://play.google.com/store/apps/details?id=com.valvesoftware.steamlink) or [App Store](https://apps.apple.com/us/app/steam-link/id1246969117). When installed, continue the guide from the [Setting up Playnite section](https://vskills.nl/posts/remote-gaming-setup-steam-link-playnite/#step-2-set-up-steam-link)
 {: .prompt-tip }
 
 ### Introduction
