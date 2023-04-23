@@ -30,7 +30,7 @@ Here's what you'll need to get started:
 
 ### Step 1: Set up Raspberry Pi
 
-First, you'll need to set up your Raspberry Pi. If you don't already have one, you can purchase one online from a variety of retailers. It's recommended to get a model with built-in Wi-Fi, such as the Raspberry Pi 3 B+ or Raspberry Pi 4.
+First, you'll need to set up your Raspberry Pi. If you don't already have one, you can purchase one online from a variety of retailers. It's recommended to get a model with built-in Wi-Fi, such as the Raspberry Pi 3 B+ or Raspberry Pi 4. Minimum 1GB of RAM is required on both models for it to work smoothly.
 
 Once you have your Raspberry Pi, you'll need to install an operating system on it. Raspberry Pi OS (formerly known as Raspbian) is the most popular operating system for Raspberry Pi, and it's what we'll be using for this guide.
 
