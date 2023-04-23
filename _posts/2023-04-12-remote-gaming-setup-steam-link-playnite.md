@@ -16,12 +16,12 @@ image:
 ### Introduction
 In the last couple of weeks, I had the sudden urge of wanting to be able to play games from the couch again. Having owned both the Playstation 2 and 3 throughout my childhood, introduced me to the simplicity of console gaming. The pick up and play experience is something priceless that I would like to replicate. To be able to do this with a desktop, requires some setting up however. This guide will you show you how to set this up and more.
 
-Steam Link is a technology that allows you to stream games from your PC or console to another device. This means you can play games on a TV or monitor that's located in another room or even in a different part of the world. Playnite is a free, open-source gaming platform that can be used to manage and launch your games from one central location. And a Raspberry Pi is a small, affordable computer that can be used for a variety of projects.
+Steam Link is a technology that allows you to stream games from your PC or console to another device. This means you can play games on a TV or monitor that's located in another room or even in a different part of the world. Playnite is a free, open-source gaming platform that can be used to manage and launch your games from one central location. A Raspberry Pi is a small, affordable computer that can be used for a variety of projects.
 
 ### Prerequisites
 Here's what you'll need to get started:
 
-- [x] Raspberry Pi (preferably a model with built-in WiFi, such as the Raspberry Pi 3 B+ or Raspberry Pi 4)
+- [x] Raspberry Pi (preferably model 3B+ or 4)
 - [x] MicroSD card (at least 16GB)
 - [x] Power supply for Raspberry Pi
 - [x] Display or TV with HDMI support
@@ -34,7 +34,7 @@ First, you'll need to set up your Raspberry Pi. If you don't already have one, y
 
 Once you have your Raspberry Pi, you'll need to install an operating system on it. Raspberry Pi OS (formerly known as Raspbian) is the most popular operating system for Raspberry Pi, and it's what we'll be using for this guide.
 
-> Make sure to select [Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-legacy) in the Imager, Steam Link is not compatible with bullseye builds
+> Make sure to select [Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-legacy) in the Imager, Steam Link is not compatible with current bullseye builds
 {: .prompt-warning }
 
 To install Raspberry Pi OS, follow these steps:
@@ -44,6 +44,7 @@ To install Raspberry Pi OS, follow these steps:
 3.  Select the **[Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-legacy)**  option and follow the on-screen instructions to install it onto your microSD card.
 4.  Once the installation is complete, insert the microSD card into your Raspberry Pi.
 
+Here is a quick 30 second video with visual instructions:
 {% include embed/youtube.html id='CQtliTJ41ZE' %}
 
 ### Step 2: Set up Steam Link
@@ -61,7 +62,7 @@ sudo apt update && sudo apt upgrade -y
 ```bash
 sudo apt install steamlink
 ```
-4.  After the installation is complete, you can launch Steam Link by clicking on the Steam Link icon in the Games menu or by typing the following command in the terminal:
+4.  After the installation is complete, you can launch Steam Link by clicking on the Steam Link icon on the desktop or by typing the following command in the terminal:
 ```bash
 steamlink
 ```
@@ -81,38 +82,43 @@ While you can launch games directly from Steam Link, it's helpful to have a cent
 
 To install Playnite on your PC, follow these steps:
 
-1.  Go to the Playnite website and download the latest version of Playnite.
-2.  Once the download is complete, run the Playnite installer and follow the on-screen instructions to install it on your PC.
-3.  After installation is complete, launch Playnite and add your games library to the app. You can do this by clicking on "Add Games" and selecting the folders where your games are stored.
+1.  Go to the Playnite website and download the latest version of Playnite
+2.  Once the download is complete, run the Playnite installer and follow the on-screen instructions to install it on your PC
+3.  After installation is complete, launch Playnite and add your games library to the app. You can do this by opening the menu on the top left and clicking on "Add Game" and selecting the folders where your games are stored
 
-### Step 4: Connect Raspberry Pi to your PC
-
-Now that Steam Link and Playnite are installed, you'll need to connect your Raspberry Pi to your PC or console. Follow these steps:
-
-1.  Make sure your Raspberry Pi is connected to your network (either via Ethernet or Wi-Fi).
-2.  Launch Steam on your PC.
-3.  In the top left corner of the Steam window, click on "Steam" and select "Settings."
-4.  Click on the "Remote Play" tab and make sure the "Enable Remote Play" checkbox is checked.
-5.  Click on "Advanced Host Options" and make sure the "Use Nvidia NVFBC capture on supported games" checkbox is checked.
-6.  Click on "OK" to save your settings.
-7.  Launch Steam Link on your Raspberry Pi.
-8.  Follow the on-screen instructions to connect to your network and select your gaming device. If your PC is running Steam, it should automatically appear on the list
-
-### Step 5: Install the Playnite PS5ish theme
+### Step 4: Install the Playnite PS5ish theme
 
 If you're a fan of the PlayStation 5's sleek, modern UI, you can install a PS5-inspired theme for Playnite to give it a similar look and feel.
 
 To install the Playnite PS5ish theme, follow these steps:
 
-1.  Go to the Playnite PS5ish theme Github page and download the latest version of the theme.
-2.  Extract the contents of the downloaded zip file to a new folder.
-3.  Open Playnite and click on the "Settings" button in the top right corner of the window.
-4.  Click on the "Themes" tab and then click on the "Install Theme" button.
-5.  Navigate to the folder where you extracted the theme files and select the "PlaynitePS5ish.xaml" file.
-6.  Click on the "Open" button to install the theme.
-7.  After installation is complete, click on the "Activate" button to apply the theme.
+1.  Go to the Playnite menu by clicking on the icon in the top left
+2.  Go to Add-ons > Browse > Themes Fullscreen
+3.  Type PS5ish in the search bar and press Enter
+4.  Click on the PS5ish Theme and click on "Install"
+5.  Click on "Save" in the bottom right
+6.  Click on "Yes" when asked if you want to restart Playnite
+7.  After Playnite has restarted, switch to Fullscreen Mode by pressing F11
+8.  Go to the Playnite menu > Settings > General > Enable "Launch in Fullscreen Mode"
+9.  Also change both the "When game starts:" and "After game closes:" option to "Do Nothing"
+
+If you want to further utitlize the Playnite Fullscreen Mode experience, I suggest you watch the following video:
+{% include embed/youtube.html id='Xurs63Ccnlo' %}
 
 The Playnite PS5ish theme should now be applied to your Playnite library, giving it a sleek, modern look that's similar to the PlayStation 5's UI.
+
+### Step 5: Connect Raspberry Pi to your PC
+
+Now that Steam Link and Playnite are installed, you'll need to connect your Raspberry Pi to your PC or console. Follow these steps:
+
+1.  Make sure your Raspberry Pi is connected to your network (either via Ethernet or Wi-Fi)
+2.  Launch Steam on your PC
+3.  In the top left corner of the Steam window, click on "Steam" and select "Settings"
+4.  Click on the "Remote Play" tab and make sure the "Enable Remote Play" checkbox is checked
+5.  Click on "Advanced Host Options" and make sure the "Use Nvidia NVFBC capture on supported games" checkbox is checked
+6.  Click on "OK" to save your settings
+7.  Launch Steam Link on your Raspberry Pi
+8.  Follow the on-screen instructions to connect to your network and select your gaming device. If your PC is running Steam, it should automatically appear on the list
 
 ### Step 6: USB Game Controller Setup
 Add a USB game controller If you prefer to use a game controller instead of a keyboard and mouse, you can connect a USB game controller to your Raspberry Pi. Simply plug in the controller and follow the on-screen instructions to set it up. Once it's connected, you should be able to use it to play games just as you would on a console.
