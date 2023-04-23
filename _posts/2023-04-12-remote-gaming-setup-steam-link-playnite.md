@@ -55,23 +55,32 @@ To install Steam Link on your Raspberry Pi, follow these steps:
 1.  Open the terminal on your Raspberry Pi by clicking on the terminal icon in the top left corner of the screen.
 2.  Type the following command to update your system:
 
-`sudo apt update && sudo apt upgrade -y` 
+```bash
+sudo apt update && sudo apt upgrade -y
+```
 
 3.  Once the update is complete, type the following command to install Steam Link:
-
-`sudo apt install steamlink` 
+```bash
+sudo apt install steamlink
+```
 
 4.  After the installation is complete, you can launch Steam Link by clicking on the Steam Link icon in the Games menu or by typing the following command in the terminal:
 
-`steamlink` 
+```bash
+steamlink
+```
 
 5. For ease of use, make Steam Link start automatically at boot:
 
-`sudo nano /etc/xdg/lxsession/LXDE-pi/autostart` 
+```bash
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart 
+```
 
 Add the following line to the bottom of this file:
 
-`@steamlink`
+```bash
+@steamlink
+```
 
 Press **CTRL + O** to save, **CTRL + X** to exit Nano
 
