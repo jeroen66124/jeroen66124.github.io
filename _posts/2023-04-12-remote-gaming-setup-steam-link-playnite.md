@@ -60,6 +60,7 @@ sudo apt update && sudo apt upgrade -y
 ```
 
 3.  Once the update is complete, type the following command to install Steam Link:
+
 ```bash
 sudo apt install steamlink
 ```
