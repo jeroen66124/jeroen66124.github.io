@@ -21,12 +21,12 @@ Steam Link is a technology that allows you to stream games from your PC or conso
 ### Prerequisites
 Here's what you'll need to get started:
 
-[x]  Raspberry Pi (preferably a model with built-in WiFi, such as the Raspberry Pi 3 B+ or Raspberry Pi 4)
-[x]  MicroSD card (at least 16GB)
-[x]  Power supply for Raspberry Pi
-[x]  Display or TV with HDMI support
-[x]  [Supported Input/Controller](https://help.steampowered.com/en/faqs/view/6424-467A-31D9-C6CB#:~:text=Supported%20Input/Controllers) (optional)
-[x]  Ethernet cable (optional, but recommended for faster and more stable streaming)
+- [x] Raspberry Pi (preferably a model with built-in WiFi, such as the Raspberry Pi 3 B+ or Raspberry Pi 4)
+- [x] MicroSD card (at least 16GB)
+- [x] Power supply for Raspberry Pi
+- [x] Display or TV with HDMI support
+- [x] [Supported Input/Controller](https://help.steampowered.com/en/faqs/view/6424-467A-31D9-C6CB#:~:text=Supported%20Input/Controllers) (optional)
+- [x] Ethernet cable (optional, but recommended for faster and more stable streaming)
 
 ### Step 1: Set up Raspberry Pi
 
