@@ -45,10 +45,11 @@ Once you have your Raspberry Pi, you'll need to install an operating system on i
 
 To install Raspberry Pi OS, follow these steps:
 
-1.  Download the **[Raspberry Pi Imager](https://www.raspberrypi.com/software/)** from the Raspberry Pi website.
-2.  Insert your microSD card into your computer and open the Raspberry Pi Imager.
-3.  Select the **[Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-legacy)**  option and follow the on-screen instructions to install it onto your microSD card.
-4.  Once the installation is complete, insert the microSD card into your Raspberry Pi.
+1.  Download the **[Raspberry Pi Imager](https://www.raspberrypi.com/software/)** from the Raspberry Pi website
+2.  Insert your microSD card into your computer and open the Raspberry Pi Imager
+3.  Select the **[Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-legacy)**  option and follow the on-screen instructions to install it onto your microSD card
+4.  Once the installation is complete, insert the microSD card into your Raspberry Pi and turn it on
+5.  Follow the instructions on the Raspbian Installation wizard and continue with the guide afterwards
 
 Here is a quick 30 second video with visual instructions:
 {% include embed/youtube.html id='CQtliTJ41ZE' %}
