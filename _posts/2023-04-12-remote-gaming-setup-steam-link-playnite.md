@@ -117,7 +117,7 @@ If you want to further utitlize and or tweak the Playnite PS5ish Fullscreen Mode
 The Playnite PS5ish theme should now be applied to your Playnite library, giving it a sleek, modern look that's similar to the PlayStation 5's UI.
 Make sure to add Playnite as a non-Steam game to your library, so you can launch it easily from within the remote play session.
 
-## Step 5: Connect Raspberry Pi to your PC
+## Step 5: Set up connection
 
 Now that Steam Link and Playnite are installed, you'll need to connect your Raspberry Pi to your PC. Follow these steps:
 
