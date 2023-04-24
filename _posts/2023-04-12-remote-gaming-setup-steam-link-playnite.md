@@ -131,7 +131,7 @@ Now that Steam Link and Playnite are installed, you'll need to connect your Rasp
 8.  Launch Steam Link on your Raspberry Pi
 9.  Follow the on-screen instructions to connect to your network and select your gaming device. If your PC is running Steam, it should automatically appear on the list. If it doesn't, you can connect through a one-time PIN code.
 
-## Step 6: USB Game Controller Setup (optional)
+## Step 6: USB Game Controller Setup
 Add a USB game controller If you prefer to use a game controller instead of a keyboard and mouse, you can connect a USB game controller to your Raspberry Pi. Simply plug in the controller and it should work automatically. Once it's connected, you can use it to play games just as you would on a console.
 
 ## Step 7: Additional things to setup 
