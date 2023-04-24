@@ -13,8 +13,10 @@ image:
 ## Project Showcase
 
 ![1](/assets/public-1/6.png)
+_Full Screen Mode on Playnite with PS5ish Theme_
 
 ![1](/assets/public-1/7.png)
+_Browsing Game Library on Playnite with PS5ish Theme_
 
 > This guide can also be applied to an Android / Apple TV. Install the Steam Link app from the [Play Store](https://play.google.com/store/apps/details?id=com.valvesoftware.steamlink) or [App Store](https://apps.apple.com/us/app/steam-link/id1246969117). When installed, continue the guide from the [Set up Playnite](https://vskills.nl/posts/remote-gaming-setup-steam-link-playnite/#step-3-set-up-playnite) section
 {: .prompt-tip }
