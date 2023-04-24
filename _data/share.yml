@@ -12,7 +12,7 @@ platforms:
 
   - type: WhatsApp
     icon: "fab fa-whatsapp"
-    link: "whatsapp://send?text=Check out this blog post!"
+    link: "whatsapp://send?text=Check out this blog: https://vskills.nl"
 
   - type: Telegram
     icon: "fab fa-telegram"
