@@ -95,7 +95,7 @@ To install Playnite on your PC, follow these steps:
 2.  Once the download is complete, run the Playnite installer and follow the on-screen instructions to install it on your PC
 3.  After installation is complete, launch Playnite and add your games library to the app. You can do this by opening the menu on the top left and clicking on "Add Game" and selecting the folders where your games are stored. Games can be added which are from any modern launcher, it even supports pirated copies (although unsupported for obvious reasons).
 
-## Step 4: Install the Playnite PS5ish theme
+## Step 4: Set up PS5ish theme
 
 If you're a fan of the PlayStation 5's sleek, modern UI, you can install a PS5-inspired theme for Playnite to give it a similar look and feel.
 
@@ -131,10 +131,10 @@ Now that Steam Link and Playnite are installed, you'll need to connect your Rasp
 8.  Launch Steam Link on your Raspberry Pi
 9.  Follow the on-screen instructions to connect to your network and select your gaming device. If your PC is running Steam, it should automatically appear on the list. If it doesn't, you can connect through a one-time PIN code.
 
-## Step 6: USB Game Controller Setup
+## Step 6: Set up USB Game Controller
 Add a USB game controller If you prefer to use a game controller instead of a keyboard and mouse, you can connect a USB game controller to your Raspberry Pi. Simply plug in the controller and it should work automatically. Once it's connected, you can use it to play games just as you would on a console.
 
-## Step 7: Additional things to setup 
+## Step 7: Set up additional things
 These are for improved stability, performance and easier troubleshooting.
 
 Go to Menu > Preferences > Raspberry Pi Configuration
