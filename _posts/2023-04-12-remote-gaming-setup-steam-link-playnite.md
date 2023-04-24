@@ -10,7 +10,7 @@ image:
   alt: Steam Link on Raspberry Pi used for Remote Gaming
 ---
 
-## Project Showcase
+## Showcase
 
 ![1](/assets/public-1/6.png)
 _Full Screen Mode on Playnite with PS5ish Theme_
