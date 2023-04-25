@@ -93,7 +93,9 @@ To install Playnite on your PC, follow these steps:
 
 1.  Go to the Playnite website and download the latest version of Playnite
 2.  Once the download is complete, run the Playnite installer and follow the on-screen instructions to install it on your PC
-3.  After installation is complete, launch Playnite and add your games library to the app. You can do this by opening the menu on the top left and clicking on "Add Game" and selecting the folders where your games are stored. Games can be added which are from any modern launcher, it even supports pirated copies (although unsupported for obvious reasons).
+3.  After installation is complete, launch Playnite and add your games library to the app. You can do this by opening the menu on the top left and clicking on "Add Game" and selecting the folders where your games are stored. 
+
+Old and new games can both be added, and it supports any modern launcher as well, it even supports pirated copies (although unsupported for obvious reasons).
 
 ## Step 4: Set up PS5ish theme
 
@@ -104,12 +106,12 @@ To install the Playnite PS5ish theme, follow these steps:
 1.  Go to the Playnite menu by clicking on the icon in the top left
 2.  Go to Add-ons > Browse > Themes Fullscreen
 3.  Type PS5ish in the search bar and press Enter
-4.  Click on the PS5ish Theme and click on Install
-5.  Click on Save in the bottom right
-6.  Click on Yes when asked if you want to restart Playnite
+4.  Click on the PS5ish Theme and click on "Install"
+5.  Click on "Save" in the bottom right
+6.  Click on "Yes" when asked if you want to restart Playnite
 7.  After Playnite has restarted, switch to Fullscreen Mode by pressing F11
-8.  Go to the Playnite menu > Settings > General > Enable Launch in Fullscreen Mode
-9.  Also change both the When game starts: & After game closes: option to Do Nothing
+8.  Go to the Playnite menu > Settings > General > Enable "Launch in Fullscreen Mode"
+9.  Also change both the "When game starts:" & "After game closes:" option to "Do Nothing"
 
 If you want to further utitlize and or tweak the Playnite PS5ish Fullscreen Mode experience, I suggest you watch the following video and check out the [official thread on the Playnite forum](https://playnite.link/forum/thread-492.html).
 {% include embed/youtube.html id='Xurs63Ccnlo' %}
@@ -132,7 +134,9 @@ Now that Steam Link and Playnite are installed, you'll need to connect your Rasp
 9.  Follow the on-screen instructions to connect to your network and select your gaming device. If your PC is running Steam, it should automatically appear on the list. If it doesn't, you can connect through a one-time PIN code.
 
 ## Step 6: Set up USB Game Controller
-Add a USB game controller If you prefer to use a game controller instead of a keyboard and mouse, you can connect a USB game controller to your Raspberry Pi. Simply plug in the controller and it should work automatically. Once it's connected, you can use it to play games just as you would on a console.
+You can add a USB game controller If you prefer to use a game controller instead of a keyboard and mouse. Plug in a USB game controller to your Raspberry Pi, and it should work automatically. Once it's connected, you can use it to play games just as you would on a console.
+
+If a game does not support controller input or the keymapping is throwing you off, check out the [Steamworks Browsing Configurations](https://partner.steamgames.com/doc/features/steam_controller/browse_configs) documentation.
 
 ## Step 7: Set up additional things
 These are for improved stability, performance and easier troubleshooting.
