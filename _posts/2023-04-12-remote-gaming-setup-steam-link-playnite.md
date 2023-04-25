@@ -24,7 +24,7 @@ _Browsing Game Library on Playnite with PS5ish Theme_
 ## Introduction
 In the last couple of weeks, I had the sudden urge of wanting to be able to play games from the couch again. Having owned both the Playstation 2 and 3 throughout my childhood, introduced me to the simplicity of console gaming. The pick up and play experience is something priceless that I would like to replicate. To be able to do this with a desktop, requires some setting up however. This guide will you show you how to set this up and more.
 
-Steam Link is a technology that allows you to stream games from your PC or console to another device. This means you can play games on a TV or monitor that's located in another room or even in a different part of the world. Playnite is a free, open-source gaming platform that can be used to manage and launch your games from one central location. A Raspberry Pi is a small, affordable computer that can be used for a variety of projects.
+Steam Link is a technology that allows you to stream games from your PC or console to another device. This means you can play games on a TV or monitor that's located in another room or even in a different part of the world. Playnite is a free, open-source gaming platform that can be used to manage and launch your games from one central location. A Raspberry Pi is a credit card sized, affordable computer that can be used for a variety of projects.
 
 ## Prerequisites
 Here's what you'll need to get started:
@@ -38,7 +38,7 @@ Here's what you'll need to get started:
 
 ## Step 1: Set up Raspberry Pi
 
-First, you'll need to set up your Raspberry Pi. If you don't already have one, you can purchase one online from a variety of retailers. It's recommended to get a model with built-in Wi-Fi, such as the Raspberry Pi 3 B+ or Raspberry Pi 4. Minimum 1GB of RAM is required on both models for it to work smoothly.
+First, you'll need to set up your Raspberry Pi. If you don't already have one, you can purchase one online from a variety of retailers. It's recommended to get a model with built-in Wi-Fi, such as the Raspberry Pi 3 B+ or Raspberry Pi 4. A Minimum 1GB of RAM is required on both models for it to work smoothly.
 
 Once you have your Raspberry Pi, you'll need to install an operating system on it. Raspberry Pi OS (formerly known as Raspbian) is the most popular operating system for Raspberry Pi, and it's what we'll be using for this guide.
 
@@ -93,7 +93,7 @@ To install Playnite on your PC, follow these steps:
 
 1.  Go to the Playnite website and download the latest version of Playnite
 2.  Once the download is complete, run the Playnite installer and follow the on-screen instructions to install it on your PC
-3.  After installation is complete, launch Playnite and add your games library to the app. You can do this by opening the menu on the top left and clicking on "Add Game" and selecting the folders where your games are stored. 
+3.  After installation is complete, launch Playnite and add your games library to the app. You can do this by opening the menu on the top left and clicking on "Add Game" and selecting the folders where your games are stored 
 
 Old and new games can both be added, and it supports any modern launcher as well, it even supports pirated copies (although unsupported for obvious reasons).
 
@@ -128,10 +128,10 @@ Now that Steam Link and Playnite are installed, you'll need to connect your Rasp
 3.  In the top left corner of the Steam window, click on "Steam" and select "Settings"
 4.  Click on the "Remote Play" tab and make sure the "Enable Remote Play" checkbox is checked
 5.  Click on "Advanced Host Options" and make sure the "Use Nvidia NVFBC capture on supported games" checkbox is checked
-6.  Also make sure to tweak your maximum bitrate and FPS. I own a model 3B+ and have set the bitrate to max 10mbps with FPS-cap on 60. This looks okay visually and also reduces stutters because the Model 3 Pi cannot handle higher bitrates smoothly.
+6.  Also make sure to tweak your maximum bitrate and FPS. I own a model 3B+ and have set the bitrate to max 10mbps with FPS-cap on 60. This looks okay visually and also reduces stutters because the Model 3 Pi cannot handle higher bitrates smoothly
 7.  Click on "OK" to save your settings
 8.  Launch Steam Link on your Raspberry Pi
-9.  Follow the on-screen instructions to connect to your network and select your gaming device. If your PC is running Steam, it should automatically appear on the list. If it doesn't, you can connect through a one-time PIN code.
+9.  Follow the on-screen instructions to connect to your network and select your gaming device. If your PC is running Steam, it should automatically appear on the list. If it doesn't, you can connect through a one-time PIN code
 
 ## Step 6: Set up USB Game Controller
 You can add a USB game controller If you prefer to use a game controller instead of a keyboard and mouse. Plug in a USB game controller to your Raspberry Pi, and it should work automatically. Once it's connected, you can use it to play games just as you would on a console.
