@@ -1,4 +1,3 @@
-
 ---
 title: How to run a full Bitcoin node the easy way with Umbrel OS
 date: 2023-05-06 19:00:00 +0200
@@ -7,7 +6,7 @@ tags: [bitcoin, full, node, umbrel, self-host, decentralized, peer-to-peer, cryp
 math: false
 mermaid: false
 image:
-  path: /assets/public-2/31.png
+  path: /assets/public-2/31.jpg
   alt: First time setup screen of Umbrel OS
 ---
 
