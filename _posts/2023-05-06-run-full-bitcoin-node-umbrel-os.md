@@ -16,7 +16,6 @@ image:
 _Umbrel OS home screen after installation_
 
 {% include embed/youtube.html id='Uu1TuE6RdKM' %}
-_Introduction video of Umbrel OS_
 
 > This guide is written with the ESXi type-1 hypervisor in mind, but can also be applied to a bare-metal installation. If you want to install Umbrel OS on bare-metal, start the guide from the [Set up Ubuntu](https://vskills.nl/posts/run-full-bitcoin-node-umbrel-os/#step-2-set-up-ubuntu-server) section
 {: .prompt-tip }
@@ -37,7 +36,7 @@ Here's what you'll need to get started:
 - [x] Minimum Dual-Core CPU & 2GB RAM
 - [x] Stable internet connection
 
-## Step 1: Set up ESXi Virtual Machine
+## Step 1: Set up Virtual Machine
 
 First, you'll need to set up your Raspberry Pi. If you don't already have one, you can purchase one online from a variety of retailers. It's recommended to get a model with built-in Wi-Fi, such as the Raspberry Pi 3 B+ or Raspberry Pi 4. A Minimum 1GB of RAM is required on both models for it to work smoothly.
 
