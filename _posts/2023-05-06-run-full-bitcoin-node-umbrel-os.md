@@ -22,7 +22,7 @@ _Introduction video of Umbrel OS_
 {: .prompt-tip }
 
 ## Introduction
-I've always been interested in Bitcoin and the way it operates. Ever since I read **[Mastering Bitcoin - Programming the Open Blockchain](https://github.com/bitcoinbook/bitcoinbook)** by Andreas Antonopoulos, I felt the need to run a full bitcoin node and be a contributor to the bitcoin network. Running a full bitcoin node is an relatively easy way to make the network more secure. The bitcoin ecosystem has matured alot throughout the years and the software has too. Follow me along on this guide and join the growing network of validators too!
+I've always been interested in Bitcoin and the way it operates. Ever since I read **[Mastering Bitcoin - Programming the Open Blockchain](https://github.com/bitcoinbook/bitcoinbook)** by Andreas Antonopoulos, I felt the need to run a full bitcoin node and be a contributor to the bitcoin network. Running a full bitcoin node is an relatively easy way to make the network more secure. The bitcoin ecosystem has matured alot throughout the years and the software has too. Follow me along on this guide and join the [growing network of validators](https://www.bitrawr.com/terminal/bitcoin-node-map) too!
 
 What is a full Bitcoin node? Let me explain the basics:
 • A node is a computer connected to other computers which follows rules and shares information      
@@ -33,8 +33,8 @@ What is a full Bitcoin node? Let me explain the basics:
 Here's what you'll need to get started:
 
 - [x] Latest [Ubuntu Server ISO](https://ubuntu.com/download/server)
-- [x] 600+ GB of storage available (Make sure to check the [current Blockchain size](https://www.blockchain.com/explorer/charts/blocks-size) to adjust size accordingly)
-- [x] Dual Core CPU & 2GB RAM
+- [x] 600+ GB of fast storage available (Make sure to check the [current blockchain size](https://www.blockchain.com/explorer/charts/blocks-size) to adjust storage size accordingly)
+- [x] Minimum Dual-Core CPU & 2GB RAM
 - [x] Stable internet connection
 
 ## Step 1: Set up ESXi Virtual Machine
