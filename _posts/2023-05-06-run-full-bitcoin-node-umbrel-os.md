@@ -32,7 +32,7 @@ What is a full Bitcoin node? Let me explain the basics:
 Here's what you'll need to get started:
 - [x] Access to an ESXi host (optional)
 - [x] Latest [Ubuntu Server ISO](https://ubuntu.com/download/server)
-- [x] 600+ GB of fast storage available (Make sure to check the [current blockchain size](https://www.blockchain.com/explorer/charts/blocks-size) to adjust storage size accordingly)
+- [x] 600+ GB of fast storage available (check the [current blockchain size](https://www.blockchain.com/explorer/charts/blocks-size) to adjust storage size accordingly)
 - [x] Minimum Dual-Core CPU & 2GB RAM
 - [x] Stable internet connection
 
