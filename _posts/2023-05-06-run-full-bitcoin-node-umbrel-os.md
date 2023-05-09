@@ -60,16 +60,16 @@ To create a new Virtual Machine, follow these steps:
 
 ## Step 2: Set up Ubuntu Server
 
-Now that your Virtual Machine is ready, you'll need to install Ubuntu Server Link on it
+Now that your Virtual Machine is ready, you'll need to install Ubuntu Server on it
 
 1.  To turn on the Virtual Machine, click on the "Power On" button
 ![1](/assets/public-2/8.png)
 2.  It should automatically load the GRUB bootloader, select "Try or Install Ubuntu Server" and wait for it to load
 ![1](/assets/public-2/9.png)
 ![1](/assets/public-2/10.png)
-3.  Select your preferred language, I chose for English
+3.  Select your preferred language, I chose English for ease of use
 ![1](/assets/public-2/11.png)
-4.  Select "Continue without updating" to save some time
+4.  Select "Continue without updating" to save some time during installation
 ![1](/assets/public-2/12.png)
 5.  Select "Done" five times to use the default options on the Keyboard, Installation, Network, Proxy and Mirror configuration screens
 6.  Select "Done" on the Guided storage configuration screen and make sure to "Use an entire disk", you can also "Encrypt the LVM group with LUKS" if you prefer to ecnrypt your installation
@@ -94,7 +94,7 @@ curl -L https://umbrel.sh | bash
 ```
 It will ask for your password like shown below:
 ![1](/assets/public-2/28.png)
-15. When it is done installing, visit http://umbrel.local or the IP address to access the web UI
+15. When the automated install script is done, visit http://umbrel.local or the IP address to access the web UI
 ![1](/assets/public-2/30.png)
 
 ## Step 3: Set up Umbrel OS
@@ -119,7 +119,7 @@ It is now time to set up our very own Bitcoin node and start syncing. You can al
 
 If you want to reduce the storage space used, you might be interested in Pruning Old Blocks. This means that you can save storage by pruning (deleting) old blocks and keeping only a limited copy of the blockchain
 
-1.  Go to your Bitcoin Node > Kebab Menu > Advanced Settings 
+1.  Go to your Bitcoin Node > kebab menu > Advanced Settings 
 ![1](/assets/public-2/38.png)
 2.  Scroll down and enable "Prune Old Blocks", use the slider to choose the size of the blockchain you want to store
 ![1](/assets/public-2/39.png)
@@ -132,13 +132,13 @@ If you want to make use of the [Lightning Network](https://academy.binance.com/e
 2.  This will merge both Bitcoin and Lightning apps and enable Lightning Network functionality
 3.  Open a channel and explore the wicked world of the Lightning Network
 4.  Profit? (Have fun exploring the rabbit-hole)
+![1](/assets/public-2/43.png)
 ![1](/assets/public-2/41.png)
 ![1](/assets/public-2/42.png)
-![1](/assets/public-2/43.png)
 
 ## Step 6: Set up other self-hosted Apps (Optional)
 
-Explore all the apps in the [Umbrel App Store](https://apps.umbrel.com/) and explore what is possible!
+Explore all the apps in the [Umbrel App Store](https://apps.umbrel.com/) and see what is possible!
 
 A list of recommended apps to install, made by me:
 
@@ -164,10 +164,8 @@ A list of recommended apps to install, made by me:
 - SimpleTorrent ~ Download torrents with your Umbrel
 - Uptime Kuma ~ Self-hosted uptime monitoring tool
 - ChatBot UI ~ ChatGPT but better through APIs
-- Electrs ~ A simple and efficient Electrum Server
-- Element ~ A glossy Matrix client compatible with Synapse
 - Whoogle ~ A self-hosted, ad-free, privacy-respecting metasearch engine
 
 ## Closing
 
-And that wraps it up! With these steps, you can set up your own Bitcoin and Lightning Node, self-host all sorts of different apps and improve your privacy while doing so. Jump into the world of Bitcoin and self-hosting with Umbrel OS, which makes this all really easy to do!
+And that wraps it up! With these steps, you can set up your own Bitcoin and Lightning Node, self-host all sorts of different apps and improve your privacy while doing so. Jump into the world of Bitcoin and self-hosting with Umbrel OS, which makes this all really easy to do.
