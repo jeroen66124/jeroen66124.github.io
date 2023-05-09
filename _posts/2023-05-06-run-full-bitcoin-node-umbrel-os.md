@@ -32,29 +32,30 @@ What is a full Bitcoin node? Let me explain the basics:
 Here's what you'll need to get started:
 - [x] Access to an ESXi host (optional)
 - [x] Latest [Ubuntu Server ISO](https://ubuntu.com/download/server)
-- [x] 600+ GB of fast storage available (check the [current blockchain size](https://www.blockchain.com/explorer/charts/blocks-size) to adjust storage size accordingly)
+- [x] 600+ GB of fast storage available (check the [current blockchain size](https://blockchair.com/bitcoin/charts/blockchain-size) to adjust storage size accordingly)
 - [x] Minimum Dual-Core CPU & 2GB RAM
 - [x] Stable internet connection
 
 ## Step 1: Set up Virtual Machine
 
-First, you'll need to set up your Raspberry Pi. If you don't already have one, you can purchase one online from a variety of retailers. It's recommended to get a model with built-in Wi-Fi, such as the Raspberry Pi 3 B+ or Raspberry Pi 4. A Minimum 1GB of RAM is required on both models for it to work smoothly.
+To upload an ISO image to your ESXi host, follow these steps:
 
-Once you have your Raspberry Pi, you'll need to install an operating system on it. Raspberry Pi OS (formerly known as Raspbian) is the most popular operating system for Raspberry Pi, and it's what we'll be using for this guide.
+1.  Browse to the FQDN / IP of the ESXi host and log in to the VMware Host Client (or vSphere Client if you are running a cluster)
+2.  Navigate to Storage > Datastore > Datastore browser and create a new folder named "Operating Systems" or any other name you'd like
+3.  Upload the Ubuntu Server ISO image to the "Operating Systems" folder by dragging and dropping it into the browser window and wait for the upload to complete
 
-> Make sure to select [Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-legacy) in the Imager, Steam Link is not compatible with current bullseye builds
-{: .prompt-warning }
+To create a new Virtual Machine, follow these steps:
 
-To install Raspberry Pi OS, follow these steps:
-
-1.  Download the **[Raspberry Pi Imager](https://www.raspberrypi.com/software/)** from the Raspberry Pi website
-2.  Insert your microSD card into your computer and open the Raspberry Pi Imager
-3.  Select the **[Raspberry Pi OS (Legacy)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-legacy)**  option and follow the on-screen instructions to install it onto your microSD card
-4.  Once the installation is complete, insert the microSD card into your Raspberry Pi and turn it on
-5.  Follow the instructions on the Raspbian Installation wizard and continue with the guide afterwards
-
-Here is a quick 30 second video with visual instructions:
-{% include embed/youtube.html id='CQtliTJ41ZE' %}
+4.  Navigate to Host > Create/Register VM > Create a new virtual machine and click "Next"
+2.  Type in the name of your VM, I went with "Umbrel", and select the other three options like so:
+![1](/assets/public-2/3.png)
+4.  Select the preferred Datastore, in my case I went with "datastore0" because I have multiple
+![1](/assets/public-2/4.png)
+5.  Customize the settings exactly like shown in the screenshots below and click on "Next"
+![1](/assets/public-2/5.png)
+![1](/assets/public-2/6.png)
+6.  Confirm the settings once more and click on "Finish" 
+![1](/assets/public-2/7.png)
 
 ## Step 2: Set up Ubuntu Server
 
