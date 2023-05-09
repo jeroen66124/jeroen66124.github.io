@@ -17,7 +17,7 @@ _Umbrel OS home screen after installation_
 
 {% include embed/youtube.html id='Uu1TuE6RdKM' %}
 
-> This guide is written with the ESXi type-1 hypervisor in mind, but can also be applied to a bare-metal installation. If you want to install Umbrel OS on bare-metal, start the guide from the [Set up Ubuntu](https://vskills.nl/posts/run-full-bitcoin-node-umbrel-os/#step-2-set-up-ubuntu-server) section
+> This guide is written with the ESXi type-1 hypervisor in mind, but can also be applied to a bare-metal installation. If you want to install Umbrel OS on bare-metal, start the guide from the [Set up Ubuntu Server](https://vskills.nl/posts/run-full-bitcoin-node-umbrel-os/#step-2-set-up-ubuntu-server) section
 {: .prompt-tip }
 
 ## Introduction
@@ -30,7 +30,7 @@ What is a full Bitcoin node? Let me explain the basics:
 
 ## Prerequisites
 Here's what you'll need to get started:
-
+- [x] Access to an ESXi host (optional)
 - [x] Latest [Ubuntu Server ISO](https://ubuntu.com/download/server)
 - [x] 600+ GB of fast storage available (Make sure to check the [current blockchain size](https://www.blockchain.com/explorer/charts/blocks-size) to adjust storage size accordingly)
 - [x] Minimum Dual-Core CPU & 2GB RAM
