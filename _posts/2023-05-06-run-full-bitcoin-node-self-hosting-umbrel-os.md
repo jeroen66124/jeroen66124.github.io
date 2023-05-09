@@ -11,10 +11,6 @@ image:
 ---
 
 ## Showcase
-
-![1](/assets/public-2/34.png)
-_Umbrel OS home screen after installation_
-
 {% include embed/youtube.html id='Uu1TuE6RdKM' %}
 
 > This guide is written with the ESXi type-1 hypervisor in mind, but can also be applied to a bare-metal installation. If you want to install Umbrel OS on bare-metal, start the guide from the [Set up Ubuntu Server](https://vskills.nl/posts/run-full-bitcoin-node-umbrel-os/#step-2-set-up-ubuntu-server) section. Although this post focuses on running a Bitcoin Node, Umbrel OS also has the option to self-host other apps, which can be done through own research
