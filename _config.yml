@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
   vSkills, writing down IT stuff I have learned.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://jeroen66124.github.io"
+url: "https://vskills.nl"
 
 github:
   username: jeroen66124 # change to your github username
@@ -80,7 +80,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "https://jeroen66124.github.io/assets/avatar.jpg"
+avatar: "https://vskills.nl/assets/avatar.jpg"
 
 # boolean type, the global switch for TOC in posts.
 toc: true
