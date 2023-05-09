@@ -140,7 +140,8 @@ If you want to make use of the [Lightning Network](https://academy.binance.com/e
 Explore all the apps in the [Umbrel App Store](https://apps.umbrel.com/) and see what is possible!
 
 1. To install an additional self-hosted app, go to the Store icon on the web UI and select your app
-2. When the store page of the app you want installed is loaded, click on the "Install" button and wait until it is done!
+2. When the store page of the app is loaded, click on the "Install" button
+3. Wait until it is done installing, and open the brand new app! 
 
 A list of recommended apps to install, made by me:
 
