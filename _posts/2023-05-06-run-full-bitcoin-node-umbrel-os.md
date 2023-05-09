@@ -102,7 +102,7 @@ It will ask for your password like shown below:
 It is now time to set up our very own Bitcoin node and start syncing. You can also explore the other apps in the store, the possibilities are endless with Umbrel OS!
 
 1.  To get started, click on "Start" on the setup screen
-![1](/assets/public-2/31.png)
+![1](/assets/public-2/31.jpg)
 2.  Fill in your preferred username and password and click "Create"
 ![1](/assets/public-2/32.png)
 3.  Once your account is created, click on "Next"
