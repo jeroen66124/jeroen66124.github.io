@@ -1,8 +1,8 @@
 ---
-title: How to run a full Bitcoin node the easy way with Umbrel OS
+title: How to run a full Bitcoin node the easy way with Umbrel OS (and self-host a bunch of other apps!)
 date: 2023-05-06 19:00:00 +0200
 categories: [Bitcoin]
-tags: [bitcoin, full, node, umbrel, self-host, decentralized, peer-to-peer, cryptocurrency, Web3, transactions, blockchain, mempool, liberty, VMware, ESXi, Ubuntu, server, synchronization, hypervisor, bare-metal]
+tags: [bitcoin, full, node, umbrel, self-host, decentralized, peer-to-peer, cryptocurrency, Web3, transactions, blockchain, mempool, liberty, VMware, ESXi, Ubuntu, server, synchronization, hypervisor, bare-metal, self-host, self-hosting]
 math: false
 mermaid: false
 image:
@@ -17,11 +17,11 @@ _Umbrel OS home screen after installation_
 
 {% include embed/youtube.html id='Uu1TuE6RdKM' %}
 
-> This guide is written with the ESXi type-1 hypervisor in mind, but can also be applied to a bare-metal installation. If you want to install Umbrel OS on bare-metal, start the guide from the [Set up Ubuntu Server](https://vskills.nl/posts/run-full-bitcoin-node-umbrel-os/#step-2-set-up-ubuntu-server) section
+> This guide is written with the ESXi type-1 hypervisor in mind, but can also be applied to a bare-metal installation. If you want to install Umbrel OS on bare-metal, start the guide from the [Set up Ubuntu Server](https://vskills.nl/posts/run-full-bitcoin-node-umbrel-os/#step-2-set-up-ubuntu-server) section. Although this post focuses on running a Bitcoin Node, Umbrel OS also has the option to self-host other apps, which can be done through own research
 {: .prompt-tip }
 
 ## Introduction
-I've always been interested in Bitcoin and the way it operates. Ever since I read **[Mastering Bitcoin - Programming the Open Blockchain](https://github.com/bitcoinbook/bitcoinbook)** by Andreas Antonopoulos, I felt the need to run a full bitcoin node and be a contributor to the bitcoin network. Running a full bitcoin node is an relatively easy way to make the network more secure. The bitcoin ecosystem has matured alot throughout the years and the software has too. Follow me along on this guide and join the [growing network of validators](https://www.bitrawr.com/terminal/bitcoin-node-map) too!
+I've always been interested in Bitcoin and the way it operates. Ever since I read **[Mastering Bitcoin - Programming the Open Blockchain](https://github.com/bitcoinbook/bitcoinbook)** by Andreas Antonopoulos, I felt the need to run a full bitcoin node and be a contributor to the bitcoin network. Running a full bitcoin node is an relatively easy way to make the network more secure, and also enables you to connect your Bitcoin (and lightning) wallets to your own node. The bitcoin ecosystem has matured alot throughout the years and the software has too, follow me along on this guide and join the [growing network of validators](https://www.bitrawr.com/terminal/bitcoin-node-map)!
 
 What is a full Bitcoin node? Let me explain the basics:
 
@@ -31,8 +31,8 @@ What is a full Bitcoin node? Let me explain the basics:
 
 ## Prerequisites
 Here's what you'll need to get started:
-- [x] Access to an ESXi host (optional)
 - [x] Latest [Ubuntu Server ISO](https://ubuntu.com/download/server)
+- [x] Access to an ESXi host (optional)
 - [x] 600+ GB of fast storage available (check the [current blockchain size](https://blockchair.com/bitcoin/charts/blockchain-size) to adjust storage size accordingly)
 - [x] Minimum Dual-Core CPU & 2GB RAM
 - [x] Stable internet connection
@@ -48,7 +48,7 @@ To upload an ISO image to your ESXi host, follow these steps:
 To create a new Virtual Machine, follow these steps:
 
 4.  Navigate to Host > Create/Register VM > Create a new virtual machine and click "Next"
-2.  Type in the name of your VM, I went with "Umbrel", and select the other three options like so:
+2.  Type in the name of your VM, I went with "Umbrel", and select the other three options like shown below:
 ![1](/assets/public-2/3.png)
 4.  Select the preferred Datastore, in my case I went with "datastore0" because I have multiple datastores
 ![1](/assets/public-2/4.png)
@@ -85,77 +85,55 @@ Now that your Virtual Machine is ready, you'll need to install Ubuntu Server Lin
 11. Select "Done" on the Featured Server Snaps screen, we don't need any
 12. Wait for the server to install and select "Reboot Now" once it's done
 ![1](/assets/public-2/26.png)
-13. Once reboot, login with your username and password
+13. Once rebooted, login with your username and password
 ![1](/assets/public-2/27.png)
+
 14. Now you can install Umbrel OS by executing the following command:
 ```bash
-sudo apt update && sudo apt upgrade -y
+curl -L https://umbrel.sh | bash
 ```
-3.  Once the update is complete, type the following command to install Steam Link:
-```bash
-sudo apt install steamlink
-```
-4.  After the installation is complete, you can launch Steam Link by clicking on the Steam Link icon on the desktop or by typing the following command in the terminal:
-```bash
-steamlink
-```
-5. For ease of use, make Steam Link start automatically at boot:
-```bash
-sudo nano /etc/xdg/lxsession/LXDE-pi/autostart 
-```
-Add the following line to the bottom of this file:
-```bash
-@steamlink
-```
-Press **CTRL + O** to save, **CTRL + X** to exit Nano
+It will ask for your password like shown below:
+![1](/assets/public-2/28.png)
+15. When it is done installing, visit http://umbrel.local or the IP address to access the web UI
+![1](/assets/public-2/30.png)
 
 ## Step 3: Set up Umbrel OS
 
-While you can launch games directly from Steam Link, it's helpful to have a central location to manage your games. Playnite is a free, open-source gaming platform that can be used to manage and launch your games from one central location.
+It is now time to set up our very own Bitcoin node and start syncing. You can also explore the other apps in the store, the possibilities are endless with Umbrel OS!
 
-To install Playnite on your PC, follow these steps:
-
-1.  Go to the Playnite website and download the latest version of Playnite
-2.  Once the download is complete, run the Playnite installer and follow the on-screen instructions to install it on your PC
-3.  After installation is complete, launch Playnite and add your games library to the app. You can do this by opening the menu on the top left and clicking on "Add Game" and selecting the folders where your games are stored 
-
-Old and new games can both be added, and it supports any modern launcher as well, it even supports pirated copies (although unsupported for obvious reasons).
+1.  To get started, click on "Start" on the setup screen
+![1](/assets/public-2/31.png)
+2.  Fill in your preferred username and password and click "Create"
+![1](/assets/public-2/32.png)
+3.  Once your account is created, click on "Next"
+![1](/assets/public-2/33.png)
+4.  You can now go ahead and install your Bitcoin Node app by clicking on it
+![1](/assets/public-2/34.png)
+5.  Click on "Install" and wait until it gives the option to "Open" the app
+![1](/assets/public-2/35.png)
+![1](/assets/public-2/36.png)
+6.  When the app has opened, it will immediatly start syncing the entire Bitcoin blockchain. This is a lengthy process and can take multiple days depending on your internet speed.
+![1](/assets/public-2/37.png)
 
 ## Step 4: Set up Pruning Mode (Optional)
 
-If you're a fan of the PlayStation 5's sleek, modern UI, you can install a PS5-inspired theme for Playnite to give it a similar look and feel.
+If you want to reduce the storage space used, you might be interested in Pruning Old Blocks. This means that you can save storage by pruning (deleting) old blocks and keeping only a limited copy of the blockchain.
 
-To install the Playnite PS5ish theme, follow these steps:
-
-1.  Go to the Playnite menu by clicking on the icon in the top left
-2.  Go to Add-ons > Browse > Themes Fullscreen
-3.  Type PS5ish in the search bar and press Enter
-4.  Click on the PS5ish Theme and click on "Install"
-5.  Click on "Save" in the bottom right
-6.  Click on "Yes" when asked if you want to restart Playnite
-7.  After Playnite has restarted, switch to Fullscreen Mode by pressing F11
-8.  Go to the Playnite menu > Settings > General > Enable "Launch in Fullscreen Mode"
-9.  Also change both the "When game starts:" & "After game closes:" option to "Do Nothing"
-
-If you want to further utitlize and or tweak the Playnite PS5ish Fullscreen Mode experience, I suggest you watch the following video and check out the [official thread on the Playnite forum](https://playnite.link/forum/thread-492.html).
-{% include embed/youtube.html id='Xurs63Ccnlo' %}
-
-The Playnite PS5ish theme should now be applied to your Playnite library, giving it a sleek, modern look that's similar to the PlayStation 5's UI.
-Make sure to add Playnite as a non-Steam game to your library, so you can launch it easily from within the remote play session.
+1.  Go to kebab menu > Advanced Settings 
+![1](/assets/public-2/38.png)
+2.  Scroll down and enable "Prune Old Blocks", use the slider to choose the size of the blockchain you want to store
+![1](/assets/public-2/39.png)
 
 ## Step 5: Set up Lightning Node (Optional)
 
-Now that Steam Link and Playnite are installed, you'll need to connect your Raspberry Pi to your PC. Follow these steps:
+If you want to make use of the [Lightning Network](https://academy.binance.com/en/articles/what-is-lightning-network), it allows you to make ultra cheap and almost instant Bitcoin transactions. By running a Lightning node, you can not only self-custody your Bitcoin on Lightning, but also earn sats by routing payments on the network.
 
-1.  Make sure your Raspberry Pi is connected to your network (either via Ethernet or Wi-Fi)
-2.  Launch Steam on your PC
-3.  In the top left corner of the Steam window, click on "Steam" and select "Settings"
-4.  Click on the "Remote Play" tab and make sure the "Enable Remote Play" checkbox is checked
-5.  Click on "Advanced Host Options" and make sure the "Use Nvidia NVFBC capture on supported games" checkbox is checked
-6.  Also make sure to tweak your maximum bitrate and FPS. I own a model 3B+ and have set the bitrate to max 10mbps with FPS-cap on 60. This looks okay visually and also reduces stutters because the Model 3 Pi cannot handle higher bitrates smoothly
-7.  Click on "OK" to save your settings
-8.  Launch Steam Link on your Raspberry Pi
-9.  Follow the on-screen instructions to connect to your network and select your gaming device. If your PC is running Steam, it should automatically appear on the list. If it doesn't, you can connect through a one-time PIN code
+1.  Install the Lighting Node app from the store
+2.  This will merge both Bitcoin and Lightning apps and enable Lightning Network functionality
+3.  Open a channel and explore the wicked world of the Lightning Network
+4.  Profit? (Have fun exploring the rabbit-hole)
+
+## Step 6: Set up other recommended self-hosted Apps (Optional)
 
 ## Closing
 
