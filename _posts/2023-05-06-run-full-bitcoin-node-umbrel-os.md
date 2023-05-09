@@ -25,8 +25,8 @@ I've always been interested in Bitcoin and the way it operates. Ever since I rea
 
 What is a full Bitcoin node? Let me explain the basics:
 
-• A node is a computer connected to other computers which follows rules and shares information      
-• A ‘full node’ is a computer in Bitcoin’s peer-to-peer network which hosts and synchronises a copy of the entire Bitcoin blockchain       
+• A node is a computer connected to other computers which follows rules and shares information
+• A ‘full node’ is a computer in Bitcoin’s peer-to-peer network which hosts and synchronises a copy of the entire Bitcoin blockchain
 • Nodes are essential for keeping a cryptocurrency network running
 
 ## Prerequisites
@@ -60,12 +60,34 @@ To create a new Virtual Machine, follow these steps:
 
 ## Step 2: Set up Ubuntu Server
 
-Now that your Raspberry Pi is set up, you'll need to install Steam Link on it. Steam Link is a free app that allows you to stream games from your PC or console to another device.
+Now that your Virtual Machine is ready, you'll need to install Ubuntu Server Link on it
 
-To install Steam Link on your Raspberry Pi, follow these steps:
-
-1.  Open the terminal on your Raspberry Pi by clicking on the terminal icon in the top left corner of the screen
-2.  Type the following command to update your system:
+1.  To turn on the Virtual Machine, click on the "Power On" button
+![1](/assets/public-2/8.png)
+2.  It should automatically load the GRUB bootloader, select "Try or Install Ubuntu Server" and wait for it to load
+![1](/assets/public-2/9.png)
+![1](/assets/public-2/10.png)
+3.  Select your preferred language, I chose for English
+![1](/assets/public-2/11.png)
+4.  Select "Continue without updating" to save some time
+![1](/assets/public-2/12.png)
+5.  Select "Done" five times to use the default options on the Keyboard, Installation, Network, Proxy and Mirror configuration screens
+6.  Select "Done" on the Guided storage configuration screen and make sure to "Use an entire disk", you can also "Encrypt the LVM group with LUKS" if you prefer to ecnrypt your installation
+![1](/assets/public-2/18.png)
+7.  Select "Done" and "Continue" on the Storage configuration screen
+![1](/assets/public-2/20.png)
+8.  Specify your name, server name, username and password on the Profile setup screen
+![1](/assets/public-2/21.png)
+9.  Select "Skip for now" and "Continue" on the Upgrade to Ubuntu Pro screen
+![1](/assets/public-2/22.png)
+10. Enable the "Install OpenSSH server" option and select "Done" on the SSH Setup screen
+![1](/assets/public-2/23.png)
+11. Select "Done" on the Featured Server Snaps screen, we don't need any
+12. Wait for the server to install and select "Reboot Now" once it's done
+![1](/assets/public-2/26.png)
+13. Once reboot, login with your username and password
+![1](/assets/public-2/27.png)
+14. Now you can install Umbrel OS by executing the following command:
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
