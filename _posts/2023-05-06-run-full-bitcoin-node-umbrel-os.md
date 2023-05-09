@@ -24,6 +24,7 @@ _Umbrel OS home screen after installation_
 I've always been interested in Bitcoin and the way it operates. Ever since I read **[Mastering Bitcoin - Programming the Open Blockchain](https://github.com/bitcoinbook/bitcoinbook)** by Andreas Antonopoulos, I felt the need to run a full bitcoin node and be a contributor to the bitcoin network. Running a full bitcoin node is an relatively easy way to make the network more secure. The bitcoin ecosystem has matured alot throughout the years and the software has too. Follow me along on this guide and join the [growing network of validators](https://www.bitrawr.com/terminal/bitcoin-node-map) too!
 
 What is a full Bitcoin node? Let me explain the basics:
+
 • A node is a computer connected to other computers which follows rules and shares information      
 • A ‘full node’ is a computer in Bitcoin’s peer-to-peer network which hosts and synchronises a copy of the entire Bitcoin blockchain       
 • Nodes are essential for keeping a cryptocurrency network running
@@ -49,7 +50,7 @@ To create a new Virtual Machine, follow these steps:
 4.  Navigate to Host > Create/Register VM > Create a new virtual machine and click "Next"
 2.  Type in the name of your VM, I went with "Umbrel", and select the other three options like so:
 ![1](/assets/public-2/3.png)
-4.  Select the preferred Datastore, in my case I went with "datastore0" because I have multiple
+4.  Select the preferred Datastore, in my case I went with "datastore0" because I have multiple datastores
 ![1](/assets/public-2/4.png)
 5.  Customize the settings exactly like shown in the screenshots below and click on "Next"
 ![1](/assets/public-2/5.png)
