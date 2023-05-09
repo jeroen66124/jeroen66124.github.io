@@ -25,9 +25,9 @@ I've always been interested in Bitcoin and the way it operates. Ever since I rea
 
 What is a full Bitcoin node? Let me explain the basics:
 
-- [] A node is a computer connected to other computers which follows rules and shares information
-- [] A ‘full node’ is a computer in Bitcoin’s peer-to-peer network which hosts and synchronises a copy of the entire Bitcoin blockchain
-- [] Nodes are essential for keeping a cryptocurrency network running
+- A node is a computer connected to other computers which follows rules and shares information
+- A ‘full node’ is a computer in Bitcoin’s peer-to-peer network which hosts and synchronises a copy of the entire Bitcoin blockchain
+- Nodes are essential for keeping a cryptocurrency network running
 
 ## Prerequisites
 Here's what you'll need to get started:
