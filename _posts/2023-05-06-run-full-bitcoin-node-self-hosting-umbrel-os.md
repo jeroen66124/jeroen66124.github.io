@@ -2,7 +2,7 @@
 title: How to run a full Bitcoin node the easy way with Umbrel OS (and self-host a bunch of other apps!)
 date: 2023-05-06 19:00:00 +0200
 categories: [Bitcoin]
-tags: [bitcoin, full, node, umbrel, self-host, decentralized, peer-to-peer, cryptocurrency, Web3, transactions, blockchain, mempool, liberty, VMware, ESXi, Ubuntu, server, synchronization, hypervisor, bare-metal, self-host, self-hosting]
+tags: [bitcoin, full, node, umbrel, self-host, decentralized, peer-to-peer, cryptocurrency, Web3, transactions, blockchain, mempool, liberty, VMware, ESXi, Ubuntu, server, synchronization, hypervisor, bare-metal, self-hosting]
 math: false
 mermaid: false
 image:
