@@ -13,11 +13,11 @@ image:
 ## Showcase
 {% include embed/youtube.html id='Uu1TuE6RdKM' %}
 
-> This guide is written with the ESXi type-1 hypervisor in mind, but can also be applied to a bare-metal installation. If you want to install Umbrel OS on bare-metal, start the guide from the [Set up Ubuntu Server](https://vskills.nl/posts/run-full-bitcoin-node-umbrel-os/#step-2-set-up-ubuntu-server) section. Although this post focuses on running a Bitcoin Node, Umbrel OS also has the option to self-host other apps, which can be done through own research
+> This guide is written with the ESXi type-1 hypervisor in mind, but can also be applied to a bare-metal installation. If you want to install Umbrel OS on bare-metal, start the guide from the [Set up Ubuntu Server](https://vskills.nl/posts/run-full-bitcoin-node-self-hosting-umbrel-os/#step-2-set-up-ubuntu-server) section. Although this guide focuses on running a Bitcoin node, Umbrel OS also has the option to self-host other apps, which can be done through own research and exploration
 {: .prompt-tip }
 
 ## Introduction
-I've always been interested in Bitcoin and the way it operates. Ever since I read **[Mastering Bitcoin - Programming the Open Blockchain](https://github.com/bitcoinbook/bitcoinbook)** by Andreas Antonopoulos, I felt the need to run a full bitcoin node and be a contributor to the bitcoin network. Running a full bitcoin node is an relatively easy way to make the network more secure, and also enables you to connect your Bitcoin (and lightning) wallets to your own node. The bitcoin ecosystem has matured alot throughout the years and the software has too, follow me along on this guide and join the [growing network of validators](https://www.bitrawr.com/terminal/bitcoin-node-map)!
+I've always been interested in Bitcoin and the way it operates. Ever since I read **[Mastering Bitcoin - Programming the Open Blockchain](https://github.com/bitcoinbook/bitcoinbook)** by Andreas Antonopoulos, I felt the need to run a full Bitcoin node and be a contributor to the Bitcoin network. Running a full Bitcoin node is an relatively easy way to make the network more secure, and also enables you to connect your Bitcoin (and lightning) wallets to your own node. The Bitcoin ecosystem has matured alot throughout the years and the software has too, follow me along on this guide and join the [growing network of validators](https://www.bitrawr.com/terminal/bitcoin-node-map)!
 
 What is a full Bitcoin node? Let me explain the basics:
 
@@ -44,9 +44,9 @@ To upload an ISO image to your ESXi host, follow these steps:
 To create a new Virtual Machine, follow these steps:
 
 4.  Navigate to Host > Create/Register VM > Create a new virtual machine and click "Next"
-2.  Type in the name of your VM, I went with "Umbrel", and select the other three options like shown below:
+2.  Type in the name of your VM, I went with "Umbrel", and select the other three setup options like shown below:
 ![1](/assets/public-2/3.png)
-4.  Select the preferred Datastore, in my case I went with "datastore0" because I have multiple datastores
+4.  Select the preferred Datastore, I went with "datastore0" because I have multiple datastores
 ![1](/assets/public-2/4.png)
 5.  Customize the settings exactly like shown in the screenshots below and click on "Next"
 ![1](/assets/public-2/5.png)
@@ -56,9 +56,9 @@ To create a new Virtual Machine, follow these steps:
 
 ## Step 2: Set up Ubuntu Server
 
-Now that your Virtual Machine is ready, you'll need to install Ubuntu Server on it
+Now that your Virtual Machine is ready, you'll need to install Ubuntu Server
 
-1.  To turn on the Virtual Machine, click on the "Power On" button
+1.  To turn on the Virtual Machine, click the "Power On" button
 ![1](/assets/public-2/8.png)
 2.  It should automatically load the GRUB bootloader, select "Try or Install Ubuntu Server" and wait for it to load
 ![1](/assets/public-2/9.png)
@@ -68,7 +68,7 @@ Now that your Virtual Machine is ready, you'll need to install Ubuntu Server on 
 4.  Select "Continue without updating" to save some time during installation
 ![1](/assets/public-2/12.png)
 5.  Select "Done" five times to use the default options on the Keyboard, Installation, Network, Proxy and Mirror configuration screens
-6.  Select "Done" on the Guided storage configuration screen and make sure to "Use an entire disk", you can also "Encrypt the LVM group with LUKS" if you prefer to ecnrypt your installation
+6.  Select "Done" on the Guided storage configuration screen and make sure to "Use an entire disk", you can also "Encrypt the LVM group with LUKS" if you prefer to encrypt your installation
 ![1](/assets/public-2/18.png)
 7.  Select "Done" and "Continue" on the Storage configuration screen
 ![1](/assets/public-2/20.png)
@@ -83,14 +83,17 @@ Now that your Virtual Machine is ready, you'll need to install Ubuntu Server on 
 ![1](/assets/public-2/26.png)
 13. Once rebooted, login with your username and password
 ![1](/assets/public-2/27.png)
-
-14. Now you can install Umbrel OS by executing the following command:
+14. First, update your server by running:
+```bash
+sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y
+```
+16. Now you can install Umbrel OS by executing the command:
 ```bash
 curl -L https://umbrel.sh | bash
 ```
 It will ask for your password like shown below:
 ![1](/assets/public-2/28.png)
-15. When the automated install script is done, visit http://umbrel.local or the IP address to access the web UI
+16. When the automated install script is done, visit [http://umbrel.local](http://umbrel.local) or the IP address to access the web UI
 ![1](/assets/public-2/30.png)
 
 ## Step 3: Set up Umbrel OS
