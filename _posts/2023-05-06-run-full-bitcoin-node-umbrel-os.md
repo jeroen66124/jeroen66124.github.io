@@ -132,6 +132,9 @@ If you want to make use of the [Lightning Network](https://academy.binance.com/e
 2.  This will merge both Bitcoin and Lightning apps and enable Lightning Network functionality
 3.  Open a channel and explore the wicked world of the Lightning Network
 4.  Profit? (Have fun exploring the rabbit-hole)
+![1](/assets/public-2/41.png)
+![1](/assets/public-2/42.png)
+![1](/assets/public-2/43.png)
 
 ## Step 6: Set up other recommended self-hosted Apps (Optional)
 
