@@ -112,21 +112,21 @@ It is now time to set up our very own Bitcoin node and start syncing. You can al
 5.  Click on "Install" and wait until it gives the option to "Open" the app
 ![1](/assets/public-2/35.png)
 ![1](/assets/public-2/36.png)
-6.  When the app has opened, it will immediatly start syncing the entire Bitcoin blockchain. This is a lengthy process and can take multiple days depending on your internet speed.
+6.  When the app has opened, it will immediatly start syncing the entire Bitcoin blockchain. This is a lengthy process and can take multiple days depending on your internet speed
 ![1](/assets/public-2/37.png)
 
 ## Step 4: Set up Pruning Mode (Optional)
 
-If you want to reduce the storage space used, you might be interested in Pruning Old Blocks. This means that you can save storage by pruning (deleting) old blocks and keeping only a limited copy of the blockchain.
+If you want to reduce the storage space used, you might be interested in Pruning Old Blocks. This means that you can save storage by pruning (deleting) old blocks and keeping only a limited copy of the blockchain
 
-1.  Go to kebab menu > Advanced Settings 
+1.  Go to your Bitcoin Node > Kebab Menu > Advanced Settings 
 ![1](/assets/public-2/38.png)
 2.  Scroll down and enable "Prune Old Blocks", use the slider to choose the size of the blockchain you want to store
 ![1](/assets/public-2/39.png)
 
 ## Step 5: Set up Lightning Node (Optional)
 
-If you want to make use of the [Lightning Network](https://academy.binance.com/en/articles/what-is-lightning-network), it allows you to make ultra cheap and almost instant Bitcoin transactions. By running a Lightning node, you can not only self-custody your Bitcoin on Lightning, but also earn sats by routing payments on the network.
+If you want to make use of the [Lightning Network](https://academy.binance.com/en/articles/what-is-lightning-network), it allows you to make ultra cheap and almost instant Bitcoin transactions. By running a Lightning node, you can not only self-custody your Bitcoin on Lightning, but also earn sats by routing payments on the network
 
 1.  Install the Lighting Node app from the store
 2.  This will merge both Bitcoin and Lightning apps and enable Lightning Network functionality
@@ -136,8 +136,38 @@ If you want to make use of the [Lightning Network](https://academy.binance.com/e
 ![1](/assets/public-2/42.png)
 ![1](/assets/public-2/43.png)
 
-## Step 6: Set up other recommended self-hosted Apps (Optional)
+## Step 6: Set up other self-hosted Apps (Optional)
+
+Explore all the apps in the [Umbrel App Store](https://apps.umbrel.com/) and explore what is possible!
+
+A list of recommended apps to install, made by me:
+
+- n8n ~ Build complex workflows, really fast
+- Plex ~ Stream Movies & TV Shows
+- Pi-hole ~ Block ads on your entire network
+- Firefox ~ Firefox is a free and open-source web browser
+- Heimdall ~ Organize your most used web sites in a simple way
+- Tailscale ~ Zero config VPN to access your Umbrel from anywhere
+- Nextcloud ~ Productivity platform that keeps you in control
+- Vaultwarden ~ Unofficial Bitwarden® compatible server
+- Home Assistant ~ Home automation that puts local control & privacy first
+- File Browser ~ Browse and manage the files you download on your Umbrel
+- mempool ~ A self-hosted blockchain explorer
+- Gitea ~ A painless self-hosted Git service
+- Syncthing ~ Peer-to-peer file synchronization between your devices
+- LibreOffice ~ Do more - easier, quicker, smarter
+- LibReddit ~ An alternative private front-end to Reddit
+- Firefly III ~ Your personal finance manager
+- Remmina ~ Remote access screen and file sharing
+- Calibre Web ~ A clean web app for your eBooks
+- Ghostfolio ~ Manage your wealth like a boss
+- SimpleTorrent ~ Download torrents with your Umbrel
+- Uptime Kuma ~ Self-hosted uptime monitoring tool
+- ChatBot UI ~ ChatGPT but better through APIs
+- Electrs ~ A simple and efficient Electrum Server
+- Element ~ A glossy Matrix client compatible with Synapse
+- Whoogle ~ A self-hosted, ad-free, privacy-respecting metasearch engine
 
 ## Closing
 
-And that's it! With these steps, you can set up your own remote gaming setup using Steam Link, Playnite, and a Raspberry Pi. Enjoy your gaming sessions from the comfort of your couch or bed, without having to be right in front of your PC. Whether you want to play your favorite games on a larger screen, or just want the flexibility to game from anywhere in your home, this project is a great way to achieve both. So, grab your Raspberry Pi, install Steam Link and Playnite, and start gaming!
+And that wraps it up! With these steps, you can set up your own Bitcoin and Lightning Node, self-host all sorts of different apps and improve your privacy while doing so. Jump into the world of Bitcoin and self-hosting with Umbrel OS, which makes this all really easy to do!
