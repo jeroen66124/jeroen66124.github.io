@@ -2,7 +2,7 @@
 title: How to run a full Bitcoin node the easy way with Umbrel OS (and self-host a bunch of other apps!)
 date: 2023-05-06 19:00:00 +0200
 categories: [Bitcoin]
-tags: [bitcoin, full, node, umbrel, self-host, decentralized, peer-to-peer, cryptocurrency, Web3, transactions, blockchain, mempool, liberty, VMware, ESXi, Ubuntu, server, synchronization, hypervisor, bare-metal, self-hosting]
+tags: [bitcoin, full, node, umbrel, decentralized, peer-to-peer, cryptocurrency, Web3, transactions, blockchain, mempool, liberty, VMware, ESXi, Ubuntu, server, synchronization, hypervisor, bare-metal, self-hosting]
 math: false
 mermaid: false
 image:
@@ -125,12 +125,12 @@ If you want to reduce the storage space used, you might be interested in Pruning
 
 ## Step 5: Set up Lightning Node (Optional)
 
-If you want to make use of the [Lightning Network](https://academy.binance.com/en/articles/what-is-lightning-network), it allows you to make ultra cheap and almost instant Bitcoin transactions. By running a Lightning node, you can not only self-custody your Bitcoin on Lightning, but also earn sats by routing payments on the network
+If you want to make use of the [Lightning Network](https://academy.binance.com/en/articles/what-is-lightning-network), it will allow you to make ultra cheap and almost instant Bitcoin transactions. By running a Lightning node, you can not only self-custody your Bitcoin on Lightning, but also earn sats by routing payments on the network and much more!
 
 1.  Install the Lighting Node app from the store
 2.  This will merge both Bitcoin and Lightning apps and enable Lightning Network functionality
-3.  Open a channel and explore the wicked world of the Lightning Network
-4.  Profit? (Have fun exploring the rabbit-hole)
+3.  Open a channel and explore the world of the Lightning Network
+4.  Profit? (Have fun exploring the Lightning rabbit-hole)
 ![1](/assets/public-2/43.png)
 ![1](/assets/public-2/41.png)
 ![1](/assets/public-2/42.png)
@@ -171,4 +171,4 @@ A list of recommended apps to install, made by me:
 
 ## Closing
 
-And that wraps it up! With these steps, you can set up your own Bitcoin and Lightning Node, self-host all sorts of different apps and improve your privacy while doing so. Jump into the world of Bitcoin and self-hosting with Umbrel OS, which makes this all really easy to do.
+And that wraps it up! With these steps, you can set up your own Bitcoin and Lightning Node, self-host all sorts of different apps and improve your privacy while doing so. Jump into the world of Bitcoin and self-hosting with Umbrel OS, and explore this easy to use solution.
