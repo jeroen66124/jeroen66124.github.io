@@ -130,7 +130,7 @@ If you want to make use of the [Lightning Network](https://academy.binance.com/e
 1.  Install the Lighting Node app from the store
 2.  This will merge both Bitcoin and Lightning apps and enable Lightning Network functionality
 3.  Open a channel and explore the world of the Lightning Network
-4.  Profit? (Have fun exploring the Lightning rabbit-hole)
+4.  Profit?
 ![1](/assets/public-2/43.png)
 ![1](/assets/public-2/41.png)
 ![1](/assets/public-2/42.png)
