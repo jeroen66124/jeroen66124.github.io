@@ -22,7 +22,7 @@ I recently began with my path to the [VCP-DCV](https://www.vmware.com/learning/c
 
 ## Prerequisites
 Here's what you'll need to get started:
-- [x] Latest [Photon OS ISO](https://github.com/vmware/photon/wiki/Downloading-Photon-OS#downloading-photon-os-50-ga) (Any flavour works)
+- [x] Latest [Photon OS ISO](https://github.com/vmware/photon/wiki/Downloading-Photon-OS#downloading-photon-os-50-ga) (any flavour works)
 - [x] Docker & Docker Compose installed (Photon OS comes pre-installed with both of these!)
 - [x] Tailscale account for the necessary credentials
 
