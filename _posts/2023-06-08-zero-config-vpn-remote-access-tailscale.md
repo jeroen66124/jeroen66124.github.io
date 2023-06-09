@@ -1,5 +1,5 @@
 ---
-title: How to create a zero config VPN for easy remote access to your homelab with Tailscale
+title: How to create a zero config VPN for remote access to your homelab with Tailscale
 date: 2023-06-08 21:00:00 +0200
 categories: [VPN]
 tags: [VPN, Tailscale, WireGuard, config, zero, easy, remote, access, homelab, secure, network, service, open-source]
@@ -28,15 +28,8 @@ Here's what you'll need to get started:
 
 ## Step 1: Set up Photon OS
 
-To upload an ISO image to your ESXi host, follow these steps:
+Boot from the Photon OS ISO image on your virtual machine or bare-metal machine
 
-1.  Browse to the FQDN / IP of the ESXi host and log in to the VMware Host Client (or vSphere Client if you are running a cluster)
-2.  Navigate to Storage > Datastore > Datastore browser and create a new folder named "Operating Systems" or any other name you'd like
-3.  Upload the Ubuntu Server ISO image to the "Operating Systems" folder by dragging and dropping it into the browser window and wait for the upload to complete
-
-To create a new Virtual Machine, follow these steps:
-
-4.  Navigate to Host > Create/Register VM > Create a new virtual machine and click "Next"
 2.  Type in the name of your VM, I went with "Umbrel", and select the other three setup options like shown below:
 ![1](/assets/public-2/3.png)
 4.  Select the preferred Datastore, I went with "datastore0" because I have multiple datastores
@@ -56,6 +49,7 @@ Now that your Virtual Machine is ready, you'll need to install Ubuntu Server
 2.  It should automatically load the GRUB bootloader, select "Try or Install Ubuntu Server" and wait for it to load
 ![1](/assets/public-2/9.png)
 ![1](/assets/public-2/10.png)
+
 ```bash
 version: '3.3'
 services:
@@ -72,6 +66,7 @@ services:
             - TS_STATE_DIR=/var/lib/tailscale
         image: tailscale/tailscale
 ```
+
 It will ask for your password like shown below:
 ![1](/assets/public-2/28.png)
 
