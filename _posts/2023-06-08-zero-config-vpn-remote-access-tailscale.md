@@ -14,7 +14,7 @@ image:
 ![1](/assets/public-3/2.jpg)
 _Tailscale using the Subnet Routing feature to expose all internal devices to the VPN_
 
-> This guide is written with the use of Photon OS (open-source minimalist Linux distro from VMware), but can also be applied to Docker Desktop, Ubuntu Server and all sorts of other docker-compose instances. If you want to know how to set up Tailscale, start the guide from the [Set up Tailscale](https://vskills.nl/posts/run-full-bitcoin-node-self-hosting-umbrel-os/#step-2-set-up-ubuntu-server) section.
+> This guide is written with the use of Photon OS (small open-source Linux distro from VMware), but can also be applied to Docker Desktop, Ubuntu Server and all sorts of other environments where Docker is possible. If you want to know how to set up Tailscale, start the guide from the [Set up Tailscale](https://vskills.nl/posts/zero-config-vpn-remote-access-tailscale/#step-2-set-up-tailscale) section.
 {: .prompt-tip }
 
 ## Introduction
@@ -22,22 +22,22 @@ I recently began with my path to the [VCP-DCV](https://www.vmware.com/learning/c
 
 ## Prerequisites
 Here's what you'll need to get started:
-- [x] Latest [Photon OS ISO](https://github.com/vmware/photon/wiki/Downloading-Photon-OS#downloading-photon-os-50-ga)
-- [x] Docker & Docker Compose installed (Photon OS comes pre-installed with Docker!)
+- [x] Latest [Photon OS ISO](https://github.com/vmware/photon/wiki/Downloading-Photon-OS#downloading-photon-os-50-ga) (Any flavour works)
+- [x] Docker & Docker Compose installed (Photon OS comes pre-installed with both of these!)
 - [x] Tailscale account for the necessary credentials
 
 ## Step 1: Set up Photon OS
 
 Boot from the Photon OS ISO image on your virtual machine or bare-metal machine
 
-2.  Type in the name of your VM, I went with "Umbrel", and select the other three setup options like shown below:
+1.  Type in the name of your VM, I went with "Umbrel", and select the other three setup options like shown below:
 ![1](/assets/public-2/3.png)
-4.  Select the preferred Datastore, I went with "datastore0" because I have multiple datastores
+2.  Select the preferred Datastore, I went with "datastore0" because I have multiple datastores
 ![1](/assets/public-2/4.png)
-5.  Customize the settings exactly like shown in the screenshots below and click on "Next"
+3.  Customize the settings exactly like shown in the screenshots below and click on "Next"
 ![1](/assets/public-2/5.png)
 ![1](/assets/public-2/6.png)
-6.  Confirm the settings once more and click on "Finish" 
+4.  Confirm the settings once more and click on "Finish" 
 ![1](/assets/public-2/7.png)
 
 ## Step 2: Set up Tailscale
