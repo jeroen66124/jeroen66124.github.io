@@ -14,7 +14,7 @@ image:
 ![1](/assets/public-3/2.jpg)
 _Tailscale using the Subnet Routing feature to expose all internal devices to the VPN_
 
-> This guide is written with the use of Photon OS (small open-source Linux distro from VMware), but can also be applied to Docker Desktop, Ubuntu Server and all sorts of other environments where Docker is possible. You can adjust the instructions rather easily to make it applicable to your infrastructure. If you want to skip the OS installaton and only want to know how to set up Tailscale, start the guide from the [Set up Tailscale](https://vskills.nl/posts/zero-config-vpn-remote-access-tailscale/#step-2-set-up-tailscale) section
+> This guide is written with the use of Photon OS (small open-source Linux distro from VMware), but can also be applied to Docker Desktop, Ubuntu Server and all sorts of other environments where Docker is possible. You can adjust the instructions rather easily to make it applicable to your situation. If you want to skip the OS installaton and only want to know how to set up Tailscale, start the guide from the [Set up Tailscale](https://vskills.nl/posts/zero-config-vpn-remote-access-tailscale/#step-2-set-up-tailscale) section
 {: .prompt-tip }
 
 ## Introduction
