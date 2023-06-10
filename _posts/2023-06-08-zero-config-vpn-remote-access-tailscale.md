@@ -18,7 +18,7 @@ _Tailscale using the Subnet Routing feature to expose all internal devices to th
 {: .prompt-tip }
 
 ## Introduction
-I recently began with my path to the [VCP-DCV](https://www.vmware.com/learning/certification/vcp-dcv.html) certification. During this learning process, I felt the need to bring my Homelab to the next level. The enablement of remote access is inevitable when it comes to upgrading your lab so I searched for an easy-to-use solution that did not cause me any headaches (I still dislike configuring networks!). Tailscale was the most modern and straight-forward option to tackle this problem.
+I recently began with my path towards the [VCP-DCV](https://www.vmware.com/learning/certification/vcp-dcv.html) certification. During this learning process, I felt the need to bring my Homelab to the next level. The enablement of remote access is inevitable when it comes to upgrading your lab so I searched for an easy-to-use solution that did not cause me any headaches (I still dislike configuring networks!). Tailscale was the most modern and straight-forward option to tackle this problem.
 
 ## Prerequisites
 Here's what you'll need to get started:
@@ -38,16 +38,16 @@ Boot from the Photon OS ISO image on your virtual machine or bare-metal machine
 ![1](/assets/public-3/5.png)
 4.  Configure the network automatically through DHCP 
 ![1](/assets/public-3/6.png)
-5.  If you are running Photon OS on bare-metal or a non-VMware hypervisor, select "Generic"
-    If you are running Photon OS through a VMware hypervisor, select "VMware hypervisor optimized"
+5.  If you are running Photon OS on bare-metal or a non-VMware hypervisor, select "Generic".
+    If you are running Photon OS through a VMware hypervisor, select "VMware hypervisor optimized".
 ![1](/assets/public-3/7.png)
 6.  Choose your hostname, this will also be the name shown in the Tailscale admin console
 ![1](/assets/public-3/7.png)
-7.  Set a strong root password and don't lose it!
+7.  Set a strong root password and don't forget it!
 ![1](/assets/public-3/9.png)
 8.  Start the Installation by selecting "Yes" to confirm
 ![1](/assets/public-3/10.png)
-9.  The installation does not take long to complete
+9.  The installation will not take more than a few minutes to complete
 ![1](/assets/public-3/11.png)
 10. Press any key to reboot after the installation is done
 ![1](/assets/public-3/12.png)
@@ -55,7 +55,7 @@ Boot from the Photon OS ISO image on your virtual machine or bare-metal machine
 ![1](/assets/public-3/13.png)
 12. Update Photon OS, Install docker-compose and preferably Nano
 ```bash
-tdnf update -y && tdnf install docker-compose && tdnf install nano -y
+tdnf update -y && tdnf install docker-compose -y && tdnf install nano -y
 ```
 ![1](/assets/public-3/14.png)
 ![1](/assets/public-3/15.png)
@@ -74,12 +74,12 @@ You may want to follow this section with an SSH session for easy copy-and-pastin
 touch docker-compose.yml && nano docker-compose.yml
 ```
 ![1](/assets/public-3/17.png)
-2. Once the file is created, go to [Tailscale Keys](https://login.tailscale.com/admin/settings/keys) > Generate auth key > Generate key
+2. Once the file is created and opened, go to [Tailscale Keys](https://login.tailscale.com/admin/settings/keys) > Generate auth key > Generate key
 ![1](/assets/public-3/18.png)
 3. Copy the key somewhere safe, it won't be shown again!
 ![1](/assets/public-3/19.png)
-4. Go back to your terminal and copy the following configuration to your docker-compose.yml file
-   Replace the **tskey-auth** with your own key and make sure the TS_ROUTES variable matches your subnet
+4. Go back to your terminal and copy the following configuration to your docker-compose.yml file.
+   Replace the **tskey-auth** with your own key and make sure the **TS_ROUTES** variable matches your subnet
 ```bash
 version: '3.3'
 services:
@@ -113,6 +113,9 @@ docker-compose up -d
 ![1](/assets/public-3/25.png)
 10. Download the Tailscale client on all your compatible devices and connect easily to your home network!
 ![1](/assets/public-3/26.png)
+
+Check out all the other [Tailscale features](https://tailscale.com/kb/1169/features/) such as Split DNS, Exit Nodes, Tailscale SSH and much more!
+
 ## Closing
 
-You are done! With these instructions, you can set up your own zero config VPN in ~30 minutes or less. Never worry about security measures such as port forwarding, DNS and DMZ ever again when it comes to your Homelab.
+You are done! With these instructions, you can set up your own zero config VPN in ~30 minutes or less. Never worry about security measures such as port forwarding ever again when it comes to your Homelab.
