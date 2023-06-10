@@ -2,7 +2,7 @@
 title: How to create a zero config VPN for remote access to your homelab with Tailscale
 date: 2023-06-08 21:00:00 +0200
 categories: [VPN]
-tags: [VPN, Tailscale, WireGuard, config, zero, easy, remote, access, homelab, secure, network, service, open-source]
+tags: [VPN, Tailscale, WireGuard, config, zero, easy, remote, access, homelab, secure, network, subnet, service, open-source]
 math: false
 mermaid: false
 image:
