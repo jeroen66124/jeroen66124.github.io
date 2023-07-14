@@ -18,6 +18,4 @@ Contact me by [email](mailto:jeroen66124@gmail.com) 📨 or send a message on [G
 
  
  
-![Bitcoin](/assets/bitcoin.png)
-<br>
-![Monero](/assets/monero.png)
+![Coins](/assets/coins.png)
