@@ -42,7 +42,7 @@ Boot from the Photon OS ISO image on your virtual machine or bare-metal machine
     If you are running Photon OS through a VMware hypervisor, select "VMware hypervisor optimized".
 ![1](/assets/public-3/7.png)
 6.  Choose your hostname, this will also be the name shown in the Tailscale admin console
-![1](/assets/public-3/7.png)
+![1](/assets/public-3/8.png)
 7.  Set a strong root password and don't forget it!
 ![1](/assets/public-3/9.png)
 8.  Start the Installation by selecting "Yes" to confirm
