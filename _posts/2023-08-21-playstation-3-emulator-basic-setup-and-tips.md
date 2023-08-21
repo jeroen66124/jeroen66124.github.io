@@ -11,7 +11,7 @@ image:
 ---
 
 ## Showcase
-![1](/assets/public-4/2.jpg)
+![1](/assets/public-4/2.png)
 _RPCS3 emulating the Playstation 3 XrossMediaBar Graphical User Interface
 
 > This guide will be written with Windows 10, but can be applied to all Operating Systems compatible with RPCS3 if the steps are reproduced for that specific platform accordingly
