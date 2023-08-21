@@ -6,12 +6,12 @@ tags: [Emulation, Reservation, PlayStation, RPCS3, Emulator, Classics, CELL, Win
 math: false
 mermaid: false
 image:
-  path: /assets/public-3/1.jpg
+  path: /assets/public-4/1.jpg
   alt: RPCS3 emulator used for emulating PS3 games
 ---
 
 ## Showcase
-![1](/assets/public-4/2.jpg)
+![1](/assets/public-3/2.jpg)
 _RPCS3 emulating a Playstation 3 game to play on the Desktop_
 
 > Tip
