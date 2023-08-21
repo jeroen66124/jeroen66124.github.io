@@ -7,12 +7,12 @@ math: false
 mermaid: false
 image:
   path: /assets/public-3/1.jpg
-  alt: Tailscale software used for easy remote access
+  alt: RPCS3 emulator used for emulating PS3 games
 ---
 
 ## Showcase
 ![1](/assets/public-4/2.jpg)
-_Tailscale using the Subnet Routing feature to expose all internal devices to the VPN_
+_RPCS3 emulating a Playstation 3 game to play on the Desktop_
 
 > Tip
 {: .prompt-tip }
