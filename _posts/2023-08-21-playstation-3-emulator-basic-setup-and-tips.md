@@ -97,4 +97,4 @@ To acquire PS3 games, you can either dump them from your digital and or physical
 ![1](/assets/public-4/30.png)
 ![1](/assets/public-4/32.png)
 4. Have fun!
-![1](/assets/public-4/32.png)
+![1](/assets/public-4/33.png)
