@@ -98,3 +98,7 @@ To acquire PS3 games, you can either dump them from your digital and or physical
 ![1](/assets/public-4/32.png)
 4. Have fun!
 ![1](/assets/public-4/33.png)
+
+## Closing
+
+Cool, you're set up! The RPCS3 emulator opens up a world of possibilities for playing PlayStation 3 games on your PC. By following this  guide, you can set up the emulator, configure it, and relive classic gaming moments from the comfort of your computer. 
