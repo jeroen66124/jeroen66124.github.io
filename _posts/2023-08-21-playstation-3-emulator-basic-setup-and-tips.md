@@ -29,3 +29,8 @@ Here's what you'll need to get started:
 - [x] Storage: You'll need storage space for both the emulator and the games
 
 ## Step 1: Set up RPCS3
+
+1.  Start by visiting the official RPCS3 download page at [rpcs3.net](https://rpcs3.net/download) to download the latest version of the emulator suitable for your operating system
+![1](/assets/public-4/3.png)
+2.  Decompress the .7z file and place it in a convenient location, also make sure to install all the required dependencies which are also available on the website
+![1](/assets/public-4/4.png)
