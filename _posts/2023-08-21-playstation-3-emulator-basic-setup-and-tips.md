@@ -18,7 +18,7 @@ _RPCS3 emulating the Playstation 3 XrossMediaBar Graphical User Interface_
 {: .prompt-tip }
 
 ## Introduction
-Gaming enthusiasts often find themselves nostalgic for older console titles that may no longer be available on the market. Thanks to emulation software like RPCS3, players can relive the glory days of PlayStation 3 games on their modern hardware. In this guide, we'll walk you through the step-by-step process of setting up the RPCS3 emulator to enjoy your favorite PS3 games on your PC.
+Gaming enthusiasts often find themselves nostalgic for older console titles that may no longer be available on the market. Thanks to emulation software like RPCS3, players can relive the glory days of PlayStation 3 games on their modern hardware. In this guide, you will go through the step-by-step process of setting up the RPCS3 emulator to enjoy your favorite PS3 games on your PC.
 
 ## Prerequisites
 Here's what you'll need to get started:
