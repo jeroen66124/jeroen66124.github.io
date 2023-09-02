@@ -96,3 +96,5 @@ To acquire PS3 games, you can either dump them from your digital and or physical
 3.  When ready, start your first game and wait for it compile (the first boot can take a while!) 
 ![1](/assets/public-4/30.png)
 ![1](/assets/public-4/32.png)
+4. Have fun!
+![1](/assets/public-4/32.png)
