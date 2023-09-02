@@ -1,4 +1,4 @@
-![image](https://github.com/jeroen66124/jeroen66124.github.io/assets/26249840/4a26e292-ed52-4bd3-a6af-27c88dc51f58)---
+---
 title: How to configure a Playstation 3 Emulator for Digital Game Reservation with RPCS3
 date: 2023-08-21 10:00:00 +0200
 categories: [Emulation]
