@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://vskills.nl/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/categories/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/archives/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/about/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/posts/playstation-3-emulator-basic-setup-and-tips/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/posts/zero-config-vpn-remote-access-tailscale/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/posts/run-full-bitcoin-node-self-hosting-umbrel-os/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/posts/remote-gaming-setup-steam-link-playnite-pi/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/open-source/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/playstation/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/remote/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/access/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/android/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/apple/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/arm/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/bare-metal/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/bitcoin/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/blockchain/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/categories/bitcoin/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/categories/emulation/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/categories/gaming/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/categories/vpn/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/bsd/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/cell/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/classics/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/config/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/console/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/controller/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/cryptocurrency/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/decentralized/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/diy/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/do-it-yourself/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/easy/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/emulation/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/emulator/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/esxi/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/full/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/gaming/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/homelab/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/hypervisor/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/internet-of-things/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/iot/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/liberty/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/linux/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/macos/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/mempool/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/network/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/node/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/peer-to-peer/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/playnite/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/project/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/raspberry-pi/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/reservation/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/rpcs3/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/secure/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/self-hosting/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/server/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/service/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/steam/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/subnet/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/synchronization/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/tailscale/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/transactions/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/tv/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/ubuntu/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/umbrel/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/vmware/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/vpn/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/web3/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/windows/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/wireguard/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/xbox/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vskills.nl/tags/zero/</loc>
+  <lastmod>2023-09-03T07:48:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
