@@ -18,7 +18,7 @@ _RPCS3 emulating the Playstation 3 XrossMediaBar Graphical User Interface_
 {: .prompt-tip }
 
 ## Introduction
-Gaming enthusiasts often find themselves nostalgic for older console titles that may no longer be available on the market. Thanks to emulation software like RPCS3, players can relive the glory days of PlayStation 3 games on their modern hardware. In this guide, you will go through the step-by-step process of setting up the RPCS3 emulator to enjoy your favorite PS3 games on your PC.
+I find myself often nostalgic for older console titles that may no longer be available on the market, or not owning the console that is compatible with a certain game. Thanks to emulation software like RPCS3, players can relive the glory days of PlayStation 3 games on their modern hardware. In this guide, you will go through the step-by-step process of setting up the RPCS3 emulator to enjoy your favorite PS3 games on your PC.
 
 ## Prerequisites
 Here's what you'll need to get started:
@@ -69,7 +69,7 @@ To acquire PS3 games, you can either dump them from your digital and or physical
 7.  When the Download and Unpack is finished, your folder should look like this
 ![1](/assets/public-4/20.png)
 
-## Step 3: Set up first PS3 game
+## Step 3: Set up first game
 
 1.  Open RPCS3 and go to File > Install Package/Raps/Edats > Browse to NoPayStation Packages > Select and Open
 ![1](/assets/public-4/21.png)
@@ -88,7 +88,7 @@ To acquire PS3 games, you can either dump them from your digital and or physical
 8.  Copy all these settings by going to both "Create Custom Configuration" and "Manage Game Patches" accordingly
 ![1](/assets/public-4/28.png)
 
-## Step 4: Playing your PS3 game
+## Step 4: Set up controller
 
 1.  Connect your controller either wired or wirelessly, this can be DualShock 3, DualShock 4, DualSense and or any Xbox or XInput-compatible controllers and also make sure to check the [Controller Configuration](https://wiki.rpcs3.net/index.php?title=Help:Controller_Configuration) guide
 2.  Go to RPCS3 > Pads (Configure Controls) > Select corresponding Handler > Test if controller input is registered 
@@ -101,4 +101,4 @@ To acquire PS3 games, you can either dump them from your digital and or physical
 
 ## Closing
 
-Cool, you're set up! The RPCS3 emulator opens up a world of possibilities for playing PlayStation 3 games on your PC. By following this  guide, you can set up the emulator, configure it, and relive classic gaming moments from the comfort of your computer. 
+Cool, you're set up! The RPCS3 emulator opens up a world of possibilities for playing PlayStation 3 games on your PC. By following this guide, you can set up the emulator, configure it, and relive classic gaming moments from the comfort of your computer. 
