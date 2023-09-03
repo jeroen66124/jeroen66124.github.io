@@ -20,10 +20,10 @@ timezone: Europe/Amsterdam
 
 title: vSkills # the main title
 
-tagline: writing down IT stuff I have learned # it will display as the sub-title
+tagline: writing about IT and hobby projects # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  vSkills, writing down IT stuff I have learned.
+  vSkills, writing about IT and hobby projects
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://vskills.nl"
