@@ -49,7 +49,7 @@ Here's what you'll need to get started:
 
 ## Step 2: Set up NoPayStation
 
-To acquire PS3 games, you can either dump them from your digital and or physical copies with this [RPCS3 wiki Dumping guide](https://wiki.rpcs3.net/index.php?title=Help:Dumping_PlayStation_3_games). The other option is to download digital PS3 games from the Playstation servers themself with NoPayStation.
+To acquire PS3 games, you can either dump them from your digital and or physical copies with this [RPCS3 wiki Dumping guide](https://wiki.rpcs3.net/index.php?title=Help:Dumping_PlayStation_3_games). The other option is to download digital PS3 games from the Playstation servers directly with NoPayStation.
 
 1.  Create a NoPayStation folder in a convenient location and download the latest version of the NPS client on the [NoPayStation website](https://nopaystation.com/)
 ![1](/assets/public-4/12.png)
