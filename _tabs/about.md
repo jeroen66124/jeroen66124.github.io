@@ -16,5 +16,7 @@ Contact me by [email](mailto:jeroen66124@gmail.com) 📨 or send a message on [G
  
   <p align="center">🔑 <b>PGP</b>: 5327 FECD F828 ABB2 2DE8 E913 1EE8 C974 ABBA F32A</p>
 
-  ![badge](https://raw.githubusercontent.com/jeroen66124/jeroen66124.github.io/main/assets/badge.png){: width="300" height="300" }
+ 
+ 
+  ![badge](https://raw.githubusercontent.com/jeroen66124/jeroen66124.github.io/main/assets/badge.png){: width="150" height="150" }
   
