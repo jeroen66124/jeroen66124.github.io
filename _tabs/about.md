@@ -18,5 +18,5 @@ Contact me by [email](mailto:jeroen66124@gmail.com) 📨 or send a message on [G
 
  
  
-<p align="center"><a href="https://www.credly.com/badges/8dfc178a-8681-45c5-89a0-3f561f99fe67"><img src="https://raw.githubusercontent.com/jeroen66124/jeroen66124.github.io/main/assets/badge.png" style="width:150px;height:150px;"></a></p>
+<p align="center"><a href="https://www.credly.com/badges/8dfc178a-8681-45c5-89a0-3f561f99fe67"><img src="https://raw.githubusercontent.com/jeroen66124/jeroen66124.github.io/main/assets/badge.png" alt="VCP-DCV Badge" style="width:150px;height:150px;"></a></p>
   
