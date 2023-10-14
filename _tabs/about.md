@@ -18,5 +18,5 @@ Contact me by [email](mailto:jeroen66124@gmail.com) 📨 or send a message on [G
 
  
  
-  ![badge](https://raw.githubusercontent.com/jeroen66124/jeroen66124.github.io/main/assets/badge.png){: width="150" height="150" }
+  [![badge](https://raw.githubusercontent.com/jeroen66124/jeroen66124.github.io/main/assets/badge.png)](https://www.credly.com/badges/8dfc178a-8681-45c5-89a0-3f561f99fe67){: width="150" height="150" }
   
