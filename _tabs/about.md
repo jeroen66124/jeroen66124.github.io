@@ -14,9 +14,9 @@ Contact me by [email](mailto:jeroen66124@gmail.com) 📨 or send a message on [G
 
  
  
-  <p align="center">🔑 <b>PGP</b>: 5327 FECD F828 ABB2 2DE8 E913 1EE8 C974 ABBA F32A</p>
+<p align="center">🔑 <b>PGP</b>: 5327 FECD F828 ABB2 2DE8 E913 1EE8 C974 ABBA F32A</p>
 
  
  
-  [![badge](https://raw.githubusercontent.com/jeroen66124/jeroen66124.github.io/main/assets/badge.png)](https://www.credly.com/badges/8dfc178a-8681-45c5-89a0-3f561f99fe67)
+<p align="center"><a href="https://www.credly.com/badges/8dfc178a-8681-45c5-89a0-3f561f99fe67"><img src="https://raw.githubusercontent.com/jeroen66124/jeroen66124.github.io/main/assets/badge.png" style="width:150px;height:150px;"></a></p>
   
