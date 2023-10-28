@@ -19,8 +19,8 @@ Contact me by [email](mailto:jeroen66124@gmail.com) 📨 or send a message on [G
  
  
 <p align="middle">
-  <a href="https://www.credly.com/badges/8dfc178a-8681-45c5-89a0-3f561f99fe67"><img src="https://images.credly.com/size/340x340/images/76cf3a86-92be-433d-bd37-85575d4995e2/image.png" height="150" width="150" />
+  <a href="https://www.credly.com/badges/8dfc178a-8681-45c5-89a0-3f561f99fe67"><img src="https://images.credly.com/size/340x340/images/76cf3a86-92be-433d-bd37-85575d4995e2/image.png" alt="VCP-DCV" height="150" width="150" />
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://www.credly.com/badges/7ae63f3e-b9a5-4c48-81cb-668d156b6747"><img src="https://images.credly.com/size/340x340/images/242902b5-f527-42ad-865e-977c9e1b5b58/image.png" height="150" width="150" />
+  <a href="https://www.credly.com/badges/7ae63f3e-b9a5-4c48-81cb-668d156b6747"><img src="https://images.credly.com/size/340x340/images/242902b5-f527-42ad-865e-977c9e1b5b58/image.png" alt="Ethical Hacker" height="150" width="150" />
 </p>
 
