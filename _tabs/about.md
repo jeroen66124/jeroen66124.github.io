@@ -19,7 +19,7 @@ Contact me by [email](mailto:jeroen66124@gmail.com) 📨 or send a message on [G
  
  
 <div align="center">
-    <img src="https://images.credly.com/size/340x340/images/76cf3a86-92be-433d-bd37-85575d4995e2/image.png" alt="VCP-DCV" height="150" width="150"/>
+    <img src="https://images.credly.com/size/340x340/images/76cf3a86-92be-433d-bd37-85575d4995e2/image.png" alt="VCP-DCV 2023" height="150" width="150"/>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="https://images.credly.com/size/340x340/images/242902b5-f527-42ad-865e-977c9e1b5b58/image.png" alt="VCP-DCV" height="150" width="150"/>
+    <img src="https://images.credly.com/size/340x340/images/242902b5-f527-42ad-865e-977c9e1b5b58/image.png" alt="Ethical Hacker" height="150" width="150"/>
 </div>
