@@ -1,5 +1,5 @@
 ---
-title: How to automate your own clean Windows setup with PowerShell 
+title: How to automate and customize your own clean Windows setup with PowerShell 
 date: 2023-11-03 19:00:00 +0200
 categories: [Automation]
 tags: [Automation, scripting, Windows, setup, winget, activation, bloatware, debloat, Microsoft, GitHub, open-source]
