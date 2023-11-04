@@ -11,8 +11,8 @@ image:
 ---
 
 ## Showcase
-![1](/assets/public-4/2.png)
-_RPCS3 emulating the Playstation 3 XrossMediaBar Graphical User Interface_
+![1](/assets/public-5/2.png)
+_Preview of the PowerShell code on the GitHub repository_
 
 > This guide will be written for Windows 10 and 11, but can be applied to all future Windows Operating Systems, compatible with PowerShell and the Windows Package Manager. Keep in mind that the code of the script is just a proof of concept, or template, if you will. It can be modified to your liking and includes comments for easier understanding, although it is pretty straight-forward on its own. 
 {: .prompt-tip }
