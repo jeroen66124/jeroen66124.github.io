@@ -18,7 +18,7 @@ _Preview of the PowerShell code on the GitHub repository_
 {: .prompt-tip }
 
 ## Introduction
-I mess around with Virtual Machines alot, which also means creating a clean Windows template is part of the process. I do not want to bother with reinstalling Windows everytime I want to try something out in a isolated environment. This script is for the rare occassion when I do end up reinstalling Windows, and want to save as much time as possible. Microsoft has developed the Windows Sandbox feature, which provides a lightweight desktop environment to safely run applications in isolation. This option has one drawback though, it does not have persistency (this has been added in later Windows 11 updates, but I run Windows 10 and do not have the intention to switch anytime soon).
+I mess around with Virtual Machines alot, which also means creating a clean Windows template is part of the process. I do not want to bother with reinstalling Windows everytime I want to try something out in an isolated environment. This script is for the rare occassion when I do end up having to reinstall Windows, and want to save as much time as possible. Microsoft has developed the Windows Sandbox feature, which provides a lightweight desktop environment to safely run applications in isolation. This option has one drawback though, it does not have persistency (this has been added in later Windows 11 updates, but I run Windows 10 and do not have the intention to switch anytime soon).
 
 ## Prerequisites
 Here's what you'll need to get started:
