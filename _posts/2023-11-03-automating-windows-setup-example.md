@@ -7,7 +7,7 @@ math: false
 mermaid: false
 image:
   path: /assets/public-5/1.jpg
-  alt: Preview of my PowerShell script on GitHub
+  alt: PowerShell will be used for automation
 ---
 
 ## Showcase
