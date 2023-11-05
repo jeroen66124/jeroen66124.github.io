@@ -24,6 +24,7 @@ I mess around with Virtual Machines alot, which also means creating a clean Wind
 Here's what you'll need to get started:
 - [x] Windows 10 or 11
 - [x] PowerShell (Administrator)
+- [x] Virtualized Development Environment
 
 ## Step 1: Run the script and evaluate
 
