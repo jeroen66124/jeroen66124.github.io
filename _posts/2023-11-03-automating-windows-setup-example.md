@@ -30,6 +30,7 @@ Here's what you'll need to get started:
 1.  Open PowerShell (as Administrator)
 ![1](/assets/public-5/3.png)
 2.  Review the [code on GitHub](https://github.com/jeroen66124/Winstart/blob/main/winstart.ps1) before executing
+![1](/assets/public-5/2.png)
 3.  Copy the [one-liner](https://github.com/jeroen66124/Winstart/blob/main/README.md#one-liner) from the README **OR** [Download](https://github.com/jeroen66124/Winstart/blob/main/winstart.ps1) the script
 ![1](/assets/public-5/4.png)
 
