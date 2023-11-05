@@ -27,8 +27,11 @@ Here's what you'll need to get started:
 
 ## Step 1: Run the script and evaluate
 
-1.  Start by visiting the official RPCS3 download page at
-2.  
+1.  Open PowerShell (as Administrator)
+![1](/assets/public-5/3.png)
+2.  Review the [code on GitHub](https://github.com/jeroen66124/Winstart/blob/main/winstart.ps1) before executing
+3.  Copy the [one-liner](https://github.com/jeroen66124/Winstart/blob/main/README.md#one-liner) from the README **OR** [Download](https://github.com/jeroen66124/Winstart/blob/main/winstart.ps1) the script
+![1](/assets/public-5/4.png)
 
 ## Step 2: Customize the script to your preference
 
