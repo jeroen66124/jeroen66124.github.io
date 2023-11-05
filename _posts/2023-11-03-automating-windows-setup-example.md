@@ -35,6 +35,17 @@ Here's what you'll need to get started:
 3.  Copy the [one-liner](https://github.com/jeroen66124/Winstart/blob/main/README.md#one-liner) from the README **OR** [Download](https://github.com/jeroen66124/Winstart/blob/main/winstart.ps1) the script
 ![1](/assets/public-5/4.png)
 4.  Execute the script and analyze the result
+![1](/assets/public-5/5.png)
+5.  The script did the following:
+    - Activate Windows
+![1](/assets/public-5/6.png)
+    - Install Office
+![1](/assets/public-5/8.png)
+    - Activate Office
+![1](/assets/public-5/7.png)
+    - Remove unwanted apps
+    - Run Windows Utility
+![1](/assets/public-5/9.png)
 
 ## Step 2: Customize the script to your preference
 
