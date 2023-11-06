@@ -1,5 +1,5 @@
 ---
-title: How to create your own clean Windows installation with NTLite 
+title: How to create your own Windows installation image with NTLite 
 date: 2023-11-03 19:00:00 +0200
 categories: [Automation]
 tags: [Automation, scripting, Windows, setup, winget, activation, bloatware, debloat, Microsoft, GitHub, NTLite]
@@ -40,47 +40,47 @@ Here's what you'll need to get started:
 ![1](/assets/public-5/8.png)
 
 ## Step 2: Customizing the image
-6. Updates > Add > Latest online updates > Select > Enqueue
+1. Updates > Add > Latest online updates > Select > Enqueue
 ![1](/assets/public-5/9.png)
-7. You can also add drivers and registry files if needed
+2. You can also add drivers and registry files if needed
 ![1](/assets/public-5/11.png)
 ![1](/assets/public-5/12.png)
-8. Post-Setup > Add > Files, Commands, Templates such as:
+3. Post-Setup > Add > Files, Commands, Templates such as:
 - [Winstart](https://github.com/jeroen66124/Winstart/blob/main/winstart.ps1) (made by me)
 - [Google Chrome](https://chromeenterprise.google/browser/download/#windows-tab)
 - Disable hibernation
 - Disable password expiry
 ![1](/assets/public-5/10.png)
-9. Components > Apps, Multimedia, Remoting and Privacy such as:
+4. Components > Apps, Multimedia, Remoting and Privacy such as:
 ![1](/assets/public-5/13.png)
 ![1](/assets/public-5/14.png)
 ![1](/assets/public-5/15.png)
-10. Features > Enable or Disable such as:
+5. Features > Enable or Disable such as:
 ![1](/assets/public-5/16.png)
-11. Settings > Customize the Desktop, Explorer, Privacy such as:
+6. Settings > Customize the Desktop, Explorer, Privacy such as:
 ![1](/assets/public-5/17.png)
 ![1](/assets/public-5/18.png)
 ![1](/assets/public-5/19.png)
-12. Services > Set to Boot, System, Automatic, Manual or Disabled:
+7. Services > Set to Boot, System, Automatic, Manual or Disabled:
 ![1](/assets/public-5/20.png)
-13. Unattended > Enable > Add local account > Enable built-in Administrator
+8. Unattended > Enable > Add local account > Enable built-in Administrator
 ![1](/assets/public-5/21.png)
-14. Unattended > Skip Out-of-box experience, Compress Windows and more:
+9. Unattended > Skip Out-of-box experience, Compress Windows and more:
 ![1](/assets/public-5/22.png)
-15. Apply > Save the image and trim editions > High compression, read-only (ESD) > Create ISO
+10. Apply > Save the image and trim editions > High compression, read-only (ESD) > Create ISO
 ![1](/assets/public-5/23.png)
-16. Apply > Process > Yes
+11. Apply > Process > Yes
 ![1](/assets/public-5/24.png)
-17. Wait for the full process to complete (this can take a while!)
+12. Wait for the full process to complete (this can take a while!)
 ![1](/assets/public-5/25.png)
 ![1](/assets/public-5/26.png)
-18. The creation of the ISO completed in around ~32 minutes
+13. The creation of the ISO completed in around ~32 minutes
 ![1](/assets/public-5/27.png)
 
 ## Step 3: Testing image in Virtual Machine
-19. Create a Virtual Machine and mount the ISO
+1. Create a Virtual Machine and mount the ISO
 ![1](/assets/public-5/28.png)
-20. Windows 11 installed succesfully along with the defined settings, Windows and Office installation & activation included thanks to the [Winstart](https://github.com/jeroen66124/Winstart/blob/main/winstart.ps1) script
+2. Windows 11 installed succesfully along with the defined settings, Windows and Office installation & activation included thanks to the [Winstart](https://github.com/jeroen66124/Winstart/blob/main/winstart.ps1) script
 ![1](/assets/public-5/29.png)
 
 ## Closing
