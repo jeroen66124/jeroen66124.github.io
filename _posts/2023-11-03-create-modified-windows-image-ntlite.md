@@ -1,8 +1,8 @@
 ---
-title: How to create your own Windows installation image with NTLite 
+title: How to customize your own Windows installation image with NTLite 
 date: 2023-11-03 19:00:00 +0200
 categories: [Automation]
-tags: [Automation, scripting, Windows, setup, winget, activation, bloatware, debloat, Microsoft, GitHub, NTLite]
+tags: [Automation, scripting, Windows, setup, winget, activation, bloatware, debloat, Microsoft, GitHub, NTLite, modify, customize]
 math: false
 mermaid: false
 image:
