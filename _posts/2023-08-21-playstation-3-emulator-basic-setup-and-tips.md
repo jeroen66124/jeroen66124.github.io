@@ -2,7 +2,7 @@
 title: How to configure a Playstation 3 Emulator for Digital Game Reservation with RPCS3
 date: 2023-08-21 10:00:00 +0200
 categories: [Emulation]
-tags: [Emulation, Reservation, PlayStation, RPCS3, Emulator, Classics, CELL, Windows, macOS, Linux, BSD, open-source]
+tags: [Emulation, reservation, PlayStation, RPCS3, emulator, classics, CELL, Windows, macOS, Linux, BSD, open-source]
 math: false
 mermaid: false
 image:
