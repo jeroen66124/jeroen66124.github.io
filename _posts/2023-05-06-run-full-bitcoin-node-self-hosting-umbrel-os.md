@@ -93,7 +93,7 @@ curl -L https://umbrel.sh | bash
 ```
 It will ask for your password like shown below:
 ![1](/assets/public-2/28.png)
-16. When the automated install script is done, visit [http://umbrel.local](http://umbrel.local) or the IP address to access the web UI
+16. When the automated install script is done, visit [https://umbrel.local](https://umbrel.local) or the IP address to access the web UI
 ![1](/assets/public-2/30.png)
 
 ## Step 3: Set up Umbrel OS
