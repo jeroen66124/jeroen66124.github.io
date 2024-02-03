@@ -6,7 +6,7 @@ tags: [blogging, blog, GitHub, pages, setup, jekyll, markdown, easy, publishing,
 math: false
 mermaid: false
 image:
-  path: /assets/public-5/1.jpg
+  path: /assets/public-6/1.jpg
   alt: Creating a custom Windows 11 image
 ---
 
