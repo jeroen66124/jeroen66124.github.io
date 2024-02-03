@@ -7,7 +7,7 @@ math: false
 mermaid: false
 image:
   path: /assets/public-6/1.jpg
-  alt: Creating a custom Windows 11 image
+  alt: Creating a Markdown blog with Jekyll
 ---
 
 ## Showcase
