@@ -14,7 +14,7 @@ image:
 ![1](/assets/public-5/2.png)
 _Using NTLite to remove unneeded App components_
 
-> This guide will be written for Windows 10 and 11, but can be applied to all future Windows Operating Systems, compatible with NTLite, PowerShell and the Windows Package Manager. Keep in mind that this guide is just a proof of concept, **do not use it in production**. The steps can be adjusted to your liking, and should include enough information for it to be pretty straight-forward. 
+> This guide will be written for Windows 10 and 11, but can be applied to all future Windows Operating Systems, compatible with NTLite, PowerShell and the Windows Package Manager. Keep in mind that this guide is just a proof of concept, **do not use it in production**. The steps can be adjusted to your liking, and should include enough information for it to be pretty straight-forward
 {: .prompt-tip }
 
 ## Introduction
