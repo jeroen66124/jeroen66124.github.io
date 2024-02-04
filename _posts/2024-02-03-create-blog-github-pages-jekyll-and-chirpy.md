@@ -32,6 +32,9 @@ Here's what you'll need to get started:
 ![1](/assets/public-6/3.png)
 2. Once the reposistory has been created, go to Settings > Code and automation > Pages
 ![1](/assets/public-6/4.png)
+3. Under Build and deployment > Source > select Deploy from a branch
+4. Under Branch > select Main > Select Root, match the settings like shown below
+![1](/assets/public-6/5.png)
 
 ## Step 2: Set up domain name
 
