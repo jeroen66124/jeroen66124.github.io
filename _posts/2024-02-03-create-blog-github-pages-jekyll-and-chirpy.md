@@ -30,6 +30,8 @@ Here's what you'll need to get started:
 ## Step 1: Set up Chirpy
 1. Sign in to GitHub and use [this](https://github.com/cotes2020/chirpy-starter/generate) link to generate a public repository and name it USERNAME.github.io, where USERNAME represents your GitHub username
 ![1](/assets/public-6/3.png)
+2. Once the reposistory has been created, go to Settings > Code and automation > Pages
+![1](/assets/public-6/4.png)
 
 ## Step 2: Set up domain name
 
