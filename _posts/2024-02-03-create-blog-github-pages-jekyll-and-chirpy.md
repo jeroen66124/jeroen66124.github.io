@@ -14,7 +14,7 @@ image:
 ![1](/assets/public-6/2.png)
 _Using the Chirpy theme for Jekyll to create a modern blog_
 
-> This guide will be written for Windows 10 and 11, but can be applied to all future Windows Operating Systems, compatible with NTLite, PowerShell and the Windows Package Manager. Keep in mind that this guide is just a proof of concept, **do not use it in production**. The steps can be adjusted to your liking, and should include enough information for it to be pretty straight-forward. 
+> This guide provides basic instructions on how to create a Jekyll blog, hosted with GitHub Pages, while using the Chirpy theme. If you want to use any other theme, you can browse them at [Jekyll Themes](https://jekyllrb.com/docs/themes/), but be aware that instructions may differ
 {: .prompt-tip }
 
 ## Introduction
@@ -24,42 +24,16 @@ The information below will cover creating a clean and preconfigured Windows imag
 Here's what you'll need to get started:
 - [x] Domain name
 - [x] GitHub account
-- [x] Basic DNS knowledge
-- [x] Basic Markdown knowledge
+- [x] DNS knowledge
+- [x] Markdown knowledge
 
-## Step 1: Set up NTLite
-1. [Download](https://www.ntlite.com/download/) and Install NTLite, the Free version works just fine
+## Step 1: Set up Chirpy
+1. Sign in to GitHub and use [this link](https://github.com/cotes2020/chirpy-starter/generate) to generate a new repository based on the Chirpy template
 ![1](/assets/public-5/3.png)
-2. [Download](https://www.microsoft.com/software-download) an Windows 10 or 11 ISO from Microsoft
-![1](/assets/public-5/4.png)
-3. Go to NTLite > Add > Image > Select ISO
-![1](/assets/public-5/5.png)
-4. Expand the ISO > Load your preferred image > Wait until loaded
-![1](/assets/public-5/6.png)
-![1](/assets/public-5/7.png)
-5. Once the image is fully loaded, you can begin customizing
-![1](/assets/public-5/8.png)
 
-## Step 2: Customizing the image
-1. Updates > Add > Latest online updates > Select > Enqueue
-![1](/assets/public-5/9.png)
-2. You can also add drivers and registry files if needed
-![1](/assets/public-5/11.png)
-![1](/assets/public-5/12.png)
-3. Post-Setup > Add > Files, Commands, Templates such as:
-- [Winstart](https://github.com/jeroen66124/Winstart/blob/main/winstart.ps1) (made by me)
-- [Google Chrome](https://chromeenterprise.google/browser/download/#windows-tab)
-- Disable hibernation
-- Disable password expiry
-![1](/assets/public-5/10.png)
-4. Components > Apps, Multimedia, Remoting and Privacy such as:
-![1](/assets/public-5/13.png)
-![1](/assets/public-5/14.png)
-![1](/assets/public-5/15.png)
+## Step 2: Set up domain name
 
-## Step 3: Testing image in Virtual Machine
-1. Create a Virtual Machine and mount the ISO
-![1](/assets/public-5/28.png)
+## Step 3: Writing your first blog post
 
 ## Closing
 
