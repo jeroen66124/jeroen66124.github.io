@@ -33,7 +33,7 @@ Here's what you'll need to get started:
 2. Once the reposistory has been created, go to Settings > Code and automation > Pages
 ![1](/assets/public-6/4.png)
 3. Under Build and deployment > Source > select Deploy from a branch
-4. Under Build and Deployment > Branch > select main > Select / (root)
+4. Under Build and Deployment > Branch > select main > Select / (root) > Save
 ![1](/assets/public-6/5.png)
 
 ## Step 2: Set up domain name
