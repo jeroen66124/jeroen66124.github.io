@@ -18,7 +18,7 @@ _Using the Chirpy theme for Jekyll to create a modern blog_
 {: .prompt-tip }
 
 ## Introduction
-The information below will cover creating a clean and preconfigured Windows image, that (if correctly maintained) can save lots of time and reduce resources. It can be applied to both virtual and host machines, and is catered towards people who like to tinker with Windows installations and strip stuff out that is not needed. Most people are fine with either an post-install debloat tool or LTSC versions of Windows, but NTLite can go way deeper than that. 
+The basic instructions below will cover creating a modern and relatively easy to maintain blog. It can be applied to all sorts of topics, but is mainly used for documentation regarding IT projects. All documentation can be found at the Chirpy theme [wiki](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
 ## Prerequisites
 Here's what you'll need to get started:
@@ -28,8 +28,8 @@ Here's what you'll need to get started:
 - [x] Markdown knowledge
 
 ## Step 1: Set up Chirpy
-1. Sign in to GitHub and use [this link](https://github.com/cotes2020/chirpy-starter/generate) to generate a new repository based on the Chirpy template
-![1](/assets/public-5/3.png)
+1. Sign in to GitHub and use [this](https://github.com/cotes2020/chirpy-starter/generate) link to generate a public repository and name it USERNAME.github.io, where USERNAME represents your GitHub username
+![1](/assets/public-6/3.png)
 
 ## Step 2: Set up domain name
 
