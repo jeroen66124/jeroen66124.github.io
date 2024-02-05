@@ -37,6 +37,20 @@ Here's what you'll need to get started:
 ![1](/assets/public-6/5.png)
 
 ## Step 2: Set up domain name
+> We will be setting up an Apex domain (such as example.com), if you want to use a subdomain (such as blog.example.com), follow [this](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-a-subdomain-for-your-github-pages-site) link for more information
+{: .prompt-warning }
+
+1. Go to your domain name provider portal, and add the following DNS records (changes to DNS can take up to 24 hours to effect!)
+```
+A     185.199.108.153
+AAAA  2606:50c0:8000::153
+CNAME username.github.io
+```
+![1](/assets/public-6/6.png)
+![1](/assets/public-6/7.png)
+2. Go to GitHub > Repository > Settings > Code and automation > Pages > Custom domain > Fill in domain name > Save
+3. Enable Enforce HTTPS for improved security, the certificate will be provided for free by Let's Encrypt
+![1](/assets/public-6/8.png)
 
 ## Step 3: Writing your first blog post
 
