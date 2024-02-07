@@ -67,20 +67,29 @@ CNAME username.github.io
 - Tagline
 - Description
 - URL
+
 ![1](/assets/public-6/9.png)
+
 - Google Analytics
+
 ![1](/assets/public-6/10.png)
+
 - Theme
 - Avatar
+
 ![1](/assets/public-6/11.png)
+
 3. These folders can be changed accordingly:
-  - /_data = Modify the Contact & Share buttons
-  - /_posts = Create and Remove Posts (Markdown)
-  - /_tabs = Modify the About page (don't touch the other files)
-  - /assets = Modify Favicons and Upload images (Recommended to put avatar here too)
+  - `/_data`{: .filepath} = Modify the Contact & Share buttons
+  - `/_posts`{: .filepath} = Create and Remove Posts (Markdown)
+  - `/_tabs`{: .filepath} = Modify the About page (don't touch the other files)
+  - `/assets`{: .filepath} = Modify Favicons and Upload images (Recommended to put avatar here too)
+
 4. If you want to have an example of the structure and usage of these folders, please view [my repository](https://github.com/jeroen66124/jeroen66124.github.io) on GitHub
 5. Make sure to check for a new version of Chirpy every once in a while by following the [Upgrade Guide](https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Upgrade-Guide#upgrade-from-starter). this will fix bugs and add new features down the line
+
 > When writing your first blog post, please be aware that Chirpy has slightly modified the usage of Markdown. I strongly recommend reading the [Text and Typography](https://chirpy.cotes.page/posts/text-and-typography/) documentation to make yourself familiar with its formatting
 {: .prompt-tip }
+
 ## Closing
 Cool stuff, I hope you got it running! Chirpy is a straight-forward Jekyll theme to start your own (freely hosted) blog through GitHub Pages. Now go write and share what you have always wanted to!
