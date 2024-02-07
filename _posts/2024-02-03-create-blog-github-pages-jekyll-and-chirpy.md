@@ -59,7 +59,7 @@ CNAME username.github.io
 ![1](/assets/public-6/8.png)
 
 ## Step 3: Set up your Chirpy theme
-1. Most of the configurations can be modified by going to your repository and editing the _config.yml file. If you want to have an example of the configuration file, please view the YAML contents of the theme [here](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/_config.yml)
+1. Most of the configurations can be modified by going to your repository and editing the *_config.yml* file. If you want to have an example of the configuration file, please view the YAML contents of the theme [here](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/_config.yml)
 2. These folders can be changed accordingly:
   - `/_data`{: .filepath} = Modify the Contact & Share buttons
   - `/_posts`{: .filepath} = Create and Remove Posts (Markdown)
