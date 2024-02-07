@@ -64,7 +64,7 @@ CNAME username.github.io
   - `/_data`{: .filepath} = Modify the Contact & Share buttons
   - `/_posts`{: .filepath} = Create and Remove Posts (Markdown)
   - `/_tabs`{: .filepath} = Modify the About page (don't touch the other files)
-  - `/assets`{: .filepath} = Modify Favicons and Upload images (Recommended to put avatar here too)
+  - `/assets`{: .filepath} = Modify Favicons and Upload images (recommended to put avatar here too)
 3. If you want to have an example of the structure and usage of these folders, please view [my repository](https://github.com/jeroen66124/jeroen66124.github.io) on GitHub
 4. Make sure to check for a new version of Chirpy every once in a while by following the [Upgrade Guide](https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Upgrade-Guide#upgrade-from-starter). this will fix bugs and add new features down the line
 
