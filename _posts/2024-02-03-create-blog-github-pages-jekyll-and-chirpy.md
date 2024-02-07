@@ -64,6 +64,7 @@ CNAME username.github.io
 1. Most of the configurations can be modified by going to your repository and editing the _config.yml file. If you want to have an example of the configuration file, please view the YAML contents of the theme [here](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/_config.yml)
 
 2. These are some of my recommended settings:
+
 - Title
 - Tagline
 - Description
