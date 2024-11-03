@@ -3,14 +3,12 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <style>
-    /* Remove margins and padding */
+    /* Ensure no margin or padding around the widget */
     body, .tradingview-widget-container {
       margin: 0;
       padding: 0;
-      background-color: #1e1e1e; /* Dark background to match widget */
+      background: none; /* Make background transparent */
     }
-
-    /* Ensure the widget div uses full width and height */
     .tradingview-widget-container__widget {
       width: 100%;
       height: 100%;
@@ -34,7 +32,7 @@
         "locale": "en",
         "dateRange": "1D",
         "colorTheme": "dark",
-        "isTransparent": false,
+        "isTransparent": true, /* Set transparency to true */
         "autosize": true,
         "largeChartUrl": ""
       }
