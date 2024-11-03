@@ -2,23 +2,43 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
+  <style>
+    /* Remove margins and padding */
+    body, .tradingview-widget-container {
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e; /* Dark background to match widget */
+    }
+
+    /* Ensure the widget div uses full width and height */
+    .tradingview-widget-container__widget {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text"></a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-  {
-  "symbol": "BITSTAMP:BTCUSD",
-  "width": "100%",
-  "height": "100%",
-  "locale": "en",
-  "dateRange": "1D",
-  "colorTheme": "dark",
-  "isTransparent": false,
-  "autosize": true,
-  "largeChartUrl": ""
-}
-  </script>
-</div>
-<!-- TradingView Widget END -->
+<body>
+  <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+        <span class="blue-text"></span>
+      </a>
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+      {
+        "symbol": "BITSTAMP:BTCUSD",
+        "width": "100%",
+        "height": "100%",
+        "locale": "en",
+        "dateRange": "1D",
+        "colorTheme": "dark",
+        "isTransparent": false,
+        "autosize": true,
+        "largeChartUrl": ""
+      }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+</body>
