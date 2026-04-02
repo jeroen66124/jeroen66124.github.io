@@ -1,11 +1,10 @@
 title: Jeroen's Notes
 description: A brain dump of nerd stuff
+url: https://jeroen66124.github.io
 theme: just-the-docs
 color_scheme: dark
 search_enabled: false
 aux_links_new_tab: true
-
-url: https://jeroen66124.github.io
 
 aux_links:
   ITQ: https://itq.eu/author/jeroenk/
