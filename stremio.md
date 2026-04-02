@@ -11,5 +11,5 @@ This is a quickstart guide to stream everything you want on Stremio in combinati
 2. Download the app and log in<br>
 [Download Stremio](https://www.stremio.com/downloads){:target="_blank" .btn .btn-blue }
 
-3. Add the Torrentio Addon to Stremio<br>
+3. Add Torrentio to Stremio<br>
 [Add Torrentio](stremio://torrentio.strem.fun/providers=yts,eztv,rarbg,1337x,thepiratebay,kickasstorrents,torrentgalaxy,magnetdl,horriblesubs,nyaasi,tokyotosho,anidex,nekobt\|sort=seeders/manifest.json){: .btn .btn-blue }
