@@ -11,9 +11,9 @@ This is a quickstart guide to stream everything you want on Stremio in combinati
 [Download Stremio](https://www.stremio.com/downloads){:target="_blank" .btn .btn-blue }
 3. **Add Torrentio to Stremio**<br>
 [Add Torrentio](stremio://torrentio.strem.fun/providers=yts,eztv,rarbg,1337x,thepiratebay,kickasstorrents,torrentgalaxy,magnetdl,horriblesubs,nyaasi,tokyotosho,anidex,nekobt\|sort=seeders/manifest.json){: .btn .btn-blue }
-4. **Clean up default addons (optional)**
+4. **Clean up default addons (optional)**<br>
 Remove everything except:<br>
-    Torrentio - used to stream shows/movies<br>
+    Torrentio — used to stream shows/movies<br>
     Cinemeta — shows trending/popular content<br>
     OpenSubtitles — adds subtitle support<br>
     Local Files — allows playing local media
