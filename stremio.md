@@ -5,9 +5,6 @@ layout: default
 
 This is a quickstart guide to stream everything you want on Stremio in combination with the Torrentio addon.
 
-Blue label
-{: .label .label-blue }
-
 1. **Register a Stremio account**<br>
 [Register Account](https://www.stremio.com/register){:target="_blank" .btn .btn-blue }
 2. **Download the app and log in**<br>
