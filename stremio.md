@@ -5,7 +5,7 @@ layout: default
 
 This is a quickstart guide to stream everything you want on Stremio in combination with the Torrentio addon.
 
-1. **Register a Stremio account**
+1. **Register a Stremio account**<br>
 _(not required, but enables syncing your library and addons with other devices)_<br>
 [Register Account](https://www.stremio.com/register){:target="_blank" .btn .btn-blue }
 
