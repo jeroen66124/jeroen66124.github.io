@@ -1,8 +1,10 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: Jeroen's Notes
+description: A brain dump of nerd stuff
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://jeroen66124.github.io
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  ITQ: https://itq.eu/author/jeroenk/
+  LinkedIn: https://www.linkedin.com/in/jkou/
+  Credly: https://www.credly.com/users/jkou/
