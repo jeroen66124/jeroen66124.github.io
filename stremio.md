@@ -10,7 +10,7 @@ This is a quickstart guide to stream everything you want on Stremio in combinati
 [Register Account](https://www.stremio.com/register){: .btn }
 </span>
 
-2. Download the Stremio app and log in <br>
+2. Download the Stremio app and log in <br><br>
 <span class="fs-3">
 [Download Stremio](https://www.stremio.com/downloads){: .btn }
 </span>
