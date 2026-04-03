@@ -5,5 +5,5 @@ layout: home
 
 # Index
 ---
-[Stremio](/pages/stremio.html)
+[Stremio](/pages/stremio.html)<br>
 [Oh My Posh](/pages/oh-my-posh.html)
