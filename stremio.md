@@ -4,6 +4,7 @@ layout: default
 ---
 
 This is a quickstart guide to stream everything you want on Stremio in combination with the Torrentio addon.
+Make sure to only follow this guide if streaming copyrighted content is not actively fined in your country.
 
 1. **Register a Stremio account**<br>
 [Register Account](https://www.stremio.com/register){:target="_blank" .btn .btn-blue }
@@ -16,4 +17,5 @@ Remove everything except:<br>
     Torrentio — used to stream shows/movies<br>
     Cinemeta — shows trending/popular content<br>
     OpenSubtitles — adds subtitle support<br>
-    Local Files — allows playing local media
+    Local Files — allows playing local media<br>
+5. **Install Stremio on other devices, e.g. TVs (optional)**
