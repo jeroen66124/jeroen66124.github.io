@@ -3,5 +3,5 @@ title: Home
 layout: home
 ---
 
-## Index<br>
-[Stremio](/stremio.html)
+## Index
+[Stremio](/pages/stremio.html)
