@@ -1,5 +1,5 @@
 ---
-title: Stremio Quickstart
+title: Stremio
 layout: default
 ---
 
