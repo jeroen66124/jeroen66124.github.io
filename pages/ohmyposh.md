@@ -3,7 +3,7 @@ title: Oh My Posh
 layout: default
 ---
 
-***Installation***
+**Installation**
 1. Install Homebrew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 2. Install iTerm2 `brew install --cask iterm2`
 3. in the **iTerm2** menu bar options, execute the ***Install Shell Integration***
