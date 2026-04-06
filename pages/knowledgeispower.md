@@ -3,7 +3,7 @@ title: Knowledge is Power
 layout: default
 ---
 
-The studio behind Knowledge is Power (Wish Studios) and other PlayLink games, has been shut down.
+The studio behind Knowledge is Power ([Wish Studios](https://thecoolestvideogames.fandom.com/wiki/Wish_Studios){:target="_blank"), has been shut down since 2019.
 Therefore both the games and companion apps are unavailable to be found from the PlayStation Store and App/Play Store(s).<br><br>
 On PlayStation, if you have already purchased one of the games, you can still download it by starting the download through the PlayStation Mobile App.<br><br>
 On Android, you can still sideload the APKs as a workaround. If you sideload these apps, you will be unable to connect to your PS5 automatically, because PlayLink was only natively supported on the PS4.
