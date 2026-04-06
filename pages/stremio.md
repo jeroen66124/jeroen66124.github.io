@@ -4,7 +4,7 @@ layout: default
 ---
 
 This is a quickstart guide to stream everything you want on Stremio in combination with the Torrentio addon.
-Make sure to **only** follow this guide if [streaming copyrighted content is not enforced in your country](https://upload.wikimedia.org/wikipedia/commons/c/cf/Download_legal_status.png){:target="_blank"}.
+Make sure to **only** follow this guide if [streaming copyrighted content is not enforced/allowed in your country](https://upload.wikimedia.org/wikipedia/commons/c/cf/Download_legal_status.png){:target="_blank"}.
 If this is not the case, please follow a [different guide](https://guides.viren070.me/stremio/setup){:target="_blank"} that covers the use of a Debrid service instead.
 
 1. **Register a Stremio account**<br>
