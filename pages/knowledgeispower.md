@@ -15,6 +15,6 @@ On Android, you can still sideload the APKs as a workaround. If you sideload the
 [Knowledge is Power](https://www.apkmirror.com/apk/playstation-mobile-inc/knowledge-is-power/knowledge-is-power-1-5-release/knowledge-is-power-1-5-android-apk-download/){:target="_blank" .btn .btn-blue }
 [Knowledge is Power: Decades](https://www.apkmirror.com/apk/playstation-mobile-inc/knowledge-is-power-decades/knowledge-is-power-decades-1-4-release/knowledge-is-power-decades-1-4-android-apk-download/){:target="_blank" .btn .btn-blue }
 3. **Connecting directly to PS5**<br>
-_Open the mobile app > go to Settings ⚙️ > Connection Help > Enter IP Address_<br>
+_Open the mobile app > go to Settings_ ⚙️ _> Connection Help > Enter IP Address_<br>
 If you don't know the IP Address of your PS5, go to:<br>
 _Settings > Network > Connection Status > View Connection Status_
