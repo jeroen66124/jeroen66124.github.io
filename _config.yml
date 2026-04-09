@@ -3,7 +3,8 @@ description: Quick brain dumps of nerd stuff
 url: https://jeroen66124.github.io
 theme: just-the-docs
 color_scheme: dark
-search_enabled: false
+nav_enabled: false
+search_enabled: true
 aux_links_new_tab: true
 
 aux_links:
