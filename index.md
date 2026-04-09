@@ -1,5 +1,5 @@
 ---
-title: Home
+title: _Home
 layout: home
 ---
 # Index
