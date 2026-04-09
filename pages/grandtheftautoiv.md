@@ -11,6 +11,6 @@ Install FusionFix and Liberty's Legacy Trainer for Grand Theft Auto IV: The Comp
 [Liberty's Legacy Trainer](https://www.nexusmods.com/gta4/mods/100?tab=files){:target="_blank" .btn .btn-blue }<br>
 [Complete Edition Fix](https://www.lcpdfr.com/downloads/gta4mods/g17media/26726-compatibility-patch-for-gta-iv-complete-edition/){:target="_blank" .btn .btn-blue }
 2. **Install everything**<br>
-- Extract all archives and run `dir -Recurse | Unblock-File` in every of the four directories
-- Place all **FusionFix** files/directories in the root of the Grand Theft Auto IV installation folder (replace all files if asked)
-- Place all files of **_.Net Script Hook_**, **_Liberty's Legacy Trainer_** and **_Complete Edition Fix_** in the **`/plugins`** folder (replace all files if asked)
+- Extract all archives and run _**`dir -Recurse | Unblock-File`**_ in every of the four directories
+- Place all **_FusionFix_** files/directories in the root of the Grand Theft Auto IV installation folder (replace all files if asked)
+- Place all files of **_.Net Script Hook_**, **_Liberty's Legacy Trainer_** and **_Complete Edition Fix_** in the _**`/plugins`**_ folder (replace all files if asked)
