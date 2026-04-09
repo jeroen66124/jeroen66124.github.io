@@ -13,4 +13,4 @@ Install FusionFix and Liberty's Legacy Trainer for Grand Theft Auto IV: The Comp
 2. **Install everything**<br>
 - Extract all archives and run `dir -Recurse | Unblock-File` in every of the four directories
 - Place all **FusionFix** files/directories in the root of the Grand Theft Auto IV installation folder (replace all files if asked)
-- Place all files of **.Net Script Hook**, **Liberty's Legacy Trainer** and **Complete Edition Fix** in the _/plugins_ folder (replace all files if asked)
+- Place all files of **_.Net Script Hook_**, **_Liberty's Legacy Trainer_** and **_Complete Edition Fix_** in the **`/plugins`** folder (replace all files if asked)
