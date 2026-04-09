@@ -1,6 +1,7 @@
 ---
 title: Oh My Posh
 layout: default
+nav_order: 3
 ---
 
 **Installation**
