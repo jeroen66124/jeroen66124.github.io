@@ -6,9 +6,9 @@ layout: default
 Install FusionFix and Liberty's Legacy Trainer for Grand Theft Auto IV: The Complete Edition version 1.2.0.59.
 
 1. **Download everything**<br>
-[FuxionFix](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/releases/latest){:target="_blank" .btn .btn-blue }
-[.Net Script Hook](https://github.com/HazardX/gta4_scripthookdotnet/releases/latest){:target="_blank" .btn .btn-blue }
-[Liberty's Legacy Trainer](https://www.nexusmods.com/gta4/mods/100?tab=files){:target="_blank" .btn .btn-blue }
+[FuxionFix](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/releases/latest){:target="_blank" .btn .btn-blue }<br>
+[.Net Script Hook](https://github.com/HazardX/gta4_scripthookdotnet/releases/latest){:target="_blank" .btn .btn-blue }<br>
+[Liberty's Legacy Trainer](https://www.nexusmods.com/gta4/mods/100?tab=files){:target="_blank" .btn .btn-blue }<br>
 [Complete Edition Fix](https://www.lcpdfr.com/downloads/gta4mods/g17media/26726-compatibility-patch-for-gta-iv-complete-edition/){:target="_blank" .btn .btn-blue }
 2. **Install everything**<br>
 - Extract all archives and run `dir -Recurse | Unblock-File` in every of the four directories
