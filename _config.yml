@@ -9,6 +9,7 @@ aux_links_new_tab: true
 favicon_ico: "/assets/favicon.ico"
 
 aux_links:
+  Home: https://jeroen66124.github.io/
   ITQ: https://itq.eu/author/jeroenk/
   LinkedIn: https://www.linkedin.com/in/jkou/
   Credly: https://www.credly.com/users/jkou/
