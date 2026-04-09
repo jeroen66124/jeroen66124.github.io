@@ -1,6 +1,7 @@
 ---
 title: Grand Theft Auto IV
 layout: default
+nav_order: 5
 ---
 
 Install FusionFix and Liberty's Legacy Trainer for Grand Theft Auto IV: The Complete Edition version 1.2.0.59.
