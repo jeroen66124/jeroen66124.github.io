@@ -1,6 +1,7 @@
 ---
 title: Stremio
 layout: default
+nav_order: 2
 ---
 
 This is a quickstart guide to stream everything you want on Stremio in combination with the Torrentio addon.
