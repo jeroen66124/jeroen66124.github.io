@@ -13,10 +13,10 @@ Get Let's Encrypt certificates for your selfhosted resources with Nginx Proxy Ma
 - On the host where you will run the Docker container, create a docker-compose.yml file like shown [here](https://nginxproxymanager.com/setup/) and run it
 - When it's running, browse to the web interface, log in, and go to the 'Certificates' tab
 - Add Certificate > Let's Encrypt via DNS >
-  1. Domain Names: _example.duckdns.org_ + _*.example.duckdns.org_ (the wildcard is used to cover all future proxy hosts you create)
-  2. Key Type: leave the default
-  3. DNS Provider: DuckDNS
-  4. Credentials File Content: replace the _your-duckdns-token_ string with the token found in the DuckDNS portal
-  5. Propagation Seconds: leave the default
-  6. Save it and wait for it to acquire the certificates
+  * Domain Names: _example.duckdns.org_ + _*.example.duckdns.org_ (the wildcard is used to cover all future proxy hosts you create)
+  * Key Type: leave the default
+  * DNS Provider: DuckDNS
+  * Credentials File Content: replace the _your-duckdns-token_ string with the token found in the DuckDNS portal
+  * Propagation Seconds: leave the default
+  * Save it and wait for it to acquire the certificates
 - Go to the 'Hosts' tab > Proxy Hosts > Add Proxy Host > Fill in required Details > SSL > Select the _example.duckdns.org_ certificate
