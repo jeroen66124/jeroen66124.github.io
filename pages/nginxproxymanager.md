@@ -1,6 +1,7 @@
 ---
 title: Nginx Proxy Manager
 layout: default
+last_modified_date: 16-04-2026
 ---
 
 Get Let's Encrypt certificates for your selfhosted resources, without exposing them to the public internet. We will use Docker, Nginx Proxy Manager and DuckDNS. Any other DDNS will work too as long as it's supported within NPM.
