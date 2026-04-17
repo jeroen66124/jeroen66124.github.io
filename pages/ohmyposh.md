@@ -2,6 +2,7 @@
 title: Oh My Posh
 layout: default
 ---
+My own Oh My Posh configuration for the macOS Terminal. Feel free to customize it as you see fit.
 
 **Installation**
 1. Install Homebrew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
