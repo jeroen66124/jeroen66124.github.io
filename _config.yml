@@ -7,6 +7,8 @@ nav_enabled: false
 search_enabled: true
 aux_links_new_tab: false
 favicon_ico: "/assets/favicon.ico"
+last_edit_timestamp: true
+last_edit_time_format: "%b %e %Y at %I:%M %p"
 
 aux_links:
   Home: https://jeroen66124.github.io/
