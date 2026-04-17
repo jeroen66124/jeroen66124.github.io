@@ -1,6 +1,7 @@
 ---
 title: Knowledge is Power
 layout: default
+last_modified_date: 05-04-2026
 ---
 
 The studio behind Knowledge is Power ([Wish Studios](https://thecoolestvideogames.fandom.com/wiki/Wish_Studios){:target="_blank"}), has been shut down since 2019.
