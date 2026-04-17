@@ -1,6 +1,7 @@
 ---
 title: Stremio
 layout: default
+last_modified_date: 02-04-2026
 ---
 
 This is a quickstart guide to stream everything you want on Stremio in combination with the Torrentio addon.
