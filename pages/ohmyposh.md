@@ -1,6 +1,7 @@
 ---
 title: Oh My Posh
 layout: default
+last_modified_date: 03-04-2026
 ---
 My own Oh My Posh configuration for the macOS Terminal. Feel free to customize it as you see fit.
 
