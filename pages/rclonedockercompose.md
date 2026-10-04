@@ -4,7 +4,7 @@ layout: default
 last_modified_date: 04-10-2026
 ---
 ### **Tree**
-Create automated backups of your Docker Compose files and persistent data using Rclone. All Docker Compose files and its persistent volumes are stored within the same _/home/user/compose/_ directory. With all volume entries in compose files ```./``` is used consistently which will result in a structure comparable to this:
+Create automated backups of your Docker Compose files and persistent data using Rclone. All Docker Compose files and its persistent volumes are stored within the same _/home/user/compose/_ directory. With all volume entries in compose files using ```./``` which will result in a structure comparable to this:
 ```
 .
 ├── compose
@@ -52,8 +52,8 @@ The script first cleans up unused Docker resources _(optional: prune line can be
 
 ### **Cron**
 
-The backup should be configured under the `root` user to avoid permission issues with Docker and the files being backed up. Open the root user's crontab:
-```bash
+The cron job should be configured under the `root` user to avoid permission issues with Docker and the files being backed up. Open the root user's crontab:
+```
 sudo su
 sudo crontab -e
 ```
