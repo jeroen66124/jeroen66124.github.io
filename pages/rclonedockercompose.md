@@ -4,11 +4,18 @@ layout: default
 last_modified_date: 04-10-2026
 ---
 
-Create automated backups of your Docker Compose configuration and persistent data using Docker Compose and Rclone.
-All Docker Compose files and persistent volumes are stored within the same `/home/user/compose/` directory. This makes it possible to back up the complete Docker environment by simply copying this directory.
+Create automated backups of your Docker Compose files and persistent data using Rclone.
+
+All Docker Compose files and persistent volumes are stored within the same `/home/user/compose/` directory. For example:
+```
+volumes:
+      - ./data:/data
+      - ./db:/etc/db
+``` 
+This makes it possible to back up the complete Docker environment by simply copying this directory.
 In this example, [Rclone](https://rclone.org/#providers) is configured with OneDrive, but any other provider supported by Rclone can be used.
 
-## Backup script
+1 **Backup script**
 
 The following script is executed automatically through cron:
 
@@ -29,10 +36,10 @@ docker restart $(docker ps -a -q)
 ```
 The script first cleans up unused Docker resources and stops all containers. It then copies the entire `/home/user/compose/` directory to a temporary backup directory and compresses it into a ZIP file.
 The existing backup on OneDrive is removed before uploading the new one. After the upload has completed, the temporary files are removed and all Docker containers are started again.
-The cleanup and container management commands are optional. Lines such as `docker system prune`, `docker stop`, and `docker restart` can be commented out using `#` if they are not required.
-The `onedrive:` remote can be replaced with any Rclone remote that has been configured on the system.
+The `onedrive:` remote can be adjusted accordingly with any Rclone remote that has been configured on the system.
+The cleanup line `docker system prune` can be commented out using `#` if they are not required.
 
-## Cron
+2. **Cron**
 
 The backup should be configured under the `root` user to avoid permission issues with Docker and the files being backed up.
 
