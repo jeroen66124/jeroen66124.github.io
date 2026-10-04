@@ -33,7 +33,7 @@ In this example [Rclone](https://rclone.org/#providers) is configured with OneDr
 
 ### **Script**
 
-The following script is executed automatically through cron (named _rclone-cron.sh_ as shown in file tree above):
+The following script is executed automatically through cron (named _rclone-cron.sh_ as shown in file tree above but can be renamed):
 
 ```bash
 #!/bin/bash
