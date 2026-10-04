@@ -38,14 +38,12 @@ The following script is executed automatically through cron (named _rclone-cron.
 ```bash
 #!/bin/bash
 docker system prune --all --volumes --force
-sleep 10
 docker stop $(docker ps -a -q)
 rclone delete onedrive:backup.zip
 mkdir /home/user/backup
 cp -rv /home/user/compose/ /home/user/backup/
 zip -r /home/user/backup.zip /home/user/backup
 rclone copy /home/user/backup.zip onedrive: --progress
-sleep 10
 rm -rf /home/user/backup
 rm /home/user/backup.zip
 docker restart $(docker ps -a -q)
