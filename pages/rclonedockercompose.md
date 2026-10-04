@@ -27,7 +27,6 @@ rm -rf /home/user/backup
 rm /home/user/backup.zip
 docker restart $(docker ps -a -q)
 ```
-
 The script first cleans up unused Docker resources and stops all containers. It then copies the entire `/home/user/compose/` directory to a temporary backup directory and compresses it into a ZIP file.
 The existing backup on OneDrive is removed before uploading the new one. After the upload has completed, the temporary files are removed and all Docker containers are started again.
 The cleanup and container management commands are optional. Lines such as `docker system prune`, `docker stop`, and `docker restart` can be commented out using `#` if they are not required.
