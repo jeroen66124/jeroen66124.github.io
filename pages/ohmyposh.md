@@ -1,5 +1,5 @@
 ---
-title: Oh My Posh
+title: Oh My Posh Config
 layout: default
 last_modified_date: 03-04-2026
 ---
