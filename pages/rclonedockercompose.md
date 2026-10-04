@@ -4,20 +4,36 @@ layout: default
 last_modified_date: 04-10-2026
 ---
 
-Create automated backups of your Docker Compose files and persistent data using Rclone.
-
-All Docker Compose files and its persistent volumes are stored within the same _/home/user/compose/_ directory. For example with a compose file ```./``` is used consistently:
+Create automated backups of your Docker Compose files and persistent data using Rclone. All Docker Compose files and its persistent volumes are stored within the same _/home/user/compose/_ directory. With all volume entries in compose files ```./``` is used consistently:
 ```
-volumes:
-      - ./data:/data
-      - ./db:/etc/db
+.
+├── compose
+│   ├── nginx
+│   │   ├── data
+│   │   ├── docker-compose.yml
+│   ├── spotify
+│   │   ├── docker-compose.yml
+│   │   └── your_spotify_db
+│   ├── stremio
+│   │   ├── docker-compose.yaml
+│   │   └── stremio-data
+│   ├── tailscale
+│   │   ├── docker-compose.yml
+│   │   └── tailscale
+│   ├── wallos
+│   │   ├── db
+│   │   ├── docker-compose.yml
+│   └── yamtrack
+│       ├── db
+│       └── docker-compose.yml
+└── rclone-cron.sh
 ``` 
 This makes it possible to back up the complete Docker environment by simply copying this one directory.
 In this example [Rclone](https://rclone.org/#providers) is configured with OneDrive, but any other provider supported by Rclone can be used.
 
 ### **Script**
 
-The following script is executed automatically through cron:
+The following script is executed automatically through cron (named _rclone-cron.sh_ as shown in file tree above):
 
 ```bash
 #!/bin/bash
@@ -44,5 +60,5 @@ sudo su
 sudo crontab -e
 ```
 For example, to run the backup every day at 03:00:<br>
-`0 3 * * * /home/user/backup.sh >> /home/user/backup.log 2>&1`<br>
+`0 3 * * * /home/user/rclone-cron.sh >> /home/user/rclone-cron.log 2>&1`<br>
 This provides a fully automated backup of the Docker Compose files and persistent data without requiring any manual interaction.
