@@ -1,5 +1,5 @@
 ---
-title: Stremio
+title: Stremio Torrentio
 layout: default
 last_modified_date: 02-04-2026
 ---
