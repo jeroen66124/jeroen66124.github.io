@@ -48,7 +48,7 @@ rm -rf /home/user/backup
 rm /home/user/backup.zip
 docker restart $(docker ps -a -q)
 ```
-The script first cleans up unused Docker resources (optional: prune line can be removed) and stops all containers. It then copies the entire _/home/user/compose/_ directory to a temporary backup directory and compresses it into a ZIP file. The existing backup on OneDrive is removed before uploading the new one. After the upload has completed, the temporary files are removed and all Docker containers are started again. The `onedrive:` remote can be adjusted accordingly with any Rclone remote that has been configured on the system.
+The script first cleans up unused Docker resources _(optional: prune line can be removed)_ and stops all containers. It then copies the entire _/home/user/compose/_ directory to a temporary backup directory and compresses it into a ZIP file. The existing backup on OneDrive is removed before uploading the new one. After the upload has completed, the temporary files are removed and all Docker containers are started again. The `onedrive:` remote can be adjusted accordingly with any Rclone remote that has been configured on the system.
 
 ### **Cron**
 
