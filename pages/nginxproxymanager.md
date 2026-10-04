@@ -6,11 +6,11 @@ last_modified_date: 16-04-2026
 
 Get Let's Encrypt certificates for your selfhosted resources, without exposing them to the public internet. We will use Docker, Nginx Proxy Manager and DuckDNS. Any other DDNS will work too as long as it's supported by NPM.
 
-**DuckDNS**<br>
+### **DuckDNS**
 1. Create a [DuckDNS](https://www.duckdns.org/){:target="_blank"} account with any Identity Provider available on the platform
 2. Once logged in, create a domain and point it towards the **local IP** you will host the Nginx Proxy Manager Docker container on (most commonly 192.168.x.x)
 3. Wait for the DNS record to propagate, this typically takes between 24-48 hours due to ISP caching
-**Nginx Proxy Manager**<br>
+### **Nginx Proxy Manager**
 1. On the host where you will run the Docker container, create a docker-compose.yml file like shown [here](https://nginxproxymanager.com/setup/){:target="_blank"} and run it
 2. Browse to the web interface and log in, go to the 'Certificates' tab
 3. Add Certificate > Let's Encrypt via DNS >
