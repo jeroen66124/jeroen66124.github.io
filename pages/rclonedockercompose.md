@@ -6,7 +6,7 @@ last_modified_date: 04-10-2026
 
 Create automated backups of your Docker Compose files and persistent data using Rclone.
 
-All Docker Compose files and its persistent volumes are stored within the same `/home/user/compose/` directory. For example with a compose file ```./``` is used consistently:
+All Docker Compose files and its persistent volumes are stored within the same _/home/user/compose/_ directory. For example with a compose file ```./``` is used consistently:
 ```
 volumes:
       - ./data:/data
@@ -34,7 +34,7 @@ rm -rf /home/user/backup
 rm /home/user/backup.zip
 docker restart $(docker ps -a -q)
 ```
-The script first cleans up unused Docker resources (optional: prune line can be removed) and stops all containers. It then copies the entire `/home/user/compose/` directory to a temporary backup directory and compresses it into a ZIP file. The existing backup on OneDrive is removed before uploading the new one. After the upload has completed, the temporary files are removed and all Docker containers are started again. The `onedrive:` remote can be adjusted accordingly with any Rclone remote that has been configured on the system.
+The script first cleans up unused Docker resources (optional: prune line can be removed) and stops all containers. It then copies the entire _/home/user/compose/_ directory to a temporary backup directory and compresses it into a ZIP file. The existing backup on OneDrive is removed before uploading the new one. After the upload has completed, the temporary files are removed and all Docker containers are started again. The `onedrive:` remote can be adjusted accordingly with any Rclone remote that has been configured on the system.
 
 ### **Cron**
 
@@ -44,5 +44,5 @@ sudo su
 sudo crontab -e
 ```
 For example, to run the backup every day at 03:00:<br>
-`0 3 * * * /home/user/backup.sh >> /home/user/backup.log 2>&1`
+`0 3 * * * /home/user/backup.sh >> /home/user/backup.log 2>&1`<br>
 This provides a fully automated backup of the Docker Compose files and persistent data without requiring any manual interaction.
