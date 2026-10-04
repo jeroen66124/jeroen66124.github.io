@@ -4,7 +4,7 @@ layout: default
 last_modified_date: 04-10-2026
 ---
 ### **Tree**
-Create automated backups of your Docker Compose files and persistent data using Rclone. All Docker Compose files and its persistent volumes are stored within the same _/home/user/compose/_ directory. With all volume entries in compose files using ```./``` which will result in a structure comparable to this:
+Create automated backups of your Docker Compose files and persistent data using [Rclone](https://rclone.org){:target="_blank"}. All Docker Compose files and its persistent volumes are stored within the same _/home/user/compose/_ directory. With all volume entries in compose files using ```./``` which will result in a structure comparable to this:
 ```
 .
 ├── compose
@@ -29,7 +29,7 @@ Create automated backups of your Docker Compose files and persistent data using 
 └── rclone-cron.sh
 ``` 
 This makes it possible to back up the complete Docker environment by simply copying this one directory.
-In this example [Rclone](https://rclone.org/#providers) is configured with OneDrive, but any other provider supported by Rclone can be used.
+In this example Rclone is configured with [OneDrive](https://rclone.org/#providers){:target="_blank"}, but any other provider supported by Rclone can be used.
 
 ### **Script**
 
