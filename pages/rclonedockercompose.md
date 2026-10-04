@@ -4,7 +4,7 @@ layout: default
 last_modified_date: 04-10-2026
 ---
 ### **Tree**
-Create automated backups of your Docker Compose files and persistent data using Rclone. All Docker Compose files and its persistent volumes are stored within the same _/home/user/compose/_ directory. With all volume entries in compose files ```./``` is used consistently:
+Create automated backups of your Docker Compose files and persistent data using Rclone. All Docker Compose files and its persistent volumes are stored within the same _/home/user/compose/_ directory. With all volume entries in compose files ```./``` is used consistently which will result in a structure comparable to this:
 ```
 .
 ├── compose
