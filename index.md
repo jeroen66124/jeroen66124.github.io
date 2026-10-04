@@ -5,7 +5,7 @@ nav_order: 1
 ---
 # Index
 ---
-[Stremio](/pages/stremio.html)<br>
+[Stremio Torrentio](/pages/stremio.html)<br>
 [Oh My Posh Config](/pages/ohmyposh.html)<br>
 [Knowledge is Power](/pages/knowledgeispower.html)<br>
 [Grand Theft Auto IV](/pages/grandtheftautoiv.html)<br>
