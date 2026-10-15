@@ -13,13 +13,24 @@ button{cursor:pointer;background:var(--cd)}button.p{background:var(--ac);border-
 td,th{padding:6px 9px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}th{background:var(--cd);position:sticky;top:0}
 .e{background:var(--cd)}.e label{display:block;margin:4px 0;font-size:13px}.e input,.e select,.e textarea{width:100%;max-width:520px;display:block}
 .tag{font-size:12px;color:var(--mu)}.s1{color:var(--ok)}.s2{color:var(--no)}
-.t{display:flex;gap:4px;flex-wrap:wrap}.t button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
-textarea.o{width:100%;height:340px;font:12px/1.4 ui-monospace,Consolas,monospace;white-space:pre}
+.t{display:flex;justify-content:center;gap:4px;width:fit-content;max-width:100%;margin:24px auto 8px;padding:5px;background:var(--cd);border:1px solid var(--bd);border-radius:14px}
+.t button{flex:1 1 auto;padding:13px 34px;font-size:16px;font-weight:600;border:0;border-radius:10px;background:transparent;color:var(--mu);transition:background .15s,color .15s,box-shadow .15s}
+.t button:hover{color:var(--fg)}.t button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.t button.on{background:var(--ac);color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+#hint{text-align:center;margin:6px 0 14px}
+@media(max-width:480px){.t{width:100%}.t button{padding:11px 10px;font-size:14px}}
+textarea.o{width:100%;height:260px;font:12px/1.4 ui-monospace,Consolas,monospace;white-space:pre}
+.f{display:grid;grid-template-columns:230px 1fr;gap:32px;margin:20px 0;align-items:start}
+.fl{font-size:15px;font-weight:600;color:var(--fg);padding-top:6px}.fl b{color:var(--no)}
+.fl button{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;max-width:150px;margin-top:14px;padding:9px 16px;font-size:14px;font-weight:600;background:var(--ac);border-color:var(--ac);color:var(--bg);box-shadow:0 1px 3px rgba(0,0,0,.25);transition:filter .15s,transform .05s}
+.fl button::before{content:"\1F4CB"}.fl button:hover{filter:brightness(1.12)}.fl button:active{transform:translateY(1px)}
+.fl button.ok{background:var(--ok);border-color:var(--ok)}.fl button.ok::before{content:"\2713"}
+@media(max-width:640px){.f{grid-template-columns:1fr;gap:10px}.fl button{max-width:none}}
 .note{border-left:3px solid var(--ac);padding:6px 10px;margin:8px 0;background:var(--cd);border-radius:0 6px 6px 0}
 </style></head><body><main>
 <h1>Custom ADMX → Workspace ONE UEM (OMA DM) converter</h1>
 <p>Generates XML for deploying custom ADMX policies not natively supported by Workspace ONE UEM!</p>
-<h2>1 · Load files</h2>
+<h2>1 · Load policy files</h2>
 <div class="c"><div class="r"><label>.admx <input id="fa" type="file" accept=".admx"></label><label>.adml <input id="fl" type="file" accept=".adml"></label><button id="ld" class="p">Load</button></div>
 <div class="r"><label>App name <input id="app" value="app" size="16"></label><label>Policy name <input id="aid" size="16" placeholder="&lt;app&gt;Admx"></label><button id="rg">New GUIDs</button><span class="mu" id="st"></span></div>
 <p></p></div>
@@ -27,14 +38,16 @@ textarea.o{width:100%;height:340px;font:12px/1.4 ui-monospace,Consolas,monospace
 <div class="r"><input id="q" placeholder="Search policies…" size="26"><select id="cf"><option value="">All categories</option></select><select id="sf"><option value="">Any state</option><option value="e">Enabled</option><option value="d">Disabled</option><option value="n">Not configured</option></select><span class="mu" id="cnt"></span></div>
 <div class="r"><button id="sa">Select filtered</button><button id="sn">Select none</button><button class="p" data-b="e">Enable selected</button><button class="p" data-b="d">Disable selected</button><button data-b="">Clear selected</button><span class="mu" id="sc"></span></div>
 <div class="w" style="max-height:520px;overflow-y:auto"><table><thead><tr><th></th><th>Policy</th><th>Category</th><th>State</th></tr></thead><tbody id="tb"></tbody></table></div>
-<h2>3 · Output</h2>
-<div class="note"><b>Import into Workspace ONE UEM:</b> <br>Go to Resources › Profiles &amp; Baselines › Profiles › Add › Add Profile › Windows › Desktop › Device Profile › Custom Settings › Configure › Set <b>Target</b> to <i>OMA DM Client</i> › enable <i>Make Commands Atomic</i><br><br><b>Profile formatting:</b><br> Paste the matching <i>Install</i> XML into <i>Install Settings</i> and <i>Remove</i> XML into <i>Remove Settings</i> for both profiles</i><br><br> XML content 1a + 1b = Profile 1 (Import)<br><b>AND</b> <br>XML content 2a + 2b = Profile 2 (Configure)<br><br><b>Deployment order:</b><br> When publishing — add the Import Policies profile before adding the Configure Policies profile<br>When removing — remove the Configure Policies profile before removing the Import Policies profile</div>
-<div class="t" id="tabs"></div><div class="r"><button id="cp">Copy</button><span class="mu" id="hint"></span></div><textarea class="o" id="out" readonly spellcheck="false"></textarea>
+<h2>3 · Instructions & output</h2>
+<div class="note"><b>Profile creation:</b> <br>Go to Resources › Profiles &amp; Baselines › Profiles › Add › Add Profile › Windows › Desktop › Device Profile › Custom Settings › Configure › Set <i>Target</i> to <b>OMA DM Client</b> › enable <b>Make Commands Atomic</b><br><br><b>Profile formatting:</b><br> For both profiles - copy the <u>Install Settings</u> and <u>Remove Settings</u> XML content below into their corresponding fields in the 'Custom Settings' configuration screen<br><br><b>Deployment order:</b><br> When publishing - add the 'Import Policies' profile before adding the 'Configure Policies' profile<br>When retiring - remove the 'Configure Policies' profile before removing the 'Import Policies' profile</div>
+<div class="t" id="tabs"></div><p class="mu" id="hint"></p>
+<div class="f"><div class="fl">Install Settings <b>*</b><button data-c="o1">Copy</button></div><textarea class="o" id="o1" readonly spellcheck="false"></textarea></div>
+<div class="f"><div class="fl">Remove Settings <b>*</b><button data-c="o2">Copy</button></div><textarea class="o" id="o2" readonly spellcheck="false"></textarea></div>
 </main>
 <script>
 const $=s=>document.querySelector(s),X=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'),SEP='&#xF000;';
 let P=[],admx='',S={},sel=new Set(),tab=0;
-const TABS=['1a · Import Policies Install','1b · Import Policies Remove','2a · Configure Policies Install','2b · Configure Policies Remove'];
+const TABS=['Import Policies','Configure Policies'];
 const rd=f=>new Promise(r=>{const x=new FileReader;x.onload=()=>r(x.result);x.readAsText(f)});
 $('#ld').onclick=async()=>{const a=$('#fa').files[0],l=$('#fl').files[0];
  if(!a||!l)return $('#st').textContent='⚠ Select both an .admx and an .adml file, then press Load';
@@ -88,15 +101,15 @@ function gen(){
  const app=($('#app').value.trim()||'app').replace(/\s+/g,''),id=$('#aid').value.trim()||app+'Admx',base=`./Vendor/MSFT/Policy/ConfigOperations/ADMXInstall/${app}/Policy`,cfg=P.filter(p=>p.st),
  uri=p=>`./${p.cls=='User'?'User':'Device'}/Vendor/MSFT/Policy/Config/${[app,'Policy',...p.ch].join('~')}/${p.name}`,
  body='\n'+admx.replace(/^\uFEFF?\s*<\?xml[^>]*\?>\s*/,'').trimEnd().split(/\r?\n/).map(l=>'\t\t\t'+l).join('\n')+'\n\t\t',
- none='<!-- Enable/disable at least one policy -->',load='<!-- Load ADMX / ADML files first -->';
+ none='<!-- Enable / disable at least one policy -->',load='<!-- Load the ADMX / ADML files first -->';
  window.O=[admx?item('i','Replace',`${base}/${id}`,body,1):load,admx?item('r','Delete',base,null,1):load,
   cfg.length?cfg.map(p=>item('c'+p.name,'Replace',uri(p),pdata(p))).join('\n'):none,cfg.length?cfg.map(p=>item('x'+p.name,'Delete',uri(p),'')).join('\n'):none];
  show()}
 function show(){
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
- $('#out').value=O[tab];$('#hint').textContent=['Profile 1: Import Policies Install – Make all app policies available','Profile 1: Import Policies Remove – Delete all available app policies','Profile 2: Configure Policies Install – one Replace per configured policy','Profile 2: Configure Policies Remove – one Delete per configured policy'][tab]}
+ $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];$('#hint').textContent=['Profile 1 – Import Policies: make all app policies available for installation and removal','Profile 2 – Configure Policies: make all app policies configurable and unconfigurable'][tab]}
 $('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;show()}};
 $('#app').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
-$('#cp').onclick=()=>{const o=$('#out');o.select();try{navigator.clipboard.writeText(o.value)}catch(_){}document.execCommand('copy');$('#hint').textContent='Copied.'};
+document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const o=$('#'+b.dataset.c);o.select();try{navigator.clipboard.writeText(o.value)}catch(_){}document.execCommand('copy');b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1200)});
 gen();
 </script></body></html>
