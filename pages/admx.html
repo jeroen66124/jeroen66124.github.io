@@ -94,7 +94,7 @@ function gen(){
  show()}
 function show(){
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
- $('#out').value=O[tab];$('#hint').textContent=['Profile 1: Import Policies Install – Make all app policies available','Profile 1: Import Policies Remove – Delete all available app policies','Profile 2: Configure Policies Install – one Replace per configured policy.','Profile 2: Configure Policies Remove – one Delete per configured policy.'][tab]}
+ $('#out').value=O[tab];$('#hint').textContent=['Profile 1: Import Policies Install – Make all app policies available','Profile 1: Import Policies Remove – Delete all available app policies','Profile 2: Configure Policies Install – one Replace per configured policy','Profile 2: Configure Policies Remove – one Delete per configured policy'][tab]}
 $('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;show()}};
 $('#app').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
 $('#cp').onclick=()=>{const o=$('#out');o.select();try{navigator.clipboard.writeText(o.value)}catch(_){}document.execCommand('copy');$('#hint').textContent='Copied.'};
