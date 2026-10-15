@@ -88,8 +88,8 @@ function gen(){
  const app=($('#app').value.trim()||'app').replace(/\s+/g,''),id=$('#aid').value.trim()||app+'Admx',base=`./Vendor/MSFT/Policy/ConfigOperations/ADMXInstall/${app}/Policy`,cfg=P.filter(p=>p.st),
  uri=p=>`./${p.cls=='User'?'User':'Device'}/Vendor/MSFT/Policy/Config/${[app,'Policy',...p.ch].join('~')}/${p.name}`,
  body='\n'+admx.replace(/^\uFEFF?\s*<\?xml[^>]*\?>\s*/,'').trimEnd().split(/\r?\n/).map(l=>'\t\t\t'+l).join('\n')+'\n\t\t',
- none='<!-- Enable/disable at least one policy -->';
- window.O=[admx?item('i','Replace',`${base}/${id}`,body,1):'<!-- Load an ADMX file first -->',item('r','Delete',base,null,1),
+ none='<!-- Enable/disable at least one policy -->',load='<!-- Load ADMX / ADML files first -->';
+ window.O=[admx?item('i','Replace',`${base}/${id}`,body,1):load,admx?item('r','Delete',base,null,1):load,
   cfg.length?cfg.map(p=>item('c'+p.name,'Replace',uri(p),pdata(p))).join('\n'):none,cfg.length?cfg.map(p=>item('x'+p.name,'Delete',uri(p),'')).join('\n'):none];
  show()}
 function show(){
