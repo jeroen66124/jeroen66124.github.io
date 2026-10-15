@@ -29,7 +29,7 @@ textarea.o{width:100%;height:260px;font:12px/1.4 ui-monospace,Consolas,monospace
 .note{border-left:3px solid var(--ac);padding:6px 10px;margin:8px 0;background:var(--cd);border-radius:0 6px 6px 0}
 </style></head><body><main>
 <h1>Custom ADMX to Workspace ONE UEM (OMA DM) converter</h1>
-<p>Generates XML for deploying ADMX policies that cannot yet be configured natively in Workspace ONE UEM!</p>
+<p>Generates XML for deploying ADMX application policies that cannot yet be configured natively in Workspace ONE UEM!</p>
 <h2>1 · Load policy files</h2>
 <div class="c"><div class="r"><label>.admx <input id="fa" type="file" accept=".admx"></label><label>.adml <input id="fl" type="file" accept=".adml"></label><button id="ld" class="p">Load</button></div>
 <div class="r"><label>App name <input id="app" value="app" size="16"></label><label>Policy name <input id="aid" size="16" placeholder="&lt;app&gt;Admx"></label><button id="rg">New GUIDs</button><span class="mu" id="st"></span></div>
@@ -107,7 +107,7 @@ function gen(){
  show()}
 function show(){
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
- $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];$('#hint').textContent=['Profile 1 – Import Policies: make all app policies available for installation and removal','Profile 2 – Configure Policies: make all app policies enableable and disableable'][tab]}
+ $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];$('#hint').textContent=['Profile 1 – Import Policies: make all app policies available','Profile 2 – Configure Policies: make all app policies configurable'][tab]}
 $('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;show()}};
 $('#app').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
 document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const o=$('#'+b.dataset.c);o.select();try{navigator.clipboard.writeText(o.value)}catch(_){}document.execCommand('copy');b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1200)});
