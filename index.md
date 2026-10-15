@@ -13,3 +13,7 @@ nav_order: 1
 [Mac IPSW Restore](/pages/macipswrestore.html)<br>
 [Rclone Docker Compose](/pages/rclonedockercompose.html)<br>
 [Custom ADMX to WS1 UEM](/pages/admx.html)
+
+---
+
+&copy; Jeroen Kouwenhoven @ ITQ
