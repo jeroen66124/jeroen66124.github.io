@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Custom ADMX → Workspace ONE UEM (OMA DM) converter</title><meta name="color-scheme" content="light dark">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Custom ADMX to Workspace ONE UEM (OMA DM) converter</title><meta name="color-scheme" content="light dark">
 <style>
 :root{--bg:#fff;--fg:#1c1e21;--mu:#6b7280;--bd:#d6dae0;--cd:#f5f6f8;--ac:#0b6bcb;--ok:#14803c;--no:#b42318;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#15171a;--fg:#e8eaed;--mu:#9aa0a6;--bd:#33373d;--cd:#1e2125;--ac:#5aa9ff;--ok:#4ade80;--no:#f87171}}
@@ -107,7 +107,7 @@ function gen(){
  show()}
 function show(){
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
- $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];$('#hint').textContent=['Profile 1 – Import Policies: make all app policies available for installation and removal','Profile 2 – Configure Policies: make all app policies configurable and unconfigurable'][tab]}
+ $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];$('#hint').textContent=['Profile 1 – Import Policies: make all app policies available for installation and removal','Profile 2 – Configure Policies: make all app policies enableable and disableable'][tab]}
 $('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;show()}};
 $('#app').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
 document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const o=$('#'+b.dataset.c);o.select();try{navigator.clipboard.writeText(o.value)}catch(_){}document.execCommand('copy');b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1200)});
