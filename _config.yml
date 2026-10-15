@@ -4,7 +4,7 @@ url: https://jeroen66124.github.io
 theme: just-the-docs
 color_scheme: dark
 nav_enabled: false
-search_enabled: true
+search_enabled: false
 aux_links_new_tab: false
 favicon_ico: "/assets/favicon.ico"
 last_edit_timestamp: true
