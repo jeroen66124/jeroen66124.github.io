@@ -25,9 +25,9 @@ td,th{padding:6px 9px;border-bottom:1px solid var(--bd);text-align:left;vertical
 .pn button:hover{background:var(--ac);color:var(--bg)}.pn button.ok,.pn button.ok:hover{background:transparent;border-color:var(--ok);color:var(--ok)}
 @media(max-width:480px){.t{width:100%}.t button{padding:11px 10px;font-size:14px}}
 textarea.o{width:100%;height:260px;font:12px/1.4 ui-monospace,Consolas,monospace;white-space:pre}
-.f{display:grid;grid-template-columns:230px 1fr;gap:32px;margin:20px 0;align-items:start}
+.f{display:grid;grid-template-columns:180px 1fr;gap:0px;max-width:900px;margin:20px auto;align-items:start}
 .fl{font-size:15px;font-weight:600;color:var(--fg);padding-top:6px}.fl b{color:var(--no)}
-.fl button{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;max-width:150px;margin-top:14px;padding:9px 16px;font-size:14px;font-weight:600;background:var(--ac);border-color:var(--ac);color:var(--bg);box-shadow:0 1px 3px rgba(0,0,0,.25);transition:filter .15s,transform .05s}
+.fl button{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;max-width:150px;margin:8px 0 0;padding:9px 16px;font-size:14px;font-weight:600;background:var(--ac);border-color:var(--ac);color:var(--bg);box-shadow:0 1px 3px rgba(0,0,0,.25);transition:filter .15s,transform .05s}
 .fl button::before{content:"\1F4CB"}.fl button:hover{filter:brightness(1.12)}.fl button:active{transform:translateY(1px)}
 .fl button.ok{background:var(--ok);border-color:var(--ok)}.fl button.ok::before{content:"\2713"}
 @media(max-width:640px){.f{grid-template-columns:1fr;gap:10px}.fl button{max-width:none}}
@@ -107,7 +107,7 @@ function gen(){
  const app=($('#app').value.trim()||'app').replace(/\s+/g,''),id=$('#aid').value.trim()||app+'Admx',base=`./Vendor/MSFT/Policy/ConfigOperations/ADMXInstall/${app}/Policy`,cfg=P.filter(p=>p.st),
  uri=p=>`./${p.cls=='User'?'User':'Device'}/Vendor/MSFT/Policy/Config/${[app,'Policy',...p.ch].join('~')}/${p.name}`,
  body='\n'+admx.replace(/^\uFEFF?\s*<\?xml[^>]*\?>\s*/,'').trimEnd().split(/\r?\n/).map(l=>'\t\t\t'+l).join('\n')+'\n\t\t',
- none='<!-- Configure at least one policy -->',load='<!-- Load ADMX / ADML files first -->';
+ none='<!-- Configure at least one policy -->',load='<!-- Load the ADMX / ADML files first -->';
  window.O=[admx?item('i','Replace',`${base}/${id}`,body,1):load,admx?item('r','Delete',base,null,1):load,
   cfg.length?cfg.map(p=>item('c'+p.name,'Replace',uri(p),pdata(p))).join('\n'):none,cfg.length?cfg.map(p=>item('x'+p.name,'Delete',uri(p),'')).join('\n'):none];
  show()}
