@@ -42,9 +42,9 @@ h6{text-align:center}
 <p>Generates XML for deploying administrative templates (ADMX) that cannot yet be configured natively in Workspace ONE UEM!</p>
 <h2>1 · Load policy files</h2>
 <div class="c"><div class="r"><label>.admx <input id="fa" type="file" accept=".admx"></label><label>.adml <input id="fl" type="file" accept=".adml"></label><button id="ld" class="p">Load</button></div>
-<div class="r"><label>Template name <input id="app" value="app" size="16"></label><label>Policy name <input id="aid" size="16" placeholder="&lt;app&gt;Admx"></label><button id="rg">New GUIDs</button><span class="mu" id="st"></span></div>
+<div class="r"><label>Template name <input id="tpl" value="template" size="16"></label><label>Policy name <input id="aid" size="16" placeholder="&lt;template&gt;Admx"></label><button id="rg">New GUIDs</button><span class="mu" id="st"></span></div>
 <details id="imp"><summary>Import an existing profile (paste XML)</summary>
-<p>Paste the XML of both existing Custom Settings profiles to edit the administrative policy: add or remove policies, then copy the updated XML back.<br>Load the matching .admx / .adml files above first for readable policy names (optional). Existing CmdIDs are kept.</p>
+<p>Paste the XML of both existing Custom Settings profiles accordingly to edit the administrative policy: reconfigure the policies, then copy the updated XML back.<br>Load the matching .admx / .adml files above first for readable policy names (optional). Existing CmdIDs are kept.</p>
 <div class="imp"><div><b>Install Policies</b><label>Install Settings<textarea id="i1" spellcheck="false"></textarea></label><label>Remove Settings<textarea id="i2" spellcheck="false"></textarea></label></div>
 <div><b>Configure Policies</b><label>Install Settings<textarea id="i3" spellcheck="false"></textarea></label><label>Remove Settings<textarea id="i4" spellcheck="false"></textarea></label></div></div>
 <div class="r"><button id="ib" class="p">Import</button><button id="ic">Clear</button><span class="mu" id="ist"></span></div></details></div>
@@ -67,7 +67,7 @@ const TABS=['Install Policies','Configure Policies'];
 const rd=f=>new Promise(r=>{const x=new FileReader;x.onload=()=>r(x.result);x.readAsText(f)});
 $('#ld').onclick=async()=>{const a=$('#fa').files[0],l=$('#fl').files[0];
  if(!a||!l)return $('#st').textContent='⚠ Select both an .admx and an .adml file, then press Load';
- admx=await rd(a);adml(await rd(l));$('#app').value=a.name.replace(/\.admx$/i,'').replace(/[^\w-]/g,'')||'app';P=[];sel.clear();parse()};
+ admx=await rd(a);adml(await rd(l));$('#tpl').value=a.name.replace(/\.admx$/i,'').replace(/[^\w-]/g,'')||'template';P=[];sel.clear();parse()};
 function adml(t){S={};[...new DOMParser().parseFromString(t,'text/xml').getElementsByTagName('string')].forEach(s=>S[s.getAttribute('id')]=s.textContent)}
 function parse(){
  if(!admx)return;const d=new DOMParser().parseFromString(admx,'text/xml');
@@ -75,7 +75,7 @@ function parse(){
  const r=s=>(s||'').replace(/\$\(string\.([^)]+)\)/g,(m,k)=>S[k]??m),rr=(s,f)=>{const x=r(s);return x&&!x.startsWith('$(')?x:f},loc=s=>(s||'').split(':').pop(),cat={};
  [...d.getElementsByTagName('category')].forEach(c=>{const p=[...c.children].find(x=>x.localName=='parentCategory');cat[c.getAttribute('name')]={p:p&&loc(p.getAttribute('ref')),n:rr(c.getAttribute('displayName'),c.getAttribute('name'))}});
  const chain=n=>{const o=[];while(n&&cat[n]&&o.length<20){o.unshift(n);n=cat[n].p}return o};
- const tg=d.getElementsByTagName('target')[0],us=[...d.getElementsByTagName('using')].find(u=>u.getAttribute('namespace')!='Microsoft.Policies.Windows'),dn=((us?.getAttribute('prefix')||'')+(tg?.getAttribute('prefix')||'')).replace(/\W/g,'');if(dn)$('#app').value=dn;
+ const tg=d.getElementsByTagName('target')[0],us=[...d.getElementsByTagName('using')].find(u=>u.getAttribute('namespace')!='Microsoft.Policies.Windows'),dn=((us?.getAttribute('prefix')||'')+(tg?.getAttribute('prefix')||'')).replace(/\W/g,'');if(dn)$('#tpl').value=dn;
  const old=Object.fromEntries(P.map(p=>[p.name,p]));
  P=[...d.getElementsByTagName('policy')].map(e=>{
   const n=e.getAttribute('name'),o=old[n],pc=[...e.children].find(x=>x.localName=='parentCategory'),ch=chain(pc&&loc(pc.getAttribute('ref')));
@@ -103,7 +103,7 @@ $('#ib').onclick=async()=>{const st=$('#ist'),c=cmds(['i1','i2','i3','i4'].map(i
  const ok=(x,o,re)=>(o?x.op==o:x.op!='Delete')&&re.test(x.uri),ins=c.find(x=>ok(x,0,ADM)),rem=c.find(x=>ok(x,'Delete',REM)),ci=c.filter(x=>ok(x,0,CFG)),cr=c.filter(x=>ok(x,'Delete',CFG));
  if(!ins&&!admx)return st.textContent='⚠ No ADMX found – paste the Install Policies › Install Settings XML (it contains the ADMX)';
  if(ins){const l=$('#fl').files[0];admx=dedent(ins.data||'');adml(l?await rd(l):'<r/>');P=[];sel.clear();parse();if(!P.length)return st.textContent='⚠ The ADMX inside the pasted XML could not be parsed'}
- const m=ins?ins.uri.match(ADM):rem?.uri.match(REM);if(m){$('#app').value=m[1];if(ins)$('#aid').value=m[2]}
+ const m=ins?ins.uri.match(ADM):rem?.uri.match(REM);if(m){$('#tpl').value=m[1];if(ins)$('#aid').value=m[2]}
  P.forEach(p=>{p.st='';p.v={}});G.clear();ins&&G.set('i',ins.id);rem&&G.set('r',rem.id);
  const nm=x=>x.uri.match(CFG)[1],miss=[];
  ci.forEach(x=>{const n=nm(x),p=P.find(q=>q.name==n);if(!p)return miss.push(n);if(/^\.\/User\//.test(x.uri))p.cls='User';setp(p,x.data||'');G.set('c'+n,x.id)});
@@ -140,20 +140,20 @@ function pdata(p){
  return'<enabled/>'+p.els.map(e=>{const x=dv(e,p);let v=e.t=='list'?lines(x).map((l,i)=>{const[k,...q]=l.split('=');return e.ex?`${X(k)}${SEP}${X(q.join('='))}`:`${i+1}${SEP}${X(l)}`}).join(SEP):e.t=='multiText'?lines(x).map(X).join(SEP):X(x);
   return`<data id="${X(e.id)}" value="${v}"/>`}).join('')}
 function gen(){
- const app=($('#app').value.trim()||'app').replace(/\s+/g,''),id=$('#aid').value.trim()||app+'Admx',base=`./Vendor/MSFT/Policy/ConfigOperations/ADMXInstall/${app}/Policy`,cfg=P.filter(p=>p.st),
- uri=p=>`./${p.cls=='User'?'User':'Device'}/Vendor/MSFT/Policy/Config/${[app,'Policy',...p.ch].join('~')}/${p.name}`,
+ const tpl=($('#tpl').value.trim()||'template').replace(/\s+/g,''),id=$('#aid').value.trim()||tpl+'Admx',base=`./Vendor/MSFT/Policy/ConfigOperations/ADMXInstall/${tpl}/Policy`,cfg=P.filter(p=>p.st),
+ uri=p=>`./${p.cls=='User'?'User':'Device'}/Vendor/MSFT/Policy/Config/${[tpl,'Policy',...p.ch].join('~')}/${p.name}`,
  body='\n'+admx.replace(/^\uFEFF?\s*<\?xml[^>]*\?>\s*/,'').trimEnd().split(/\r?\n/).map(l=>'\t\t\t'+l).join('\n')+'\n\t\t',
- none='<!-- Configure at least one policy -->',load='<!-- Load ADMX / ADML files first -->';
+ none='<!-- Configure at least one policy -->',load='<!-- Load .admx / .adml files first -->';
  window.O=[admx?item('i','Replace',`${base}/${id}`,body,1):load,admx?item('r','Delete',base,null,1):load,
   cfg.length?cfg.map(p=>item('c'+p.name,'Replace',uri(p),pdata(p))).join('\n'):none,cfg.length?cfg.map(p=>item('x'+p.name,'Delete',uri(p),'')).join('\n'):none];
  show()}
 function show(){
- const app=($('#app').value.trim()||'app').replace(/\s+/g,''),pn=`Windows - ${app} - ADMX ${['Install','Config'][tab]}`;
+ const tpl=($('#tpl').value.trim()||'template').replace(/\s+/g,''),pn=`Windows - ${tpl} - ADMX ${['Install','Config'][tab]}`;
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
  $('#pn').value=pn;$('#pn').style.width=`calc(${pn.length}ch + 28px)`;
  $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];$('#hint').textContent=['Profile 1 – Install Policies: make all administrative policies available','Profile 2 – Configure Policies: make all administrative policies configurable'][tab]}
 $('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;show()}};
-$('#app').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
+$('#tpl').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
 document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const o=$('#'+b.dataset.c);o.select();try{navigator.clipboard.writeText(o.value)}catch(_){}document.execCommand('copy');b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1200)});
 gen();
 </script></body></html>
