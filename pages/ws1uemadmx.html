@@ -9,6 +9,10 @@ main{max-width:1100px;margin:0 auto;padding:16px}h1{font-size:20px;margin:0 0 4p
 p,.mu{color:var(--mu);margin:4px 0}input,select,textarea,button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--bd);border-radius:6px;padding:6px 9px}
 button{cursor:pointer;background:var(--cd)}button.p{background:var(--ac);border-color:var(--ac);color:#fff}
 .r{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}.c{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:12px}
+details{margin-top:10px;border-top:1px solid var(--bd);padding-top:10px}summary{cursor:pointer;font-weight:600}
+.imp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}.imp label{display:block;font-size:12px;color:var(--mu);margin-top:6px}
+.imp textarea{width:100%;height:110px;font:11px/1.35 ui-monospace,Consolas,monospace;white-space:pre;background:var(--bg)}
+@media(max-width:640px){.imp{grid-template-columns:1fr}}
 .w{overflow-x:auto;border:1px solid var(--bd);border-radius:8px}table{border-collapse:collapse;width:100%;min-width:640px}
 td,th{padding:6px 9px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}th{background:var(--cd);position:sticky;top:0}
 .e{background:var(--cd)}.e label{display:block;margin:4px 0;font-size:13px}.e input,.e select,.e textarea{width:100%;max-width:520px;display:block}
@@ -39,13 +43,17 @@ h6{text-align:center}
 <h2>1 · Load policy files</h2>
 <div class="c"><div class="r"><label>.admx <input id="fa" type="file" accept=".admx"></label><label>.adml <input id="fl" type="file" accept=".adml"></label><button id="ld" class="p">Load</button></div>
 <div class="r"><label>App name <input id="app" value="app" size="16"></label><label>Policy name <input id="aid" size="16" placeholder="&lt;app&gt;Admx"></label><button id="rg">New GUIDs</button><span class="mu" id="st"></span></div>
-<p></p></div>
+<details id="imp"><summary>Import an existing profile (paste XML)</summary>
+<p>Paste the XML of an existing Custom Settings profile to edit it: add or remove policies, then copy the updated XML back.<br>Select the matching .admx / .adml above first for readable policy names (optional). Existing CmdIDs are kept.</p>
+<div class="imp"><div><b>Install Policies</b><label>Install Settings<textarea id="i1" spellcheck="false"></textarea></label><label>Remove Settings<textarea id="i2" spellcheck="false"></textarea></label></div>
+<div><b>Configure Policies</b><label>Install Settings<textarea id="i3" spellcheck="false"></textarea></label><label>Remove Settings<textarea id="i4" spellcheck="false"></textarea></label></div></div>
+<div class="r"><button id="ib" class="p">Import</button><button id="ic">Clear</button><span class="mu" id="ist"></span></div></details></div>
 <h2>2 · Select &amp; configure policies</h2>
-<div class="r"><input id="q" placeholder="Search policies…" size="26"><select id="cf"><option value="">All categories</option></select><select id="sf"><option value="">Any state</option><option value="e">Enabled</option><option value="d">Disabled</option><option value="n">Not configured</option></select><span class="mu" id="cnt"></span></div>
+<div class="r"><input id="q" placeholder="Search policies…" size="26"><select id="cf"><option value="">All categories</option></select><select id="sf"><option value="">Any state</option><option value="c">Configured</option><option value="e">Enabled</option><option value="d">Disabled</option><option value="n">Not configured</option></select><span class="mu" id="cnt"></span></div>
 <div class="r"><button id="sa">Select filtered</button><button id="sn">Select none</button><button class="p" data-b="e">Enable selected</button><button class="p" data-b="d">Disable selected</button><button data-b="">Clear selected</button><span class="mu" id="sc"></span></div>
 <div class="w" style="max-height:520px;overflow-y:auto"><table><thead><tr><th></th><th>Policy</th><th>Category</th><th>State</th></tr></thead><tbody id="tb"></tbody></table></div>
 <h2>3 · Instructions & output</h2>
-<div class="note"><b>Profile creation:</b> <br>Go to Resources › Profiles &amp; Baselines › Profiles › Add › Add Profile › Windows › Desktop › Device Profile › Custom Settings › Configure › Set <i>Target</i> to <b>OMA DM Client</b> › enable <b>Make Commands Atomic</b><br><br><b>Profile formatting:</b><br> For each profile - copy the <b>Install Settings</b> and <b>Remove Settings</b> XML into the fields with the same names in the 'Custom Settings' payload. <br>Optionally, copy the example <b>Profile name</b> into the Name field under General.<br><br><b>Deployment order:</b><br> When publishing - add the 'Import Policies' profile before adding the 'Configure Policies' profile<br>When retiring - remove the 'Configure Policies' profile before removing the 'Import Policies' profile</div>
+<div class="note"><b>Profile creation:</b> <br>Go to Resources › Profiles &amp; Baselines › Profiles › Add › Add Profile › Windows › Desktop › Device Profile › Custom Settings › Configure › Set <i>Target</i> to <b>OMA DM Client</b> › enable <b>Make Commands Atomic</b><br><br><b>Profile formatting:</b><br> For each profile - copy the <b>Install Settings</b> and <b>Remove Settings</b> XML into the fields with the same names in the 'Custom Settings' payload. <br>Optionally, copy the example <b>Profile name</b> into the Name field under General.<br><br><b>Deployment order:</b><br> When publishing - add the 'Install Policies' profile before adding the 'Configure Policies' profile<br>When retiring - remove the 'Configure Policies' profile before removing the 'Install Policies' profile</div>
 <div class="t" id="tabs"></div><p class="mu" id="hint"></p>
 <div class="pn"><span>Profile name</span><input id="pn" readonly spellcheck="false"><button data-c="pn">Copy</button></div>
 <div class="f"><div class="fl">Install Settings <b>*</b><button data-c="o1">Copy</button></div><textarea class="o" id="o1" readonly spellcheck="false"></textarea></div>
@@ -55,7 +63,7 @@ h6{text-align:center}
 <script>
 const $=s=>document.querySelector(s),X=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'),SEP='&#xF000;';
 let P=[],admx='',S={},sel=new Set(),tab=0;
-const TABS=['Import Policies','Configure Policies'];
+const TABS=['Install Policies','Configure Policies'];
 const rd=f=>new Promise(r=>{const x=new FileReader;x.onload=()=>r(x.result);x.readAsText(f)});
 $('#ld').onclick=async()=>{const a=$('#fa').files[0],l=$('#fl').files[0];
  if(!a||!l)return $('#st').textContent='⚠ Select both an .admx and an .adml file, then press Load';
@@ -64,23 +72,49 @@ function adml(t){S={};[...new DOMParser().parseFromString(t,'text/xml').getEleme
 function parse(){
  if(!admx)return;const d=new DOMParser().parseFromString(admx,'text/xml');
  if(d.querySelector('parsererror'))return $('#st').textContent='⚠ Invalid ADMX XML';
- const r=s=>(s||'').replace(/\$\(string\.([^)]+)\)/g,(m,k)=>S[k]??m),loc=s=>(s||'').split(':').pop(),cat={};
- [...d.getElementsByTagName('category')].forEach(c=>{const p=[...c.children].find(x=>x.localName=='parentCategory');cat[c.getAttribute('name')]={p:p&&loc(p.getAttribute('ref')),n:r(c.getAttribute('displayName'))}});
+ const r=s=>(s||'').replace(/\$\(string\.([^)]+)\)/g,(m,k)=>S[k]??m),rr=(s,f)=>{const x=r(s);return x&&!x.startsWith('$(')?x:f},loc=s=>(s||'').split(':').pop(),cat={};
+ [...d.getElementsByTagName('category')].forEach(c=>{const p=[...c.children].find(x=>x.localName=='parentCategory');cat[c.getAttribute('name')]={p:p&&loc(p.getAttribute('ref')),n:rr(c.getAttribute('displayName'),c.getAttribute('name'))}});
  const chain=n=>{const o=[];while(n&&cat[n]&&o.length<20){o.unshift(n);n=cat[n].p}return o};
  const tg=d.getElementsByTagName('target')[0],us=[...d.getElementsByTagName('using')].find(u=>u.getAttribute('namespace')!='Microsoft.Policies.Windows'),dn=((us?.getAttribute('prefix')||'')+(tg?.getAttribute('prefix')||'')).replace(/\W/g,'');if(dn)$('#app').value=dn;
  const old=Object.fromEntries(P.map(p=>[p.name,p]));
  P=[...d.getElementsByTagName('policy')].map(e=>{
-  const pc=[...e.children].find(x=>x.localName=='parentCategory'),ch=chain(pc&&loc(pc.getAttribute('ref')));
+  const n=e.getAttribute('name'),o=old[n],pc=[...e.children].find(x=>x.localName=='parentCategory'),ch=chain(pc&&loc(pc.getAttribute('ref')));
   const els=[...(e.getElementsByTagName('elements')[0]?.children||[])].map(x=>({t:x.localName,id:x.getAttribute('id'),min:x.getAttribute('minValue'),ex:x.getAttribute('explicitValue')=='true',
-   o:x.localName=='enum'?[...x.children].map(i=>({n:r(i.getAttribute('displayName')),v:(c=>c?.localName=='string'?c.textContent:c?.getAttribute('value')??'')([...i.children].find(y=>y.localName=='value')?.firstElementChild)})):null}));
-  const n=e.getAttribute('name'),o=old[n];
-  return{name:n,title:r(e.getAttribute('displayName')),cls:e.getAttribute('class'),ch,cat:ch.map(c=>cat[c].n).join(' › ')||'(root)',els,st:o?.st||'',v:o?.v||{}}});
+   o:x.localName=='enum'?[...x.children].map(i=>{const v=(c=>c?.localName=='string'?c.textContent:c?.getAttribute('value')??'')([...i.children].find(y=>y.localName=='value')?.firstElementChild);return{n:rr(i.getAttribute('displayName'),v),v}}):null}));
+  return{name:n,title:rr(e.getAttribute('displayName'),n),cls:e.getAttribute('class'),ch,cat:ch.map(c=>cat[c].n).join(' › ')||'(root)',els,st:o?.st||'',v:o?.v||{}}});
  $('#st').textContent=`✓ ${P.length} policies loaded`;
  $('#cf').innerHTML='<option value="">All categories</option>'+[...new Set(P.map(p=>p.cat))].sort().map(c=>`<option>${X(c)}</option>`).join('');
  render();gen()}
+/* ---- import an existing profile (pasted UEM XML) ---- */
+const ADM=/\/ADMXInstall\/([^/]+)\/Policy\/([^/]+)$/,REM=/\/ADMXInstall\/([^/]+)\/Policy$/,CFG=/^\.\/(?:Device|User)\/Vendor\/MSFT\/Policy\/Config\/[^/]+\/([^/]+)$/;
+function cmds(t){const d=new DOMParser().parseFromString('<r>'+t+'</r>','text/xml');if(d.querySelector('parsererror'))return null;
+ return[...d.documentElement.children].map(c=>{const g=n=>c.getElementsByTagName(n)[0],dt=g('Data');return{op:c.localName,id:g('CmdID')?.textContent.trim(),uri:(g('LocURI')?.textContent||'').trim(),data:dt?dt.textContent:null}})}
+function dedent(t){const L=t.replace(/^\uFEFF/,'').replace(/^\s*<\?xml[^>]*\?>/,'').split(/\r?\n/),ind=l=>l.match(/^[ \t]*/)[0].length;
+ while(L.length&&!L[0].trim())L.shift();while(L.length&&!L[L.length-1].trim())L.pop();
+ const m=Math.min(...L.filter(l=>l.trim()).map(ind));return L.map(l=>l.trim()?l.slice(m):'').join('\n')}
+const pairs=a=>{const o=[];for(let i=0;i<a.length;i+=2)o.push([a[i],a[i+1]??'']);return o};
+function setp(p,data){const d=new DOMParser().parseFromString('<r>'+data+'</r>','text/xml');p.v={};
+ if(d.getElementsByTagName('disabled')[0]){p.st='d';return}p.st='e';
+ [...d.getElementsByTagName('data')].forEach(x=>{const e=p.els.find(y=>y.id==x.getAttribute('id'));if(!e)return;const v=x.getAttribute('value')||'',a=v.split('\uF000');
+  p.v[e.id]=e.t=='list'?pairs(a).map(([k,y])=>e.ex?k+'='+y:y).join('\n'):e.t=='multiText'?a.join('\n'):v})}
+$('#ic').onclick=()=>{['i1','i2','i3','i4'].forEach(i=>$('#'+i).value='');$('#ist').textContent=''};
+$('#ib').onclick=async()=>{const st=$('#ist'),c=cmds(['i1','i2','i3','i4'].map(i=>$('#'+i).value).join('\n'));
+ if(!c)return st.textContent='⚠ The pasted XML is not well-formed – check for missing or extra tags';
+ const ok=(x,o,re)=>(o?x.op==o:x.op!='Delete')&&re.test(x.uri),ins=c.find(x=>ok(x,0,ADM)),rem=c.find(x=>ok(x,'Delete',REM)),ci=c.filter(x=>ok(x,0,CFG)),cr=c.filter(x=>ok(x,'Delete',CFG));
+ if(!ins&&!admx)return st.textContent='⚠ No ADMX found – paste the Install Policies › Install Settings XML (it contains the ADMX)';
+ if(ins){const l=$('#fl').files[0];admx=dedent(ins.data||'');adml(l?await rd(l):'<r/>');P=[];sel.clear();parse();if(!P.length)return st.textContent='⚠ The ADMX inside the pasted XML could not be parsed'}
+ const m=ins?ins.uri.match(ADM):rem?.uri.match(REM);if(m){$('#app').value=m[1];if(ins)$('#aid').value=m[2]}
+ P.forEach(p=>{p.st='';p.v={}});G.clear();ins&&G.set('i',ins.id);rem&&G.set('r',rem.id);
+ const nm=x=>x.uri.match(CFG)[1],miss=[];
+ ci.forEach(x=>{const n=nm(x),p=P.find(q=>q.name==n);if(!p)return miss.push(n);if(/^\.\/User\//.test(x.uri))p.cls='User';setp(p,x.data||'');G.set('c'+n,x.id)});
+ cr.forEach(x=>{if(P.some(q=>q.name==nm(x)))G.set('x'+nm(x),x.id)});
+ const have=new Set(ci.map(nm)),extra=[...new Set(cr.map(nm))].filter(n=>!have.has(n));
+ st.textContent=`✓ Imported ${P.length} policies from the ADMX, ${ci.length-miss.length} configured`+(miss.length?` · ⚠ not in ADMX: ${miss.join(', ')}`:'')+(extra.length?` · ⚠ only in Remove Settings: ${extra.join(', ')}`:'');
+ render();gen()};
+/* ---- end import ---- */
 const dv=(e,p)=>p.v[e.id]??(e.t=='enum'?e.o[0]?.v:e.t=='boolean'?'false':e.t.includes('ecimal')?e.min||'0':'');
 const vis=()=>{const q=$('#q').value.toLowerCase(),c=$('#cf').value,s=$('#sf').value;
- return P.map((p,i)=>[p,i]).filter(([p])=>(!q||(p.title+p.name).toLowerCase().includes(q))&&(!c||p.cat==c)&&(!s||(s=='n'?!p.st:p.st==s)))};
+ return P.map((p,i)=>[p,i]).filter(([p])=>(!q||(p.title+p.name).toLowerCase().includes(q))&&(!c||p.cat==c)&&(!s||(s=='n'?!p.st:s=='c'?!!p.st:p.st==s)))};
 function render(){
  const v=vis();$('#cnt').textContent=`${v.length}/${P.length} shown`;
  $('#sc').textContent=`${sel.size} selected · ${P.filter(p=>p.st).length} configured`;
@@ -117,7 +151,7 @@ function show(){
  const app=($('#app').value.trim()||'app').replace(/\s+/g,''),pn=`Windows - ${app} - ADMX ${['Install','Config'][tab]}`;
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
  $('#pn').value=pn;$('#pn').style.width=`calc(${pn.length}ch + 28px)`;
- $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];$('#hint').textContent=['Profile 1 – Import Policies: make all app policies available','Profile 2 – Configure Policies: make all app policies configurable'][tab]}
+ $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];$('#hint').textContent=['Profile 1 – Install Policies: make all app policies available','Profile 2 – Configure Policies: make all app policies configurable'][tab]}
 $('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;show()}};
 $('#app').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
 document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const o=$('#'+b.dataset.c);o.select();try{navigator.clipboard.writeText(o.value)}catch(_){}document.execCommand('copy');b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1200)});
