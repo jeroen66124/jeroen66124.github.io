@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><link rel="icon" href="https://jeroen66124.github.io/assets/favicon.ico"><title>Workspace ONE ADMX | Notes</title><meta name="color-scheme" content="light dark">
 <style>
-:root{--bg:#fff;--fg:#1c1e21;--mu:#6b7280;--bd:#d6dae0;--cd:#f5f6f8;--ac:#0b6bcb;--ok:#14803c;--no:#b42318;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#15171a;--fg:#e8eaed;--mu:#9aa0a6;--bd:#33373d;--cd:#1e2125;--ac:#5aa9ff;--ok:#4ade80;--no:#f87171}}
-:root[data-theme=dark]{--bg:#15171a;--fg:#e8eaed;--mu:#9aa0a6;--bd:#33373d;--cd:#1e2125;--ac:#5aa9ff;--ok:#4ade80;--no:#f87171}
+:root{--bg:#fff;--fg:#1c1e21;--mu:#6b7280;--bd:#d6dae0;--cd:#f5f6f8;--ac:#0b6bcb;--ok:#14803c;--no:#b42318;--wn:#b45309;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#15171a;--fg:#e8eaed;--mu:#9aa0a6;--bd:#33373d;--cd:#1e2125;--ac:#5aa9ff;--ok:#4ade80;--no:#f87171;--wn:#fbbf24}}
+:root[data-theme=dark]{--bg:#15171a;--fg:#e8eaed;--mu:#9aa0a6;--bd:#33373d;--cd:#1e2125;--ac:#5aa9ff;--ok:#4ade80;--no:#f87171;--wn:#fbbf24}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
 main{max-width:1100px;margin:0 auto;padding:16px}h1{font-size:20px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 8px}
@@ -17,6 +17,14 @@ details{margin-top:10px;border-top:1px solid var(--bd);padding-top:10px}summary{
 td,th{padding:6px 9px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}th{background:var(--cd);position:sticky;top:0}
 .e{background:var(--cd)}.e label{display:block;margin:4px 0;font-size:13px}.e input,.e select,.e textarea{width:100%;max-width:520px;display:block}
 .tag{font-size:12px;color:var(--mu)}.s1{color:var(--ok)}.s2{color:var(--no)}
+details.x{margin:4px 0 0;border:0;padding:0}details.x summary{font-size:12px;font-weight:400;color:var(--ac)}
+.xd{font-size:12px;color:var(--mu);margin-top:4px;max-width:560px}.xd .ex{white-space:pre-wrap;max-height:150px;overflow:auto}
+.xd code{display:block;font:11px/1.4 ui-monospace,Consolas,monospace;color:var(--fg);word-break:break-all;margin-top:2px}
+.wn{color:var(--wn);margin-left:6px;cursor:help}
+.pnl{border:1px solid var(--bd);border-left:4px solid var(--ac);border-radius:0 6px 6px 0;padding:8px 12px;margin:8px 0;background:var(--cd);font-size:13px}
+.pnl.ok{border-left-color:var(--ok)}.pnl.warn{border-left-color:var(--wn)}
+.pnl ul{margin:6px 0 0;padding-left:18px;max-height:170px;overflow:auto}.pnl li{margin:2px 0}
+.pnl b.a{color:var(--ok)}.pnl b.r{color:var(--no)}.pnl b.m{color:var(--ac)}
 .t{display:flex;justify-content:center;gap:4px;width:fit-content;max-width:100%;margin:24px auto 8px;padding:5px;background:var(--cd);border:1px solid var(--bd);border-radius:14px}
 .t button{flex:1 1 auto;padding:13px 34px;font-size:16px;font-weight:600;border:0;border-radius:10px;background:transparent;color:var(--mu);transition:background .15s,color .15s,box-shadow .15s}
 .t button:hover{color:var(--fg)}.t button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
@@ -29,6 +37,7 @@ td,th{padding:6px 9px;border-bottom:1px solid var(--bd);text-align:left;vertical
 .pn button:hover{background:var(--ac);color:var(--bg)}.pn button.ok,.pn button.ok:hover{background:transparent;border-color:var(--ok);color:var(--ok)}
 @media(max-width:480px){.t{width:100%}.t button{padding:11px 10px;font-size:14px}}
 textarea.o{width:100%;height:260px;font:12px/1.4 ui-monospace,Consolas,monospace;white-space:pre}
+.xs{font-size:12px;margin-top:4px;color:var(--mu);min-height:1.2em}.xs.ok{color:var(--ok)}.xs.bad{color:var(--no)}
 .f{display:grid;grid-template-columns:180px 1fr;gap:0px;max-width:900px;margin:20px auto;align-items:start}
 .fl{font-size:15px;font-weight:600;color:var(--fg);padding-top:6px}.fl b{color:var(--no)}
 .fl button{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;max-width:150px;margin:8px 0 0;padding:9px 16px;font-size:14px;font-weight:600;background:var(--ac);border-color:var(--ac);color:var(--bg);box-shadow:0 1px 3px rgba(0,0,0,.25);transition:filter .15s,transform .05s}
@@ -54,20 +63,21 @@ h6{text-align:center}
 <div class="w" style="max-height:520px;overflow-y:auto"><table><thead><tr><th></th><th>Policy</th><th>Category</th><th>State</th></tr></thead><tbody id="tb"></tbody></table></div>
 <h2>3 · Instructions & output</h2>
 <div class="note"><b>Profile creation:</b> <br>Go to Resources › Profiles &amp; Baselines › Profiles › Add › Add Profile › Windows › Desktop › Device Profile › Custom Settings › Configure › Set Target to <b>OMA DM Client</b> › enable <b>Make Commands Atomic</b><br><br><b>Profile formatting:</b><br> For both profiles - copy the <b>Install Settings</b> and <b>Remove Settings</b> XML into the corresponding fields in the 'Custom Settings' payload. <br>Optionally, copy the example <b>Profile name</b> into the Name field under General.<br><br><b>Deployment order:</b><br> When publishing - add the 'Install Policies' profile before adding the 'Configure Policies' profile<br>When retiring - remove the 'Configure Policies' profile before removing the 'Install Policies' profile</div>
+<div id="val" class="pnl" hidden></div><div id="chg" class="pnl" hidden></div>
 <div class="t" id="tabs"></div><p class="mu" id="hint"></p>
 <div class="pn"><span>Profile name</span><input id="pn" readonly spellcheck="false"><button data-c="pn">Copy</button></div>
-<div class="f"><div class="fl">Install Settings <b>*</b><button data-c="o1">Copy</button></div><textarea class="o" id="o1" readonly spellcheck="false"></textarea></div>
-<div class="f"><div class="fl">Remove Settings <b>*</b><button data-c="o2">Copy</button></div><textarea class="o" id="o2" readonly spellcheck="false"></textarea></div>
+<div class="f"><div class="fl">Install Settings <b>*</b><button data-c="o1">Copy</button></div><div><textarea class="o" id="o1" readonly spellcheck="false"></textarea><div class="xs" id="s1"></div></div></div>
+<div class="f"><div class="fl">Remove Settings <b>*</b><button data-c="o2">Copy</button></div><div><textarea class="o" id="o2" readonly spellcheck="false"></textarea><div class="xs" id="s2"></div></div></div>
 <h6>© Jeroen Kouwenhoven — Engineer @ ITQ</h6>
 </main>
 <script>
 const $=s=>document.querySelector(s),X=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'),SEP='&#xF000;';
-let P=[],admx='',S={},sel=new Set(),tab=0;
+let P=[],admx='',S={},sel=new Set(),tab=0,snap=null;
 const TABS=['Install Policies','Configure Policies'];
 const rd=f=>new Promise(r=>{const x=new FileReader;x.onload=()=>r(x.result);x.readAsText(f)});
 $('#ld').onclick=async()=>{const a=$('#fa').files[0],l=$('#fl').files[0];
  if(!a||!l)return $('#st').textContent='⚠ Select both an .admx and an .adml file, then press Load';
- admx=await rd(a);adml(await rd(l));$('#tpl').value=a.name.replace(/\.admx$/i,'').replace(/[^\w-]/g,'')||'template';P=[];sel.clear();parse()};
+ admx=await rd(a);adml(await rd(l));$('#tpl').value=a.name.replace(/\.admx$/i,'').replace(/[^\w-]/g,'')||'template';P=[];sel.clear();snap=null;parse()};
 function adml(t){S={};[...new DOMParser().parseFromString(t,'text/xml').getElementsByTagName('string')].forEach(s=>S[s.getAttribute('id')]=s.textContent)}
 function parse(){
  if(!admx)return;const d=new DOMParser().parseFromString(admx,'text/xml');
@@ -78,10 +88,11 @@ function parse(){
  const tg=d.getElementsByTagName('target')[0],us=[...d.getElementsByTagName('using')].find(u=>u.getAttribute('namespace')!='Microsoft.Policies.Windows'),dn=((us?.getAttribute('prefix')||'')+(tg?.getAttribute('prefix')||'')).replace(/\W/g,'');if(dn)$('#tpl').value=dn;
  const old=Object.fromEntries(P.map(p=>[p.name,p]));
  P=[...d.getElementsByTagName('policy')].map(e=>{
-  const n=e.getAttribute('name'),o=old[n],pc=[...e.children].find(x=>x.localName=='parentCategory'),ch=chain(pc&&loc(pc.getAttribute('ref')));
-  const els=[...(e.getElementsByTagName('elements')[0]?.children||[])].map(x=>({t:x.localName,id:x.getAttribute('id'),min:x.getAttribute('minValue'),ex:x.getAttribute('explicitValue')=='true',
+  const n=e.getAttribute('name'),o=old[n],pk=e.getAttribute('key')||'',pc=[...e.children].find(x=>x.localName=='parentCategory'),ch=chain(pc&&loc(pc.getAttribute('ref')));
+  const sv=t=>{const c=e.getElementsByTagName(t)[0]?.firstElementChild;return c?(c.localName=='string'?c.textContent:c.getAttribute('value')??''):''};
+  const els=[...(e.getElementsByTagName('elements')[0]?.children||[])].map(x=>({t:x.localName,id:x.getAttribute('id'),key:x.getAttribute('key')||pk,vn:x.getAttribute('valueName')||'',min:x.getAttribute('minValue'),max:x.getAttribute('maxValue'),ml:x.getAttribute('maxLength'),req:x.getAttribute('required')=='true',ex:x.getAttribute('explicitValue')=='true',
    o:x.localName=='enum'?[...x.children].map(i=>{const v=(c=>c?.localName=='string'?c.textContent:c?.getAttribute('value')??'')([...i.children].find(y=>y.localName=='value')?.firstElementChild);return{n:rr(i.getAttribute('displayName'),v),v}}):null}));
-  return{name:n,title:rr(e.getAttribute('displayName'),n),cls:e.getAttribute('class'),ch,cat:ch.map(c=>cat[c].n).join(' › ')||'(root)',els,st:o?.st||'',v:o?.v||{}}});
+  return{name:n,title:rr(e.getAttribute('displayName'),n),info:rr(e.getAttribute('explainText'),''),key:pk,vn:e.getAttribute('valueName')||'',ev:sv('enabledValue'),dvv:sv('disabledValue'),cls:e.getAttribute('class'),ch,cat:ch.map(c=>cat[c].n).join(' › ')||'(root)',els,st:o?.st||'',v:o?.v||{}}});
  $('#st').textContent=`✓ ${P.length} policies loaded`;
  $('#cf').innerHTML='<option value="">All categories</option>'+[...new Set(P.map(p=>p.cat))].sort().map(c=>`<option>${X(c)}</option>`).join('');
  render();gen()}
@@ -97,11 +108,11 @@ function setp(p,data){const d=new DOMParser().parseFromString('<r>'+data+'</r>',
  if(d.getElementsByTagName('disabled')[0]){p.st='d';return}p.st='e';
  [...d.getElementsByTagName('data')].forEach(x=>{const e=p.els.find(y=>y.id==x.getAttribute('id'));if(!e)return;const v=x.getAttribute('value')||'',a=v.split('\uF000');
   p.v[e.id]=e.t=='list'?pairs(a).map(([k,y])=>e.ex?k+'='+y:y).join('\n'):e.t=='multiText'?a.join('\n'):v})}
-$('#ic').onclick=()=>{['i1','i2','i3','i4'].forEach(i=>$('#'+i).value='');$('#ist').textContent=''};
+$('#ic').onclick=()=>{['i1','i2','i3','i4'].forEach(i=>$('#'+i).value='');$('#ist').textContent='';snap=null;chg()};
 $('#ib').onclick=async()=>{const st=$('#ist'),c=cmds(['i1','i2','i3','i4'].map(i=>$('#'+i).value).join('\n'));
  if(!c)return st.textContent='⚠ The pasted XML is not well-formed – check for missing or extra tags';
  const ok=(x,o,re)=>(o?x.op==o:x.op!='Delete')&&re.test(x.uri),ins=c.find(x=>ok(x,0,ADM)),rem=c.find(x=>ok(x,'Delete',REM)),ci=c.filter(x=>ok(x,0,CFG)),cr=c.filter(x=>ok(x,'Delete',CFG));
- if(!ins&&!admx)return st.textContent='⚠ No ADMX found – paste the Install Policies › Install Settings XML (it contains the ADMX)';
+ if(!ins&&!admx)return st.textContent='⚠ No ADMX found – paste the XML before you can continue';
  if(ins){const l=$('#fl').files[0];admx=dedent(ins.data||'');adml(l?await rd(l):'<r/>');P=[];sel.clear();parse();if(!P.length)return st.textContent='⚠ The ADMX inside the pasted XML could not be parsed'}
  const m=ins?ins.uri.match(ADM):rem?.uri.match(REM);if(m){$('#tpl').value=m[1];if(ins)$('#aid').value=m[2]}
  P.forEach(p=>{p.st='';p.v={}});G.clear();ins&&G.set('i',ins.id);rem&&G.set('r',rem.id);
@@ -109,22 +120,63 @@ $('#ib').onclick=async()=>{const st=$('#ist'),c=cmds(['i1','i2','i3','i4'].map(i
  ci.forEach(x=>{const n=nm(x),p=P.find(q=>q.name==n);if(!p)return miss.push(n);if(/^\.\/User\//.test(x.uri))p.cls='User';setp(p,x.data||'');G.set('c'+n,x.id)});
  cr.forEach(x=>{if(P.some(q=>q.name==nm(x)))G.set('x'+nm(x),x.id)});
  const have=new Set(ci.map(nm)),extra=[...new Set(cr.map(nm))].filter(n=>!have.has(n));
+ snap={m:new Map(P.filter(p=>p.st).map(p=>[p.name,{st:p.st,v:{...p.v},data:pdata(p)}])),drop:miss};
  st.textContent=`✓ Imported ${P.length} policies from the ADMX, ${ci.length-miss.length} configured`+(miss.length?` · ⚠ not in ADMX: ${miss.join(', ')}`:'')+(extra.length?` · ⚠ only in Remove Settings: ${extra.join(', ')}`:'');
  render();gen()};
 /* ---- end import ---- */
+/* ---- changes since import ---- */
+function chg(){const el=$('#chg');if(!snap){el.hidden=true;return}
+ const A=[],R=[],M=[],L=s=>s=='e'?'Enabled':'Disabled';
+ P.forEach(p=>{const o=snap.m.get(p.name);
+  if(p.st&&!o)A.push(p);else if(!p.st&&o)R.push(p);
+  else if(p.st&&o&&pdata(p)!==o.data){const ids=p.els.filter(e=>dv(e,p)!==dv(e,{v:o.v})).map(e=>e.id);M.push([p,p.st!=o.st?`${L(o.st)} → ${L(p.st)}`:ids.length?'changed: '+ids.join(', '):'values changed'])}});
+ const n=A.length+R.length+M.length+snap.drop.length,li=(c,s,t,x)=>`<li><b class="${c}">${s}</b> ${X(t)} ${x?`<span class="tag">${X(x)}</span>`:''}</li>`;
+ el.hidden=false;el.className='pnl';
+ el.innerHTML=`<b>Changes since import:</b> `+(n?`${A.length} added · ${R.length+snap.drop.length} removed · ${M.length} modified<ul>`+A.map(p=>li('a','+',p.title,L(p.st))).join('')+R.map(p=>li('r','−',p.title,'no longer configured')).join('')+snap.drop.map(x=>li('r','−',x,'not in the ADMX – removed from the output')).join('')+M.map(([p,w])=>li('m','~',p.title,w)).join('')+'</ul>':'none – the output matches the imported profile')}
+/* ---- validation ---- */
+function validate(){const out=[];
+ P.forEach(p=>{if(p.st!='e')return;const m=[];
+  p.els.forEach(e=>{const x=String(dv(e,p)),t=x.trim(),num=e.t.includes('ecimal');
+   if(!t){if(e.req)m.push(`${e.id}: required value is empty`);else if(num)m.push(`${e.id}: enter a number`)}
+   else if(num){if(!/^-?\d+$/.test(t))m.push(`${e.id}: "${x}" is not a whole number`);
+    else{const n=+t;if(e.min!=null&&e.min!==''&&n<+e.min)m.push(`${e.id}: ${n} is below the minimum (${e.min})`);if(e.max!=null&&e.max!==''&&n>+e.max)m.push(`${e.id}: ${n} is above the maximum (${e.max})`)}}
+   if((e.t=='text'||e.t=='multiText')&&e.ml&&x.length>+e.ml)m.push(`${e.id}: ${x.length} characters exceeds the maximum of ${e.ml}`);
+   if(e.t=='enum'&&e.o&&!e.o.some(o=>o.v==x))m.push(`${e.id}: "${x}" is not one of the allowed options`);
+   if(e.t=='boolean'&&!/^(true|false)$/.test(x))m.push(`${e.id}: must be true or false`);
+   if(e.t=='list'&&e.ex&&lines(x).some(l=>!l.includes('=')))m.push(`${e.id}: every line needs the form name=value`)});
+  if(m.length)out.push({p,m})});
+ return out}
+function val(){const el=$('#val'),V=validate(),n=P.filter(p=>p.st).length,by=new Map(V.map(v=>[v.p,v]));
+ P.forEach((p,i)=>{const w=$('#w'+i);if(w){const x=by.get(p);w.textContent=x?'⚠':'';w.title=x?x.m.join('\n'):''}});
+ if(!n){el.hidden=true;return}el.hidden=false;el.className='pnl '+(V.length?'warn':'ok');
+ el.innerHTML=V.length?`<b>⚠ ${V.length} configured ${V.length>1?'policies need':'policy needs'} attention</b><ul>${V.map(v=>`<li><b>${X(v.p.title)}</b> — ${v.m.map(X).join('; ')}</li>`).join('')}</ul>`:`<b>✓ No problems found</b> in ${n} configured ${n>1?'policies':'policy'}`}
+function chk(t){if(/^\s*<!--/.test(t))return null;
+ const D=new DOMParser(),pe=d=>d.querySelector('parsererror'),o=D.parseFromString('<r>'+t+'</r>','text/xml'),bad=m=>({ok:0,msg:'✗ XML is not valid – '+m});
+ if(pe(o))return bad((pe(o).textContent.match(/(error on line \d+ at column \d+[^\n]*|XML Parsing Error[^\n]*)/)||[])[0]?.slice(0,140)||'malformed tags');
+ for(const d of o.getElementsByTagName('Data')){const s=d.textContent.trim();if(s.startsWith('<')&&pe(D.parseFromString('<r>'+s+'</r>','text/xml')))return bad('the content inside a <Data> block is malformed')}
+ return{ok:1,msg:'✓ XML is valid'}}
+/* ---- policy list ---- */
 const dv=(e,p)=>p.v[e.id]??(e.t=='enum'?e.o[0]?.v:e.t=='boolean'?'false':e.t.includes('ecimal')?e.min||'0':'');
 const vis=()=>{const q=$('#q').value.toLowerCase(),c=$('#cf').value,s=$('#sf').value;
  return P.map((p,i)=>[p,i]).filter(([p])=>(!q||(p.title+p.name).toLowerCase().includes(q))&&(!c||p.cat==c)&&(!s||(s=='n'?!p.st:s=='c'?!!p.st:p.st==s)))};
+const rg=p=>{const h=p.cls=='User'?'HKCU':'HKLM',L=[];
+ if(!p.els.length){if(p.key){const ed=[p.ev!==''&&`enabled = ${p.ev}`,p.dvv!==''&&`disabled = ${p.dvv}`].filter(Boolean).join(', ');L.push(`${h}\\${p.key}${p.vn?' : '+p.vn:''}${ed?`  (${ed})`:''}`)}}
+ else p.els.forEach(e=>{if(e.key)L.push(e.t=='list'?`${h}\\${e.key}  (${e.ex?'name = value pairs':'numbered values 1, 2, 3…'})`:`${h}\\${e.key}${e.vn?' : '+e.vn:''}`)});
+ return L};
+const det=(p,i)=>{const R=rg(p);if(!p.info&&!R.length)return'';
+ return`<details class="x" data-o="${i}" ${p.open?'open':''}><summary>Details</summary><div class="xd">${p.info?`<div class="ex">${X(p.info)}</div>`:''}${R.length?`<div style="margin-top:6px">Registry:${R.map(l=>`<code>${X(l)}</code>`).join('')}</div>`:''}</div></details>`};
 function render(){
  const v=vis();$('#cnt').textContent=`${v.length}/${P.length} shown`;
  $('#sc').textContent=`${sel.size} selected · ${P.filter(p=>p.st).length} configured`;
- $('#tb').innerHTML=v.slice(0,400).map(([p,i])=>`<tr><td><input type="checkbox" data-s="${i}" ${sel.has(i)?'checked':''}></td><td>${X(p.title)}<div class="tag">${X(p.name)}${p.cls=='User'?' · User':''}</div></td><td class="tag">${X(p.cat)}</td>
- <td><select data-i="${i}"><option value="">Not configured</option><option value="e" ${p.st=='e'?'selected':''}>Enabled</option><option value="d" ${p.st=='d'?'selected':''}>Disabled</option></select></td></tr>`+
+ $('#tb').innerHTML=v.slice(0,400).map(([p,i])=>`<tr><td><input type="checkbox" data-s="${i}" ${sel.has(i)?'checked':''}></td><td>${X(p.title)}<div class="tag">${X(p.name)}${p.cls=='User'?' · User':''}</div>${det(p,i)}</td><td class="tag">${X(p.cat)}</td>
+ <td><select data-i="${i}"><option value="">Not configured</option><option value="e" ${p.st=='e'?'selected':''}>Enabled</option><option value="d" ${p.st=='d'?'selected':''}>Disabled</option></select><span class="wn" id="w${i}"></span></td></tr>`+
  (p.st=='e'&&p.els.length?`<tr class="e"><td></td><td colspan="3">${p.els.map(e=>{const k=`data-i="${i}" data-k="${X(e.id)}"`,x=dv(e,p);
   return`<label>${X(e.id)} <span class="tag">(${e.t})</span>`+(e.t=='enum'?`<select ${k}>${e.o.map(o=>`<option value="${X(o.v)}" ${o.v==x?'selected':''}>${X(o.n)} (${X(o.v)})</option>`).join('')}</select>`:
   e.t=='boolean'?`<select ${k}><option ${x=='true'?'selected':''}>true</option><option ${x=='false'?'selected':''}>false</option></select>`:
-  e.t=='list'||e.t=='multiText'?`<textarea rows="3" ${k} placeholder="${e.ex?'name=value, one per line':'one entry per line'}">${X(x)}</textarea>`:`<input ${k} value="${X(x)}" ${e.t.includes('ecimal')?'type="number"':''}>`)+'</label>'}).join('')}</td></tr>`:'')).join('')+(v.length>400?'<tr><td colspan="4" class="mu">Showing first 400 – refine the search.</td></tr>':'')}
+  e.t=='list'||e.t=='multiText'?`<textarea rows="3" ${k} placeholder="${e.ex?'name=value, one per line':'one entry per line'}">${X(x)}</textarea>`:`<input ${k} value="${X(x)}" ${e.t.includes('ecimal')?'type="number"':''}>`)+'</label>'}).join('')}</td></tr>`:'')).join('')+(v.length>400?'<tr><td colspan="4" class="mu">Showing first 400 – refine the search.</td></tr>':'');
+ val()}
 const vf=['q','cf','sf'];vf.forEach(id=>$('#'+id).oninput=render);
+$('#tb').addEventListener('toggle',e=>{const i=e.target.dataset?.o;if(i!=null)P[i].open=e.target.open},true);
 $('#tb').onchange=e=>{const t=e.target,i=t.dataset.i;
  if(t.dataset.s!=null)t.checked?sel.add(+t.dataset.s):sel.delete(+t.dataset.s);
  else if(t.dataset.k!=null)P[i].v[t.dataset.k]=t.value;else{P[i].st=t.value;render()}
@@ -146,12 +198,14 @@ function gen(){
  none='<!-- Configure at least one policy -->',load='<!-- Load .admx / .adml files first -->';
  window.O=[admx?item('i','Replace',`${base}/${id}`,body,1):load,admx?item('r','Delete',base,null,1):load,
   cfg.length?cfg.map(p=>item('c'+p.name,'Replace',uri(p),pdata(p))).join('\n'):none,cfg.length?cfg.map(p=>item('x'+p.name,'Delete',uri(p),'')).join('\n'):none];
- show()}
+ val();chg();show()}
 function show(){
  const tpl=($('#tpl').value.trim()||'template').replace(/\s+/g,''),pn=`Windows - ${tpl} - ADMX ${['Install','Config'][tab]}`;
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
  $('#pn').value=pn;$('#pn').style.width=`calc(${pn.length}ch + 28px)`;
- $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];$('#hint').textContent=['Profile 1 – Install Policies: make all administrative policies available','Profile 2 – Configure Policies: make all administrative policies configurable'][tab]}
+ $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];
+ [1,2].forEach(n=>{const r=chk(O[tab*2+n-1]),s=$('#s'+n);s.className='xs'+(r?r.ok?' ok':' bad':'');s.textContent=r?r.msg:''});
+ $('#hint').textContent=['Profile 1 – Install Policies: make all administrative policies available','Profile 2 – Configure Policies: make all administrative policies configurable'][tab]}
 $('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;show()}};
 $('#tpl').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
 document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const o=$('#'+b.dataset.c);o.select();try{navigator.clipboard.writeText(o.value)}catch(_){}document.execCommand('copy');b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1200)});
