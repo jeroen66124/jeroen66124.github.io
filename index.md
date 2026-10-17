@@ -12,4 +12,4 @@ nav_order: 1
 [Nginx Proxy Manager](/pages/nginxproxymanager.html)<br>
 [Mac IPSW Restore](/pages/macipswrestore.html)<br>
 [Rclone Docker Compose](/pages/rclonedockercompose.html)<br>
-[ADMX WS1 UEM OMA DM](/pages/ws1uemadmx.html)
+[Workspace ONE ADMX](/pages/ws1uemadmx.html)
