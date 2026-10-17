@@ -121,7 +121,7 @@ $('#ib').onclick=async()=>{const st=$('#ist'),c=cmds(['i1','i2','i3','i4'].map(i
  cr.forEach(x=>{if(P.some(q=>q.name==nm(x)))G.set('x'+nm(x),x.id)});
  const have=new Set(ci.map(nm)),extra=[...new Set(cr.map(nm))].filter(n=>!have.has(n));
  snap={m:new Map(P.filter(p=>p.st).map(p=>[p.name,{st:p.st,v:{...p.v},data:pdata(p)}])),drop:miss};
- st.textContent=`✓ Imported ${P.length} policies from the ADMX, ${ci.length-miss.length} configured`+(miss.length?` · ⚠ not in ADMX: ${miss.join(', ')}`:'')+(extra.length?` · ⚠ only in Remove Settings: ${extra.join(', ')}`:'');
+ st.textContent=`✓ Imported ${P.length} policies from the XML, ${ci.length-miss.length} configured`+(miss.length?` · ⚠ not in ADMX: ${miss.join(', ')}`:'')+(extra.length?` · ⚠ only in Remove Settings: ${extra.join(', ')}`:'');
  render();gen()};
 /* ---- end import ---- */
 /* ---- changes since import ---- */
