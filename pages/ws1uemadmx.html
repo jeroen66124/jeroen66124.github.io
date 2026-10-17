@@ -49,8 +49,8 @@ h6{text-align:center}
 </style></head><body><main>
 <h1>Custom ADMX to Workspace ONE UEM (OMA DM)</h1>
 <p>Generates XML for deploying <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-configuration-service-provider" target="_blank">administrative templates (ADMX)</a> that are not yet natively supported in <a href="https://docs.omnissa.com/Windows_Desktop_Management-VSaaS/uemWindeskProfiles#custom-settings-profile" target="_blank">Workspace ONE UEM</a>!</p>
-<h2>1 · Load policy files</h2>
-<div class="c"><div class="r"><label>.admx <input id="fa" type="file" accept=".admx"></label><label>.adml <input id="fl" type="file" accept=".adml"></label><button id="ld" class="p">Load</button></div>
+<h2>1 · Import policy files</h2>
+<div class="c"><div class="r"><label>.admx <input id="fa" type="file" accept=".admx"></label><label>.adml <input id="fl" type="file" accept=".adml"></label><button id="ld" class="p">Import</button></div>
 <div class="r"><label>Template name <input id="tpl" value="template" size="16"></label><label>Policy name <input id="aid" size="16" placeholder="&lt;template&gt;Admx"></label><button id="rg">New GUIDs</button><span class="mu" id="st"></span></div>
 <details id="imp"><summary>Import an existing policy (paste XML)</summary>
 <p>Paste the XML of both existing Custom Settings profiles accordingly to edit the administrative policy: reconfigure the policies, then copy the updated XML back.<br>Load the matching .admx / .adml files above first for readable policy names (optional). Existing CmdIDs are kept.</p>
@@ -76,7 +76,7 @@ let P=[],admx='',S={},sel=new Set(),tab=0,snap=null;
 const TABS=['Install Policies','Configure Policies'];
 const rd=f=>new Promise(r=>{const x=new FileReader;x.onload=()=>r(x.result);x.readAsText(f)});
 $('#ld').onclick=async()=>{const a=$('#fa').files[0],l=$('#fl').files[0];
- if(!a||!l)return $('#st').textContent='⚠ Select both an .admx and an .adml file, then press Load';
+ if(!a||!l)return $('#st').textContent='⚠ Select both an .admx and an .adml file, then press Import';
  admx=await rd(a);adml(await rd(l));$('#tpl').value=a.name.replace(/\.admx$/i,'').replace(/[^\w-]/g,'')||'template';P=[];sel.clear();snap=null;parse()};
 function adml(t){S={};[...new DOMParser().parseFromString(t,'text/xml').getElementsByTagName('string')].forEach(s=>S[s.getAttribute('id')]=s.textContent)}
 function parse(){
@@ -93,7 +93,7 @@ function parse(){
   const els=[...(e.getElementsByTagName('elements')[0]?.children||[])].map(x=>({t:x.localName,id:x.getAttribute('id'),key:x.getAttribute('key')||pk,vn:x.getAttribute('valueName')||'',min:x.getAttribute('minValue'),max:x.getAttribute('maxValue'),ml:x.getAttribute('maxLength'),req:x.getAttribute('required')=='true',ex:x.getAttribute('explicitValue')=='true',
    o:x.localName=='enum'?[...x.children].map(i=>{const v=(c=>c?.localName=='string'?c.textContent:c?.getAttribute('value')??'')([...i.children].find(y=>y.localName=='value')?.firstElementChild);return{n:rr(i.getAttribute('displayName'),v),v}}):null}));
   return{name:n,title:rr(e.getAttribute('displayName'),n),info:rr(e.getAttribute('explainText'),''),key:pk,vn:e.getAttribute('valueName')||'',ev:sv('enabledValue'),dvv:sv('disabledValue'),cls:e.getAttribute('class'),ch,cat:ch.map(c=>cat[c].n).join(' › ')||'(root)',els,st:o?.st||'',v:o?.v||{}}});
- $('#st').textContent=`✓ ${P.length} policies loaded`;
+ $('#st').textContent=`✓ ${P.length} policies imported`;
  $('#cf').innerHTML='<option value="">All categories</option>'+[...new Set(P.map(p=>p.cat))].sort().map(c=>`<option>${X(c)}</option>`).join('');
  render();gen()}
 /* ---- import an existing profile (pasted UEM XML) ---- */
@@ -195,7 +195,7 @@ function gen(){
  const tpl=($('#tpl').value.trim()||'template').replace(/\s+/g,''),id=$('#aid').value.trim()||tpl+'Admx',base=`./Vendor/MSFT/Policy/ConfigOperations/ADMXInstall/${tpl}/Policy`,cfg=P.filter(p=>p.st),
  uri=p=>`./${p.cls=='User'?'User':'Device'}/Vendor/MSFT/Policy/Config/${[tpl,'Policy',...p.ch].join('~')}/${p.name}`,
  body='\n'+admx.replace(/^\uFEFF?\s*<\?xml[^>]*\?>\s*/,'').trimEnd().split(/\r?\n/).map(l=>'\t\t\t'+l).join('\n')+'\n\t\t',
- none='<!-- Configure at least one policy -->',load='<!-- Load .admx / .adml files first -->';
+ none='<!-- Configure at least one policy -->',load='<!-- Import .admx / .adml files first -->';
  window.O=[admx?item('i','Replace',`${base}/${id}`,body,1):load,admx?item('r','Delete',base,null,1):load,
   cfg.length?cfg.map(p=>item('c'+p.name,'Replace',uri(p),pdata(p))).join('\n'):none,cfg.length?cfg.map(p=>item('x'+p.name,'Delete',uri(p),'')).join('\n'):none];
  val();chg();show()}
