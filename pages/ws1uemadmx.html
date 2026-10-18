@@ -37,7 +37,7 @@ details.x{margin:4px 0 0;border:0;padding:0}details.x summary{font-size:12px;fon
 .pn button:hover{background:var(--ac);color:var(--bg)}.pn button.ok,.pn button.ok:hover{background:transparent;border-color:var(--ok);color:var(--ok)}
 @media(max-width:480px){.t{width:100%}.t button{padding:11px 10px;font-size:14px}}
 textarea.o{width:100%;height:260px;font:12px/1.4 ui-monospace,Consolas,monospace;white-space:pre}
-.xs{font-size:12px;margin-top:4px;color:var(--mu);min-height:1.2em}.xs.ok{color:var(--ok)}.xs.bad{color:var(--no)}
+.xs{font-size:12px;margin-top:4px;color:var(--mu);min-height:1.2em}.xs.ok{color:var(--ok)}.xs.bad{color:var(--no)}.xs .w2{color:var(--wn)}
 .f{display:grid;grid-template-columns:180px 1fr;gap:0px;max-width:900px;margin:20px auto;align-items:start}
 .fl{font-size:15px;font-weight:600;color:var(--fg);padding-top:6px}.fl b{color:var(--no)}
 .fl button{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;max-width:150px;margin:8px 0 0;padding:9px 16px;font-size:14px;font-weight:600;background:var(--ac);border-color:var(--ac);color:var(--bg);box-shadow:0 1px 3px rgba(0,0,0,.25);transition:filter .15s,transform .05s}
@@ -74,12 +74,12 @@ h6{text-align:center}
 </main>
 <script>
 const $=s=>document.querySelector(s),X=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'),SEP='&#xF000;';
-let P=[],admx='',S={},sel=new Set(),tab=0,snap=null;
+let P=[],admx='',S={},sel=new Set(),tab=0,snap=null,VN=0;
 const TABS=['Install Policies','Configure Policies'];
 const rd=f=>new Promise(r=>{const x=new FileReader;x.onload=()=>r(x.result);x.readAsText(f)});
 $('#ld').onclick=async()=>{const a=$('#fa').files[0],l=$('#fl').files[0];
  if(!a||!l)return $('#st').textContent='⚠ Select both an .admx and an .adml file, then press Import';
- admx=await rd(a);adml(await rd(l));$('#tpl').value=a.name.replace(/\.admx$/i,'').replace(/[^\w-]/g,'')||'template';P=[];sel.clear();snap=null;parse()};
+ admx=await rd(a);adml(await rd(l));$('#tpl').value=a.name.replace(/\.admx$/i,'').replace(/[^\w-]/g,'')||'template';P=[];sel.clear();snap={m:new Map(),drop:[],src:'start'};parse()};
 function adml(t){S={};[...new DOMParser().parseFromString(t,'text/xml').getElementsByTagName('string')].forEach(s=>S[s.getAttribute('id')]=s.textContent)}
 function parse(){
  if(!admx)return;const d=new DOMParser().parseFromString(admx,'text/xml');
@@ -110,10 +110,11 @@ function setp(p,data){const d=new DOMParser().parseFromString('<r>'+data+'</r>',
  if(d.getElementsByTagName('disabled')[0]){p.st='d';return}p.st='e';
  [...d.getElementsByTagName('data')].forEach(x=>{const e=p.els.find(y=>y.id==x.getAttribute('id'));if(!e)return;const v=x.getAttribute('value')||'',a=v.split('\uF000');
   p.v[e.id]=e.t=='list'?pairs(a).map(([k,y])=>e.ex?k+'='+y:y).join('\n'):e.t=='multiText'?a.join('\n'):v})}
-$('#ic').onclick=()=>{['i1','i2','i3','i4'].forEach(i=>$('#'+i).value='');$('#ist').textContent='';snap=null;chg()};
+$('#ic').onclick=()=>{['i1','i2','i3','i4'].forEach(i=>$('#'+i).value='');$('#ist').textContent=''};
 $('#ib').onclick=async()=>{const st=$('#ist'),c=cmds(['i1','i2','i3','i4'].map(i=>$('#'+i).value).join('\n'));
  if(!c)return st.textContent='⚠ The pasted XML is not well-formed – check for missing or extra tags';
  const ok=(x,o,re)=>(o?x.op==o:x.op!='Delete')&&re.test(x.uri),ins=c.find(x=>ok(x,0,ADM)),rem=c.find(x=>ok(x,'Delete',REM)),ci=c.filter(x=>ok(x,0,CFG)),cr=c.filter(x=>ok(x,'Delete',CFG));
+ if(!ins&&!ci.length)return st.textContent='⚠ Nothing to import – paste the XML of the existing profiles first';
  if(!ins&&!admx)return st.textContent='⚠ No ADMX found – paste the XML before you can continue';
  if(ins){const l=$('#fl').files[0];admx=dedent(ins.data||'');adml(l?await rd(l):'<r/>');P=[];sel.clear();parse();if(!P.length)return st.textContent='⚠ The ADMX inside the pasted XML could not be parsed'}
  const m=ins?ins.uri.match(ADM):rem?.uri.match(REM);if(m){$('#tpl').value=m[1];if(ins)$('#aid').value=m[2]}
@@ -122,19 +123,19 @@ $('#ib').onclick=async()=>{const st=$('#ist'),c=cmds(['i1','i2','i3','i4'].map(i
  ci.forEach(x=>{const n=nm(x),p=P.find(q=>q.name==n);if(!p)return miss.push(n);if(/^\.\/User\//.test(x.uri))p.cls='User';setp(p,x.data||'');G.set('c'+n,x.id)});
  cr.forEach(x=>{if(P.some(q=>q.name==nm(x)))G.set('x'+nm(x),x.id)});
  const have=new Set(ci.map(nm)),extra=[...new Set(cr.map(nm))].filter(n=>!have.has(n));
- snap={m:new Map(P.filter(p=>p.st).map(p=>[p.name,{st:p.st,v:{...p.v},data:pdata(p)}])),drop:miss};
+ snap={m:new Map(P.filter(p=>p.st).map(p=>[p.name,{st:p.st,v:{...p.v},data:pdata(p)}])),drop:miss,src:'import'};
  st.textContent=`✓ Imported ${P.length} policies from the XML, ${ci.length-miss.length} configured`+(miss.length?` · ⚠ not in ADMX: ${miss.join(', ')}`:'')+(extra.length?` · ⚠ only in Remove Settings: ${extra.join(', ')}`:'');
  render();gen()};
 /* ---- end import ---- */
 /* ---- changes since import ---- */
-function chg(){const el=$('#chg');if(!snap){el.hidden=true;return}
+function chg(){const el=$('#chg');if(!snap||!P.length){el.hidden=true;return}
  const A=[],R=[],M=[],L=s=>s=='e'?'Enabled':'Disabled';
  P.forEach(p=>{const o=snap.m.get(p.name);
   if(p.st&&!o)A.push(p);else if(!p.st&&o)R.push(p);
   else if(p.st&&o&&pdata(p)!==o.data){const ids=p.els.filter(e=>dv(e,p)!==dv(e,{v:o.v})).map(e=>e.id);M.push([p,p.st!=o.st?`${L(o.st)} → ${L(p.st)}`:ids.length?'changed: '+ids.join(', '):'values changed'])}});
  const n=A.length+R.length+M.length+snap.drop.length,li=(c,s,t,x)=>`<li><b class="${c}">${s}</b> ${X(t)} ${x?`<span class="tag">${X(x)}</span>`:''}</li>`;
  el.hidden=false;el.className='pnl';
- el.innerHTML=`<b>Changes since import:</b> `+(n?`${A.length} added · ${R.length+snap.drop.length} removed · ${M.length} modified<ul>`+A.map(p=>li('a','+',p.title,L(p.st))).join('')+R.map(p=>li('r','−',p.title,'no longer configured')).join('')+snap.drop.map(x=>li('r','−',x,'not in the ADMX – removed from the output')).join('')+M.map(([p,w])=>li('m','~',p.title,w)).join('')+'</ul>':'none – the output matches the imported profile')}
+ el.innerHTML=`<b>Changes since import:</b> `+(n?`${A.length} added · ${R.length+snap.drop.length} removed · ${M.length} modified<ul>`+A.map(p=>li('a','+',p.title,L(p.st))).join('')+R.map(p=>li('r','−',p.title,'no longer configured')).join('')+snap.drop.map(x=>li('r','−',x,'not in the ADMX – removed from the output')).join('')+M.map(([p,w])=>li('m','~',p.title,w)).join('')+'</ul>':snap.src=='import'?'none – the output matches the imported profile':'none yet – enable or disable a policy to see it listed here')}
 /* ---- validation ---- */
 function validate(){const out=[];
  P.forEach(p=>{if(p.st!='e')return;const m=[];
@@ -148,15 +149,15 @@ function validate(){const out=[];
    if(e.t=='list'&&e.ex&&lines(x).some(l=>!l.includes('=')))m.push(`${e.id}: every line needs the form name=value`)});
   if(m.length)out.push({p,m})});
  return out}
-function val(){const el=$('#val'),V=validate(),n=P.filter(p=>p.st).length,by=new Map(V.map(v=>[v.p,v]));
+function val(){const el=$('#val'),V=validate();VN=V.length;const n=P.filter(p=>p.st).length,by=new Map(V.map(v=>[v.p,v]));
  P.forEach((p,i)=>{const w=$('#w'+i);if(w){const x=by.get(p);w.textContent=x?'⚠':'';w.title=x?x.m.join('\n'):''}});
  if(!n){el.hidden=true;return}el.hidden=false;el.className='pnl '+(V.length?'warn':'ok');
  el.innerHTML=V.length?`<b>⚠ ${V.length} configured ${V.length>1?'policies need':'policy needs'} attention</b><ul>${V.map(v=>`<li><b>${X(v.p.title)}</b> — ${v.m.map(X).join('; ')}</li>`).join('')}</ul>`:`<b>✓ No problems found</b> in ${n} configured ${n>1?'policies':'policy'}`}
 function chk(t){if(/^\s*<!--/.test(t))return null;
- const D=new DOMParser(),pe=d=>d.querySelector('parsererror'),o=D.parseFromString('<r>'+t+'</r>','text/xml'),bad=m=>({ok:0,msg:'✗ XML is not valid – '+m});
+ const D=new DOMParser(),pe=d=>d.querySelector('parsererror'),o=D.parseFromString('<r>'+t+'</r>','text/xml'),bad=m=>({ok:0,msg:'✗ XML syntax is not valid – '+m});
  if(pe(o))return bad((pe(o).textContent.match(/(error on line \d+ at column \d+[^\n]*|XML Parsing Error[^\n]*)/)||[])[0]?.slice(0,140)||'malformed tags');
  for(const d of o.getElementsByTagName('Data')){const s=d.textContent.trim();if(s.startsWith('<')&&pe(D.parseFromString('<r>'+s+'</r>','text/xml')))return bad('the content inside a <Data> block is malformed')}
- return{ok:1,msg:'✓ XML is valid'}}
+ return{ok:1,msg:'✓ XML syntax is valid'}}
 /* ---- policy list ---- */
 const dv=(e,p)=>p.v[e.id]??(e.t=='enum'?e.o[0]?.v:e.t=='boolean'?'false':e.t.includes('ecimal')?e.min||'0':'');
 const vis=()=>{const q=$('#q').value.toLowerCase(),c=$('#cf').value,s=$('#sf').value;
@@ -206,7 +207,7 @@ function show(){
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
  $('#pn').value=pn;$('#pn').style.width=`calc(${pn.length}ch + 28px)`;
  $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];
- [1,2].forEach(n=>{const r=chk(O[tab*2+n-1]),s=$('#s'+n);s.className='xs'+(r?r.ok?' ok':' bad':'');s.textContent=r?r.msg:''});
+ [1,2].forEach(n=>{const r=chk(O[tab*2+n-1]),s=$('#s'+n);s.className='xs'+(r?r.ok?' ok':' bad':'');s.innerHTML=r?X(r.msg)+(r.ok&&tab==1&&VN?` <span class="w2">– ⚠ ${VN} ${VN>1?'policies need':'policy needs'} attention</span>`:''):''});
  $('#hint').textContent=['Profile 1 – Install Policies: make all administrative policies available','Profile 2 – Configure Policies: make all administrative policies configurable'][tab]}
 $('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;show()}};
 $('#tpl').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
