@@ -25,7 +25,7 @@ details.x{margin:4px 0 0;border:0;padding:0}details.x summary{font-size:12px;fon
 .pnl{border:1px solid var(--bd);border-left:4px solid var(--ac);border-radius:0 6px 6px 0;padding:8px 12px;margin:8px 0;background:var(--cd);font-size:13px}
 .pnl.ok{border-left-color:var(--ok)}.pnl.warn{border-left-color:var(--wn)}
 .pnl ul{margin:6px 0 0;padding-left:18px;max-height:170px;overflow:auto}.pnl li{margin:2px 0}
-.pnl b.a{color:var(--ok)}.pnl b.r{color:var(--no)}.pnl b.m{color:var(--ac)}
+.pnl b.a{color:var(--ok)}.pnl b.rm{color:var(--no)}.pnl b.m{color:var(--ac)}
 .t{display:flex;justify-content:center;gap:4px;width:fit-content;max-width:100%;margin:24px auto 8px;padding:5px;background:var(--cd);border:1px solid var(--bd);border-radius:14px}
 .t button{flex:1 1 auto;padding:13px 34px;font-size:16px;font-weight:600;border:0;border-radius:10px;background:transparent;color:var(--mu);transition:background .15s,color .15s,box-shadow .15s}
 .t button:hover{color:var(--fg)}.t button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
@@ -122,7 +122,7 @@ function migrate(nx,ns,name,quiet){
  upd={from,to:rev(nx),file:name,gone,elems,news:P.filter(p=>!names.has(p.name)).length,kept:P.filter(p=>p.st).length};
  $('#st').textContent=`✓ ${P.length} policies imported · ${upd.kept} configured policies carried over`;gen()}
 function updPanel(){const el=$('#upd');if(!upd){el.hidden=true;return}
- const n=upd.gone.length+upd.elems.length,li=(t,w)=>`<li><b class="r">−</b> ${X(t)} <span class="tag">${w}</span></li>`;
+ const n=upd.gone.length+upd.elems.length,li=(t,w)=>`<li><b class="rm">−</b> ${X(t)} <span class="tag">${w}</span></li>`;
  el.hidden=false;el.className='pnl'+(n?' warn':' ok');
  el.innerHTML=`<b>ADMX update:</b> revision ${X(upd.from||'?')} → ${X(upd.to||'?')} (${X(upd.file||'')}) · ${upd.kept} configured ${upd.kept==1?'policy':'policies'} carried over`+(upd.news?` · ${upd.news} new ${upd.news==1?'policy':'policies'} available`:'')+(n?'<ul>'+upd.gone.map(t=>li(t,'no longer in the new ADMX – its setting is dropped')).join('')+upd.elems.map(([t,id])=>li(t,`element ${X(id)} no longer exists – its value is dropped`)).join('')+'</ul>':'<br>✓ Everything you configured also exists in the new ADMX')}
 /* ---- import an existing profile (pasted UEM XML) ---- */
@@ -174,7 +174,7 @@ function chg(){const el=$('#chg');if(!snap||!P.length){el.hidden=true;return}
    if(p.st!=o.st)w.push(`${L(o.st)} → ${L(p.st)}`);else if(ids.length)w.push('changed: '+ids.join(', '));if(sc)w.push(`scope ./${o.sc} → ./${scope(p)}`);M.push([p,w.join(' · ')||'values changed'])}}});
  const dr=snap.drop.concat([...snap.m].filter(([n])=>!pn.has(n)).map(([,o])=>o.t)),n=A.length+R.length+M.length+dr.length,li=(c,s,t,x)=>`<li><b class="${c}">${s}</b> ${X(t)} ${x?`<span class="tag">${X(x)}</span>`:''}</li>`;
  el.hidden=false;el.className='pnl';
- el.innerHTML=`<b>Changes since import:</b> `+(n?`${A.length} added · ${R.length+dr.length} removed · ${M.length} modified<ul>`+A.map(p=>li('a','+',p.title,L(p.st))).join('')+R.map(p=>li('r','−',p.title,'no longer configured')).join('')+dr.map(x=>li('r','−',x,'not in the ADMX – removed from the output')).join('')+M.map(([p,w])=>li('m','~',p.title,w)).join('')+'</ul>':snap.src=='import'?'none – the output matches the imported profile':'none yet – enable or disable a policy to see it listed here')}
+ el.innerHTML=`<b>Changes since import:</b> `+(n?`${A.length} added · ${R.length+dr.length} removed · ${M.length} modified<ul>`+A.map(p=>li('a','+',p.title,L(p.st))).join('')+R.map(p=>li('rm','−',p.title,'no longer configured')).join('')+dr.map(x=>li('rm','−',x,'not in the ADMX – removed from the output')).join('')+M.map(([p,w])=>li('m','~',p.title,w)).join('')+'</ul>':snap.src=='import'?'none – the output matches the imported profile':'none yet – enable or disable a policy to see it listed here')}
 /* ---- validation ---- */
 function validate(){const out=[];
  P.forEach(p=>{if(!p.st)return;const m=[];
