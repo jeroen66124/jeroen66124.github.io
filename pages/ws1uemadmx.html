@@ -91,7 +91,7 @@ $('#ld').onclick=async()=>{const a=$('#fa').files[0],l=$('#fl').files[0];ask();
  if(admxFrom=='xml'&&snap?.src=='import'&&P.length){
   if(nz(nx)==nz(admx))return migrate(nx,ns,a.name,1);
   pend={k:'b',nx,ns,name:a.name};
-  return ask(`<b>Which version should be used?</b><br>The imported profile contains ADMX revision <b>${X(rev(admx)||'?')}</b>, the files you selected (${X(a.name)}) are revision <b>${X(rev(nx)||'?')}</b>.<div class="r"><button id="ak1" class="p">Use the selected files (update)</button><button id="ak2">Keep the pasted ADMX</button></div><span class="tag">Updating keeps your configuration and lists what no longer exists in the new ADMX.</span>`)}
+  return ask(`<b>Which version should be used?</b><br>The imported profile contains ADMX revision <b>${X(rev(admx)||'?')}</b>, the files you imported (${X(a.name)}) are revision <b>${X(rev(nx)||'?')}</b>.<div class="r"><button id="ak1" class="p">Use the selected files (update)</button><button id="ak2">Keep the pasted ADMX</button></div><span class="tag">Updating keeps your configuration and lists what no longer exists in the new ADMX.</span>`)}
  loadFiles(nx,ns,a.name)};
 function adml(t){S={};[...new DOMParser().parseFromString(t,'text/xml').getElementsByTagName('string')].forEach(s=>S[s.getAttribute('id')]=s.textContent)}
 function parse(){
