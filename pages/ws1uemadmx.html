@@ -91,7 +91,7 @@ $('#ld').onclick=async()=>{const a=$('#fa').files[0],l=$('#fl').files[0];ask();
  if(admxFrom=='xml'&&snap?.src=='import'&&P.length){
   if(nz(nx)==nz(admx))return migrate(nx,ns,a.name,1);
   pend={k:'b',nx,ns,name:a.name};
-  return ask(`<b>Which ADMX should be used?</b><br>The imported profile contains ADMX revision <b>${X(rev(admx)||'?')}</b>, the files you selected (${X(a.name)}) are revision <b>${X(rev(nx)||'?')}</b>.<div class="r"><button id="ak1" class="p">Use the selected files (update)</button><button id="ak2">Keep the pasted ADMX</button></div><span class="tag">Updating keeps your configuration and lists what no longer exists in the new ADMX.</span>`)}
+  return ask(`<b>Which version should be used?</b><br>The imported profile contains ADMX revision <b>${X(rev(admx)||'?')}</b>, the files you selected (${X(a.name)}) are revision <b>${X(rev(nx)||'?')}</b>.<div class="r"><button id="ak1" class="p">Use the selected files (update)</button><button id="ak2">Keep the pasted ADMX</button></div><span class="tag">Updating keeps your configuration and lists what no longer exists in the new ADMX.</span>`)}
  loadFiles(nx,ns,a.name)};
 function adml(t){S={};[...new DOMParser().parseFromString(t,'text/xml').getElementsByTagName('string')].forEach(s=>S[s.getAttribute('id')]=s.textContent)}
 function parse(){
@@ -145,7 +145,7 @@ $('#ib').onclick=()=>{const st=$('#ist'),c=cmds(['i1','i2','i3','i4'].map(i=>$('
  if(!x.ins&&!x.ci.length)return st.textContent='⚠ Nothing to import – paste the Install Settings XML of an existing profile first';
  if(!x.ins&&!admx)return st.textContent='⚠ No ADMX found – paste the XML before you can continue';
  if(x.ins&&admx&&admxFrom=='files'&&nz(x.ins.data||'')!=nz(admx)){pend={k:'a',x};
-  return ask(`<b>Which ADMX should be used?</b><br>The pasted profile contains ADMX revision <b>${X(rev(x.ins.data||'')||'?')}</b>, the files you imported (${X(fname)}) are revision <b>${X(rev(admx)||'?')}</b>.<div class="r"><button id="ak1" class="p">Use the newer policies (update)</button><button id="ak2">Use the pasted policies (keep)</button></div><span class="tag">Updating keeps your configuration and lists what no longer exists in the new policies</span>`)}
+  return ask(`<b>Which version should be used?</b><br>The pasted profile contains ADMX revision <b>${X(rev(x.ins.data||'')||'?')}</b>, the files you imported (${X(fname)}) are revision <b>${X(rev(admx)||'?')}</b>.<div class="r"><button id="ak1" class="p">Use the newer policies (update)</button><button id="ak2">Use the pasted policies (keep)</button></div><span class="tag">Updating keeps your configuration and lists what no longer exists in the new policies</span>`)}
  run(x,'pasted')};
 $('#ask').onclick=async e=>{const b=e.target.closest('button'),p=pend;if(!b||!p)return;ask();
  if(p.k=='a')await run(p.x,b.id=='ak1'?'loaded':'pasted');
