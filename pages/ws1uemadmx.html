@@ -3,7 +3,8 @@
 <style>
 :root{--bg:#fff;--fg:#1c1e21;--mu:#6b7280;--bd:#d6dae0;--cd:#f5f6f8;--ac:#0b6bcb;--ok:#14803c;--no:#b42318;--wn:#b45309;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#15171a;--fg:#e8eaed;--mu:#9aa0a6;--bd:#33373d;--cd:#1e2125;--ac:#5aa9ff;--ok:#4ade80;--no:#f87171;--wn:#fbbf24}}
-:root[data-theme=dark]{--bg:#15171a;--fg:#e8eaed;--mu:#9aa0a6;--bd:#33373d;--cd:#1e2125;--ac:#5aa9ff;--ok:#4ade80;--no:#f87171;--wn:#fbbf24}
+:root[data-theme=dark]{--bg:#15171a;--fg:#e8eaed;--mu:#9aa0a6;--bd:#33373d;--cd:#1e2125;--ac:#5aa9ff;--ok:#4ade80;--no:#f87171;--wn:#fbbf24;color-scheme:dark}
+:root[data-theme=light]{color-scheme:light}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
 main{max-width:1100px;margin:0 auto;padding:16px}h1{font-size:20px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 8px}
@@ -50,17 +51,20 @@ textarea.o{width:100%;height:260px;font:12px/1.4 ui-monospace,Consolas,monospace
 p a,p a:visited{color:inherit}
 h5{text-align:center}h5 a,h5 a:visited{color:inherit}
 h6{text-align:center}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#th{flex:none;width:38px;height:38px;padding:0;border-radius:50%;font-size:18px;line-height:1;transition:background .15s,transform .05s}
+#th:hover{background:var(--bd)}#th:active{transform:scale(.94)}#th:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 </style></head>
 
 <body><main>
-<h1>Custom ADMX to Workspace ONE UEM (OMA DM)</h1>
+<div class="hd"><h1>Custom ADMX to Workspace ONE UEM (OMA DM)</h1><button id="th" type="button"></button></div>
 <p>Generates XML for deploying <a href="https://learn.microsoft.com/en-us/windows/client-management/structure-of-oma-dm-provisioning-files" target="_blank">administrative templates (ADMX)</a> that are not yet natively supported in <a href="https://docs.omnissa.com/Windows_Desktop_Management-VSaaS/uemWindeskProfiles#custom-settings-profile" target="_blank">Workspace ONE UEM</a>!</p>
 <h2>1 · Import policy files</h2>
 <div class="c"><div class="r"><label>.admx <input id="fa" type="file" accept=".admx"></label><label>.adml <input id="fl" type="file" accept=".adml"></label><button id="ld" class="p">Import</button></div>
 <div class="r"><label>Template name <input id="tpl" value="Template" size="16"></label><label>Policy name <input id="aid" size="16" placeholder="&lt;Template&gt;Admx"></label><button id="rg">New CmdIDs</button><span class="mu" id="st"></span></div>
 <div id="ask" class="pnl warn" hidden></div>
 <details id="imp"><summary>Import an existing policy (paste XML)</summary>
-<p>Paste the XML of both existing Custom Settings profiles accordingly to edit the administrative policy: reconfigure the policies, then copy the updated XML back.<br>Optionally, import the matching .admx / .adml files above for readable policy names and policy version drift. If the pasted XML contains policy drift compared to the imported profiles, you can choose which one to use. Existing CmdIDs are kept.</p>
+<p>Paste the Install and Remove XML of both existing Custom Settings profiles accordingly to edit the administrative policy: reconfigure the policies, then copy the updated XML back.<br>Optionally, import the matching .admx / .adml files above for readable policy names and policy version drift. If the pasted XML contains policy drift compared to the imported profiles, you can choose which one to use. Existing CmdIDs are kept.</p>
 <div class="imp"><div><b>Install Policies</b><label>Install Settings<textarea id="i1" spellcheck="false"></textarea></label><label>Remove Settings<textarea id="i2" spellcheck="false"></textarea></label></div>
 <div><b>Configure Policies</b><label>Install Settings<textarea id="i3" spellcheck="false"></textarea></label><label>Remove Settings<textarea id="i4" spellcheck="false"></textarea></label></div></div>
 <div class="r"><button id="ib" class="p">Import</button><button id="ic">Clear</button><span class="mu" id="ist"></span></div></details></div>
@@ -84,6 +88,14 @@ h6{text-align:center}
 const $=s=>document.querySelector(s),X=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'),SEP='&#xF000;',CH=150;
 let P=[],admx='',S={},sel=new Set(),tab=0,snap=null,VN=0,admxFrom='',fname='',upd=null,pend=null,VW=[],RN=0;
 const TABS=['Install Policies','Configure Policies'];
+
+/* ---- Theme: light and dark mode toggle ---- */
+const root=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):{matches:false};
+const isDark=()=>root.dataset.theme?root.dataset.theme=='dark':mq.matches;
+function themeBtn(){const b=$('#th'),d=isDark();b.textContent=d?'☀️':'🌙';b.title=d?'Switch to light mode':'Switch to dark mode';b.setAttribute('aria-label',b.title)}
+function setTheme(t){root.dataset.theme=t;themeBtn()}
+$('#th').onclick=()=>setTheme(isDark()?'light':'dark');
+mq.addEventListener?.('change',themeBtn);themeBtn();
 
 /* ---- Scope and ADMX revision helpers ---- */
 const rd=f=>new Promise(r=>{const x=new FileReader;x.onload=()=>r(x.result);x.readAsText(f)});
