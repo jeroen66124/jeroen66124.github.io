@@ -57,7 +57,7 @@ h6{text-align:center}
 <p>Generates XML for deploying <a href="https://learn.microsoft.com/en-us/windows/client-management/structure-of-oma-dm-provisioning-files" target="_blank">administrative templates (ADMX)</a> that are not yet natively supported in <a href="https://docs.omnissa.com/Windows_Desktop_Management-VSaaS/uemWindeskProfiles#custom-settings-profile" target="_blank">Workspace ONE UEM</a>!</p>
 <h2>1 · Import policy files</h2>
 <div class="c"><div class="r"><label>.admx <input id="fa" type="file" accept=".admx"></label><label>.adml <input id="fl" type="file" accept=".adml"></label><button id="ld" class="p">Import</button></div>
-<div class="r"><label>Template name <input id="tpl" value="template" size="16"></label><label>Policy name <input id="aid" size="16" placeholder="&lt;template&gt;Admx"></label><button id="rg">New CmdIDs</button><span class="mu" id="st"></span></div>
+<div class="r"><label>Template name <input id="tpl" value="Template" size="16"></label><label>Policy name <input id="aid" size="16" placeholder="&lt;Template&gt;Admx"></label><button id="rg">New CmdIDs</button><span class="mu" id="st"></span></div>
 <div id="ask" class="pnl warn" hidden></div>
 <details id="imp"><summary>Import an existing policy (paste XML)</summary>
 <p>Paste the XML of both existing Custom Settings profiles accordingly to edit the administrative policy: reconfigure the policies, then copy the updated XML back.<br>Optionally, import the matching .admx / .adml files above for readable policy names and policy version drift. If the pasted XML contains policy drift compared to the imported profiles, you can choose which one to use. Existing CmdIDs are kept.</p>
@@ -94,7 +94,7 @@ const nz=t=>dedent(t).replace(/\s+/g,' ').trim(),rev=t=>{try{return new DOMParse
 function ask(h){const el=$('#ask');el.hidden=!h;el.innerHTML=h||'';if(!h)pend=null}
 
 /* ---- File import: load ADMX and ADML files ---- */
-function loadFiles(nx,ns,name){admx=nx;adml(ns);fname=name;$('#tpl').value=name.replace(/\.admx$/i,'').replace(/[^\w-]/g,'')||'template';P=[];sel.clear();snap={m:new Map(),drop:[],src:'start'};admxFrom='files';upd=null;parse()}
+function loadFiles(nx,ns,name){admx=nx;adml(ns);fname=name;$('#tpl').value=name.replace(/\.admx$/i,'').replace(/[^\w-]/g,'')||'Template';P=[];sel.clear();snap={m:new Map(),drop:[],src:'start'};admxFrom='files';upd=null;parse()}
 
 /* ---- File import: Import button ---- */
 $('#ld').onclick=async()=>{const a=$('#fa').files[0],l=$('#fl').files[0];ask();
@@ -285,7 +285,7 @@ function pdata(p){
 
 /* ---- XML generation: profile output ---- */
 function gen(){
- const tpl=($('#tpl').value.trim()||'template').replace(/\s+/g,''),id=$('#aid').value.trim()||tpl+'Admx',base=`./Vendor/MSFT/Policy/ConfigOperations/ADMXInstall/${tpl}/Policy`,cfg=P.filter(p=>p.st),
+ const tpl=($('#tpl').value.trim()||'Template').replace(/\s+/g,''),id=$('#aid').value.trim()||tpl+'Admx',base=`./Vendor/MSFT/Policy/ConfigOperations/ADMXInstall/${tpl}/Policy`,cfg=P.filter(p=>p.st),
  uri=p=>`./${scope(p)}/Vendor/MSFT/Policy/Config/${[tpl,'Policy',...p.ch].join('~')}/${p.name}`,
  body='\n'+admx.replace(/^\uFEFF?\s*<\?xml[^>]*\?>\s*/,'').trimEnd().split(/\r?\n/).map(l=>'\t\t\t'+l).join('\n')+'\n\t\t',
  none='<!-- Configure at least one policy -->',load='<!-- Import .admx / .adml files first -->';
@@ -295,7 +295,7 @@ function gen(){
 
 /* ---- Output display ---- */
 function show(){
- const tpl=($('#tpl').value.trim()||'template').replace(/\s+/g,''),pn=`Windows - ${tpl} - ADMX ${['Install','Config'][tab]}`;
+ const tpl=($('#tpl').value.trim()||'Template').replace(/\s+/g,''),pn=`Windows - ${tpl} - ADMX ${['Install','Config'][tab]}`;
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
  $('#pn').value=pn;$('#pn').style.width=`calc(${pn.length}ch + 28px)`;
  $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];
