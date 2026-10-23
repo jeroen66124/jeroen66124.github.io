@@ -40,7 +40,7 @@ details.x{margin:4px 0 0;border:0;padding:0}details.x summary{font-size:12px;fon
 .pn button:hover{background:var(--ac);color:var(--bg)}.pn button.ok,.pn button.ok:hover{background:transparent;border-color:var(--ok);color:var(--ok)}
 @media(max-width:480px){.t{width:100%}.t button{padding:11px 10px;font-size:14px}}
 textarea.o{width:100%;height:260px;font:12px/1.4 ui-monospace,Consolas,monospace;white-space:pre}
-.xs{font-size:12px;margin-top:4px;color:var(--mu);min-height:1.2em}.xs.ok{color:var(--ok)}.xs.bad{color:var(--no)}.xs .w2{color:var(--wn)}
+.xs{display:flex;justify-content:space-between;gap:4px 12px;flex-wrap:wrap;font-size:12px;margin-top:4px;color:var(--mu);min-height:1.2em}.xs.ok{color:var(--ok)}.xs.bad{color:var(--no)}.xs .w2{color:var(--wn)}.xs .cc{color:var(--mu)}
 .f{display:grid;grid-template-columns:180px 1fr;gap:0px;max-width:900px;margin:20px auto;align-items:start}
 .fl{font-size:15px;font-weight:600;color:var(--fg);padding-top:6px}.fl b{color:var(--no)}
 .fl button{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;max-width:150px;margin:8px 0 0;padding:9px 16px;font-size:14px;font-weight:600;background:var(--ac);border-color:var(--ac);color:var(--bg);box-shadow:0 1px 3px rgba(0,0,0,.25);transition:filter .15s,transform .05s}
@@ -51,6 +51,7 @@ textarea.o{width:100%;height:260px;font:12px/1.4 ui-monospace,Consolas,monospace
 p a,p a:visited{color:inherit}
 h5{text-align:center}h5 a,h5 a:visited{color:inherit}
 h6{text-align:center}
+#dz.drag{outline:2px dashed var(--ac);outline-offset:-2px;background:var(--bd)}
 .hd{display:flex;align-items:center;justify-content:space-between;gap:12px}
 #th{flex:none;width:38px;height:38px;padding:0;border-radius:50%;font-size:18px;line-height:1;transition:background .15s,transform .05s}
 #th:hover{background:var(--bd)}#th:active{transform:scale(.94)}#th:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
@@ -60,7 +61,7 @@ h6{text-align:center}
 <div class="hd"><h1>Custom ADMX to Workspace ONE UEM (OMA-DM)</h1><button id="th" type="button"></button></div>
 <p>Generates XML for deploying <a href="https://learn.microsoft.com/en-us/windows/client-management/understanding-admx-backed-policies" target="_blank">administrative templates (ADMX)</a> with <a href="https://learn.microsoft.com/en-us/windows/client-management/structure-of-oma-dm-provisioning-files" target="_blank">OMA-DM</a> that are not yet natively supported in <a href="https://docs.omnissa.com/Windows_Desktop_Management-VSaaS/uemWindeskProfiles#custom-settings-profile" target="_blank">Workspace ONE UEM</a>!</p>
 <h2>1 · Import policy files</h2>
-<div class="c"><div class="r"><label>.admx <input id="fa" type="file" accept=".admx"></label><label>.adml <input id="fl" type="file" accept=".adml"></label><button id="ld" class="p">Import</button></div>
+<div class="c" id="dz"><div class="r"><label>.admx <input id="fa" type="file" accept=".admx"></label><label>.adml <input id="fl" type="file" accept=".adml"></label><button id="ld" class="p">Import</button><span class="tag">or drop both files here</span></div>
 <div class="r"><label>Template name <input id="tpl" value="Template" size="16"></label><label>Policy name <input id="aid" size="16" placeholder="&lt;Template&gt;Admx"></label><button id="rg">New CmdIDs</button><span class="mu" id="st"></span></div>
 <div id="ask" class="pnl warn" hidden></div>
 <details id="imp"><summary>Import an existing policy (paste XML)</summary>
@@ -88,6 +89,7 @@ h6{text-align:center}
 const $=s=>document.querySelector(s),X=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'),SEP='&#xF000;',CH=150;
 let P=[],admx='',S={},sel=new Set(),tab=0,snap=null,VN=0,admxFrom='',fname='',upd=null,pend=null,VW=[],RN=0;
 const TABS=['Install Policies','Configure Policies'];
+const rd=f=>new Promise(r=>{const x=new FileReader;x.onload=()=>r(x.result);x.readAsText(f)});
 
 /* ---- Theme: light and dark mode toggle ---- */
 const root=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):{matches:false};
@@ -98,27 +100,42 @@ $('#th').onclick=()=>setTheme(isDark()?'light':'dark');
 mq.addEventListener?.('change',themeBtn);themeBtn();
 
 /* ---- Scope and ADMX revision helpers ---- */
-const rd=f=>new Promise(r=>{const x=new FileReader;x.onload=()=>r(x.result);x.readAsText(f)});
 const scope=p=>p.sc||(p.cls=='User'?'User':'Device'),cf=p=>(p.cls=='User'||p.cls=='Machine')&&scope(p)!=(p.cls=='User'?'User':'Device');
 const nz=t=>dedent(t).replace(/\s+/g,' ').trim(),rev=t=>{try{return new DOMParser().parseFromString(dedent(t),'text/xml').documentElement.getAttribute('revision')||''}catch(_){return''}};
 
 /* ---- Prompt panel (ADMX version choice) ---- */
 function ask(h){const el=$('#ask');el.hidden=!h;el.innerHTML=h||'';if(!h)pend=null}
 
+/* ---- File import: file slots and drag and drop ---- */
+const F={a:null,l:null,done:false},zone=$('#dz'),gf=k=>F[k]||$(k=='a'?'#fa':'#fl').files[0];
+$('#fa').onchange=()=>{F.a=$('#fa').files[0]||null;F.done=false};
+$('#fl').onchange=()=>{F.l=$('#fl').files[0]||null;F.done=false};
+function pick(files){
+ if(F.done){F.a=F.l=null;F.done=false;$('#fa').value='';$('#fl').value=''}
+ let n=0;[...files].forEach(f=>{const k=/\.admx$/i.test(f.name)?'a':/\.adml$/i.test(f.name)?'l':'';if(!k)return;n++;F[k]=f;
+  try{const dt=new DataTransfer();dt.items.add(f);$(k=='a'?'#fa':'#fl').files=dt.files}catch(_){}});
+ if(!n)return $('#st').textContent='⚠ Only .admx and .adml files can be dropped';
+ F.a&&F.l?importFiles():$('#st').textContent=`✓ ${(F.a||F.l).name} added – now add the matching ${F.a?'.adml':'.admx'} file`}
+['dragenter','dragover'].forEach(t=>zone.addEventListener(t,e=>{e.preventDefault();zone.classList.add('drag')}));
+zone.addEventListener('dragleave',e=>{if(!zone.contains(e.relatedTarget))zone.classList.remove('drag')});
+zone.addEventListener('drop',e=>{e.preventDefault();zone.classList.remove('drag');pick(e.dataTransfer.files)});
+
 /* ---- File import: load ADMX and ADML files ---- */
 function loadFiles(nx,ns,name){admx=nx;adml(ns);fname=name;$('#tpl').value=name.replace(/\.admx$/i,'').replace(/[^\w-]/g,'')||'Template';P=[];sel.clear();snap={m:new Map(),drop:[],src:'start'};admxFrom='files';upd=null;parse()}
 
 /* ---- File import: Import button ---- */
-$('#ld').onclick=async()=>{const a=$('#fa').files[0],l=$('#fl').files[0];ask();
+async function importFiles(){const a=gf('a'),l=gf('l');ask();
  if(!a||!l)return $('#st').textContent='⚠ Select both an .admx and an .adml file, then press Import';
+ F.done=true;
  const nx=await rd(a),ns=await rd(l);
  if(admxFrom=='xml'&&snap?.src=='import'&&P.length){
   if(nz(nx)==nz(admx))return migrate(nx,ns,a.name,1);
   pend={k:'b',nx,ns,name:a.name};
   return ask(`<b>Which version should be used?</b><br>The imported profile contains ADMX revision <b>${X(rev(admx)||'?')}</b>, the files you imported (${X(a.name)}) are revision <b>${X(rev(nx)||'?')}</b>.<div class="r"><button id="ak1" class="p">Use the imported files (update)</button><button id="ak2">Use the imported XML (keep)</button></div><span class="tag">Updating keeps your configuration and lists what no longer exists in the new ADMX</span>`)}
- loadFiles(nx,ns,a.name)};
+ loadFiles(nx,ns,a.name)}
+$('#ld').onclick=importFiles;
 
- /* ---- ADML string table ---- */
+/* ---- ADML string table ---- */
 function adml(t){S={};[...new DOMParser().parseFromString(t,'text/xml').getElementsByTagName('string')].forEach(s=>S[s.getAttribute('id')]=s.textContent)}
 
 /* ---- ADMX parser: builds the policy list ---- */
@@ -157,6 +174,8 @@ function updPanel(){const el=$('#upd');if(!upd){el.hidden=true;return}
  const n=upd.gone.length+upd.elems.length,li=(t,w)=>`<li><b class="rm">−</b> ${X(t)} <span class="tag">${w}</span></li>`;
  el.hidden=false;el.className='pnl'+(n?' warn':' ok');
  el.innerHTML=`<b>ADMX update:</b> revision ${X(upd.from||'?')} → ${X(upd.to||'?')} (${X(upd.file||'')}) · ${upd.kept} configured ${upd.kept==1?'policy':'policies'} carried over`+(upd.news?` · ${upd.news} new ${upd.news==1?'policy':'policies'} available`:'')+(n?'<ul>'+upd.gone.map(t=>li(t,'no longer in the new ADMX – its setting is dropped')).join('')+upd.elems.map(([t,id])=>li(t,`element ${X(id)} no longer exists – its value is dropped`)).join('')+'</ul>':'<br>✓ Everything you configured also exists in the new ADMX')}
+
+/* ---- XML import: patterns and parsing helpers ---- */
 const ADM=/\/ADMXInstall\/([^/]+)\/Policy\/([^/]+)$/,REM=/\/ADMXInstall\/([^/]+)\/Policy$/,CFG=/^\.\/(?:Device|User)\/Vendor\/MSFT\/Policy\/Config\/[^/]+\/([^/]+)$/;
 function cmds(t){const d=new DOMParser().parseFromString('<r>'+t+'</r>','text/xml');if(d.querySelector('parsererror'))return null;
  return[...d.documentElement.children].map(c=>{const g=n=>c.getElementsByTagName(n)[0],dt=g('Data');return{op:c.localName,id:g('CmdID')?.textContent.trim(),uri:(g('LocURI')?.textContent||'').trim(),data:dt?dt.textContent:null}})}
@@ -188,7 +207,7 @@ $('#ask').onclick=async e=>{const b=e.target.closest('button'),p=pend;if(!b||!p)
 
 /* ---- XML import: apply the pasted profile ---- */
 async function run({ins,rem,ci,cr},mode){const st=$('#ist'),lost=[];
- if(ins&&mode!='loaded'){const l=$('#fl').files[0];admx=dedent(ins.data||'');adml(l?await rd(l):'<r/>');P=[];sel.clear();parse();admxFrom='xml';if(!P.length)return st.textContent='⚠ The ADMX inside the pasted XML could not be parsed'}
+ if(ins&&mode!='loaded'){const l=gf('l');admx=dedent(ins.data||'');adml(l?await rd(l):'<r/>');P=[];sel.clear();parse();admxFrom='xml';if(!P.length)return st.textContent='⚠ The ADMX inside the pasted XML could not be parsed'}
  const m=ins?ins.uri.match(ADM):rem?.uri.match(REM);if(m){$('#tpl').value=m[1];if(ins)$('#aid').value=m[2]}
  P.forEach(p=>{p.st='';p.v={};p.sc=undefined});G.clear();ins&&G.set('i',ins.id);rem&&G.set('r',rem.id);
  const nm=q=>q.uri.match(CFG)[1],miss=[];
@@ -203,12 +222,13 @@ async function run({ins,rem,ci,cr},mode){const st=$('#ist'),lost=[];
  render();gen()}
 
 /* ---- Change tracking: changes since import ---- */
+const fv=v=>{const s=String(v??'').replace(/\r?\n/g,' ⏎ ');return s===''?'(empty)':`"${s.slice(0,60)}${s.length>60?'…':''}"`};
 function chg(){const el=$('#chg');if(!snap||!P.length){el.hidden=true;return}
  const A=[],R=[],M=[],L=s=>s=='e'?'Enabled':'Disabled',pn=new Set(P.map(p=>p.name));
  P.forEach(p=>{const o=snap.m.get(p.name);
   if(p.st&&!o)A.push(p);else if(!p.st&&o)R.push(p);
-  else if(p.st&&o){const sc=scope(p)!=o.sc;if(pdata(p)!==o.data||sc){const ids=p.els.filter(e=>dv(e,p)!==dv(e,{v:o.v})).map(e=>e.id),w=[];
-   if(p.st!=o.st)w.push(`${L(o.st)} → ${L(p.st)}`);else if(ids.length)w.push('changed: '+ids.join(', '));if(sc)w.push(`scope ./${o.sc} → ./${scope(p)}`);M.push([p,w.join(' · ')||'values changed'])}}});
+  else if(p.st&&o){const sc=scope(p)!=o.sc;if(pdata(p)!==o.data||sc){const ids=p.els.filter(e=>dv(e,p)!==dv(e,{v:o.v})).map(e=>`${e.id}: ${fv(dv(e,{v:o.v}))} → ${fv(dv(e,p))}`),w=[];
+   if(p.st!=o.st)w.push(`${L(o.st)} → ${L(p.st)}`);else if(ids.length)w.push(ids.join('; '));if(sc)w.push(`scope ./${o.sc} → ./${scope(p)}`);M.push([p,w.join(' · ')||'values changed'])}}});
  const dr=snap.drop.concat([...snap.m].filter(([n])=>!pn.has(n)).map(([,o])=>o.t)),n=A.length+R.length+M.length+dr.length,li=(c,s,t,x)=>`<li><b class="${c}">${s}</b> ${X(t)} ${x?`<span class="tag">${X(x)}</span>`:''}</li>`;
  el.hidden=false;el.className='pnl';
  el.innerHTML=`<b>Changes since import:</b> `+(n?`${A.length} added · ${R.length+dr.length} removed · ${M.length} modified<ul>`+A.map(p=>li('a','+',p.title,L(p.st))).join('')+R.map(p=>li('rm','−',p.title,'no longer configured')).join('')+dr.map(x=>li('rm','−',x,'not in the ADMX – removed from the output')).join('')+M.map(([p,w])=>li('m','~',p.title,w)).join('')+'</ul>':snap.src=='import'?'none – the output matches the imported profile':'none yet – enable or disable a policy to see it listed here')}
@@ -242,7 +262,8 @@ function chk(t){if(/^\s*<!--/.test(t))return null;
  return{ok:1,msg:'✓ XML syntax is valid'}}
 
 /* ---- Policy list: values and filtering ---- */
-const dv=(e,p)=>p.v[e.id]??(e.t=='enum'?e.o[0]?.v:e.t=='boolean'?'false':e.t.includes('ecimal')?e.min||'0':'');
+const dv=(e,p)=>p.v[e.id]??(e.t=='enum'?e.o[0]?.v:e.t=='boolean'?'false':'');
+const rng=e=>e.min!=null||e.max!=null?`number (${e.min??'min'} to ${e.max??'max'})`:'number';
 const vis=()=>{const q=$('#q').value.toLowerCase(),c=$('#cf').value,s=$('#sf').value;
  return P.map((p,i)=>[p,i]).filter(([p])=>(!q||(p.title+p.name).toLowerCase().includes(q))&&(!c||p.cat==c)&&(!s||(s=='n'?!p.st:s=='c'?!!p.st:p.st==s)))};
 
@@ -260,7 +281,7 @@ const rowHtml=([p,i])=>`<tr><td><input type="checkbox" data-s="${i}" ${sel.has(i
  (p.st=='e'&&p.els.length?`<tr class="e"><td></td><td colspan="3">${p.els.map(e=>{const k=`data-i="${i}" data-k="${X(e.id)}"`,x=dv(e,p);
   return`<label>${X(e.id)} <span class="tag">(${e.t})</span>`+(e.t=='enum'?`<select ${k}>${e.o.map(o=>`<option value="${X(o.v)}" ${o.v==x?'selected':''}>${X(o.n)} (${X(o.v)})</option>`).join('')}</select>`:
   e.t=='boolean'?`<select ${k}><option ${x=='true'?'selected':''}>true</option><option ${x=='false'?'selected':''}>false</option></select>`:
-  e.t=='list'||e.t=='multiText'?`<textarea rows="3" ${k} placeholder="${e.ex?'name=value, one per line':'one entry per line'}">${X(x)}</textarea>`:`<input ${k} value="${X(x)}" ${e.t.includes('ecimal')?'type="number"':''}>`)+'</label>'}).join('')}</td></tr>`:'');
+  e.t=='list'||e.t=='multiText'?`<textarea rows="3" ${k} placeholder="${e.ex?'name=value, one per line':'one entry per line'}">${X(x)}</textarea>`:`<input ${k} value="${X(x)}" ${e.t.includes('ecimal')?`type="number" placeholder="${X(rng(e))}"`:''}>`)+'</label>'}).join('')}</td></tr>`:'');
 
 /* ---- Policy list: chunked rendering ---- */
 function render(keep){VW=vis();RN=Math.min(keep?Math.max(RN,CH):CH,VW.length);
@@ -311,7 +332,7 @@ function show(){
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
  $('#pn').value=pn;$('#pn').style.width=`calc(${pn.length}ch + 28px)`;
  $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];
- [1,2].forEach(n=>{const r=chk(O[tab*2+n-1]),s=$('#s'+n);s.className='xs'+(r?r.ok?' ok':' bad':'');s.innerHTML=r?X(r.msg)+(r.ok&&tab==1&&VN?` <span class="w2">– ⚠ ${VN} ${VN>1?'policies need':'policy needs'} attention</span>`:''):''});
+ [1,2].forEach(n=>{const r=chk(O[tab*2+n-1]),s=$('#s'+n);s.className='xs'+(r?r.ok?' ok':' bad':'');s.innerHTML=r?`<span>${X(r.msg)}${r.ok&&tab==1&&VN?` <span class="w2">– ⚠ ${VN} ${VN>1?'policies need':'policy needs'} attention</span>`:''}</span><span class="cc">${O[tab*2+n-1].length.toLocaleString()} characters</span>`:''});
  $('#hint').textContent=['Profile 1 – Install Policies: make all administrative policies available','Profile 2 – Configure Policies: make all administrative policies configurable'][tab]}
 $('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;show()}};
 $('#tpl').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
