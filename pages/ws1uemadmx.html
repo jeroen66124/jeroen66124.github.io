@@ -17,6 +17,7 @@ details{margin-top:10px;border-top:1px solid var(--bd);padding-top:10px}summary{
 @media(max-width:640px){.imp{grid-template-columns:1fr}}
 .w{overflow-x:auto;border:1px solid var(--bd);border-radius:8px}table{border-collapse:collapse;width:100%;min-width:640px}
 td,th{padding:6px 9px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}th{background:var(--cd);position:sticky;top:0}
+#snt td{padding:0;border:0;height:1px}
 .e{background:var(--cd)}.e label{display:block;margin:4px 0;font-size:13px}.e input,.e select,.e textarea{width:100%;max-width:520px;display:block}
 .tag{font-size:12px;color:var(--mu)}.s1{color:var(--ok)}.s2{color:var(--no)}
 details.x{margin:4px 0 0;border:0;padding:0}details.x summary{font-size:12px;font-weight:400;color:var(--ac)}
@@ -87,9 +88,12 @@ h6{text-align:center}
 <script>
 /* ---- Core helpers and application state ---- */
 const $=s=>document.querySelector(s),X=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'),SEP='&#xF000;',CH=150;
-let P=[],admx='',S={},sel=new Set(),tab=0,snap=null,VN=0,admxFrom='',fname='',upd=null,pend=null,VW=[],RN=0;
+let P=[],admx='',S={},sel=new Set(),tab=0,snap=null,VN=0,VM=new Map,admxFrom='',fname='',upd=null,pend=null,VW=[],RN=0,gt=0;
 const TABS=['Install Policies','Configure Policies'];
 const rd=f=>new Promise(r=>{const x=new FileReader;x.onload=()=>r(x.result);x.readAsText(f)});
+
+/* ---- Debounced output generation (typing) ---- */
+const genSoon=()=>{clearTimeout(gt);gt=setTimeout(gen,120)},flush=()=>{if(gt)gen()};
 
 /* ---- Theme: light and dark mode toggle ---- */
 const root=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):{matches:false};
@@ -101,7 +105,7 @@ mq.addEventListener?.('change',themeBtn);themeBtn();
 
 /* ---- Scope and ADMX revision helpers ---- */
 const scope=p=>p.sc||(p.cls=='User'?'User':'Device'),cf=p=>(p.cls=='User'||p.cls=='Machine')&&scope(p)!=(p.cls=='User'?'User':'Device');
-const nz=t=>dedent(t).replace(/\s+/g,' ').trim(),rev=t=>{try{return new DOMParser().parseFromString(dedent(t),'text/xml').documentElement.getAttribute('revision')||''}catch(_){return''}};
+const nz=t=>dedent(t).replace(/\s+/g,' ').trim(),rev=t=>(String(t||'').match(/<(?:[\w-]+:)?policyDefinitions\b[^>]*?\srevision\s*=\s*["']([^"']*)["']/)||[])[1]||'';
 
 /* ---- Prompt panel (ADMX version choice) ---- */
 function ask(h){const el=$('#ask');el.hidden=!h;el.innerHTML=h||'';if(!h)pend=null}
@@ -164,8 +168,8 @@ function migrate(nx,ns,name,quiet){
  const o=P.filter(p=>p.st).map(p=>({n:p.name,t:p.title,v:{...p.v},ids:new Set(p.els.map(e=>e.id))})),names=new Set(P.map(p=>p.name)),from=rev(admx),tp=$('#tpl').value;
  admx=nx;adml(ns);fname=name;admxFrom='files';sel.clear();parse();$('#tpl').value=tp;
  if(quiet){upd=null;$('#st').textContent=`✓ Policy names updated from the ADML · ${P.filter(p=>p.st).length} configured policies kept`;return gen()}
- const gone=[],elems=[];
- o.forEach(q=>{const p=P.find(x=>x.name==q.n);if(!p)return gone.push(q.t);Object.keys(q.v).forEach(id=>{if(q.ids.has(id)&&!p.els.some(e=>e.id==id))elems.push([p.title,id])})});
+ const byName=new Map(P.map(p=>[p.name,p])),gone=[],elems=[];
+ o.forEach(q=>{const p=byName.get(q.n);if(!p)return gone.push(q.t);Object.keys(q.v).forEach(id=>{if(q.ids.has(id)&&!p.els.some(e=>e.id==id))elems.push([p.title,id])})});
  upd={from,to:rev(nx),file:name,gone,elems,news:P.filter(p=>!names.has(p.name)).length,kept:P.filter(p=>p.st).length};
  $('#st').textContent=`✓ ${P.length} policies imported · ${upd.kept} configured policies carried over`;gen()}
 
@@ -181,7 +185,8 @@ function cmds(t){const d=new DOMParser().parseFromString('<r>'+t+'</r>','text/xm
  return[...d.documentElement.children].map(c=>{const g=n=>c.getElementsByTagName(n)[0],dt=g('Data');return{op:c.localName,id:g('CmdID')?.textContent.trim(),uri:(g('LocURI')?.textContent||'').trim(),data:dt?dt.textContent:null}})}
 function dedent(t){const L=t.replace(/^\uFEFF/,'').replace(/^\s*<\?xml[^>]*\?>/,'').split(/\r?\n/),ind=l=>l.match(/^[ \t]*/)[0].length;
  while(L.length&&!L[0].trim())L.shift();while(L.length&&!L[L.length-1].trim())L.pop();
- const m=Math.min(...L.filter(l=>l.trim()).map(ind));return L.map(l=>l.trim()?l.slice(m):'').join('\n')}
+ let m=Infinity;for(const l of L)if(l.trim())m=Math.min(m,ind(l));if(m===Infinity)m=0;
+ return L.map(l=>l.trim()?l.slice(m):'').join('\n')}
 const pairs=a=>{const o=[];for(let i=0;i<a.length;i+=2)o.push([a[i],a[i+1]??'']);return o};
 function setp(p,data){const d=new DOMParser().parseFromString('<r>'+data+'</r>','text/xml'),bad=[];p.v={};
  if(d.getElementsByTagName('disabled')[0]){p.st='d';return bad}p.st='e';
@@ -210,9 +215,9 @@ async function run({ins,rem,ci,cr},mode){const st=$('#ist'),lost=[];
  if(ins&&mode!='loaded'){const l=gf('l');admx=dedent(ins.data||'');adml(l?await rd(l):'<r/>');P=[];sel.clear();parse();admxFrom='xml';if(!P.length)return st.textContent='⚠ The ADMX inside the pasted XML could not be parsed'}
  const m=ins?ins.uri.match(ADM):rem?.uri.match(REM);if(m){$('#tpl').value=m[1];if(ins)$('#aid').value=m[2]}
  P.forEach(p=>{p.st='';p.v={};p.sc=undefined});G.clear();ins&&G.set('i',ins.id);rem&&G.set('r',rem.id);
- const nm=q=>q.uri.match(CFG)[1],miss=[];
- ci.forEach(q=>{const n=nm(q),p=P.find(z=>z.name==n);if(!p)return miss.push(n);p.sc=/^\.\/User\//.test(q.uri)?'User':'Device';setp(p,q.data||'').forEach(id=>lost.push([p.title,id]));G.set('c'+n,q.id)});
- cr.forEach(q=>{if(P.some(z=>z.name==nm(q)))G.set('x'+nm(q),q.id)});
+ const byName=new Map(P.map(p=>[p.name,p])),nm=q=>q.uri.match(CFG)[1],miss=[];
+ ci.forEach(q=>{const n=nm(q),p=byName.get(n);if(!p)return miss.push(n);p.sc=/^\.\/User\//.test(q.uri)?'User':'Device';setp(p,q.data||'').forEach(id=>lost.push([p.title,id]));G.set('c'+n,q.id)});
+ cr.forEach(q=>{if(byName.has(nm(q)))G.set('x'+nm(q),q.id)});
  const have=new Set(ci.map(nm)),extra=[...new Set(cr.map(nm))].filter(n=>!have.has(n));
  snap={m:new Map(P.filter(p=>p.st).map(p=>[p.name,{t:p.title,st:p.st,v:{...p.v},data:pdata(p),sc:scope(p)}])),drop:miss,src:'import'};
  if(mode=='loaded'){const pn=new Set([...new DOMParser().parseFromString(dedent(ins.data||''),'text/xml').getElementsByTagName('policy')].map(e=>e.getAttribute('name')));
@@ -249,20 +254,22 @@ function validate(){const out=[];
  return out}
 
 /* ---- Validation: summary panel and row badges ---- */
-function val(){const el=$('#val'),V=validate();VN=V.length;const n=P.filter(p=>p.st).length,by=new Map(V.map(v=>[v.p,v]));
- P.forEach((p,i)=>{const w=$('#w'+i);if(w){const x=by.get(p);w.textContent=x?'⚠':'';w.title=x?x.m.join('\n'):''}});
+const badge=w=>{const m=VM.get(w.dataset.w);w.textContent=m?'⚠':'';w.title=m?m.join('\n'):''};
+function val(){const el=$('#val'),V=validate();VN=V.length;VM=new Map(V.map(v=>[v.p.name,v.m]));const n=P.filter(p=>p.st).length;
+ document.querySelectorAll('#tb [data-w]').forEach(badge);
  if(!n){el.hidden=true;return}el.hidden=false;el.className='pnl '+(V.length?'warn':'ok');
  el.innerHTML=V.length?`<b>⚠ ${V.length} configured ${V.length>1?'policies need':'policy needs'} attention</b><ul>${V.map(v=>`<li><b>${X(v.p.title)}</b> — ${v.m.map(X).join('; ')}</li>`).join('')}</ul>`:`<b>✓ No problems found</b> in ${n} configured ${n>1?'policies':'policy'}`}
 
-/* ---- Validation: XML syntax check ---- */
+/* ---- Validation: XML syntax check (memoized per output string) ---- */
 function chk(t){if(/^\s*<!--/.test(t))return null;
  const D=new DOMParser(),pe=d=>d.querySelector('parsererror'),o=D.parseFromString('<r>'+t+'</r>','text/xml'),bad=m=>({ok:0,msg:'✗ XML syntax is not valid – '+m});
  if(pe(o))return bad((pe(o).textContent.match(/(error on line \d+ at column \d+[^\n]*|XML Parsing Error[^\n]*)/)||[])[0]?.slice(0,140)||'malformed tags');
  for(const d of o.getElementsByTagName('Data')){const s=d.textContent.trim();if(s.startsWith('<')&&pe(D.parseFromString('<r>'+s+'</r>','text/xml')))return bad('the content inside a <Data> block is malformed')}
  return{ok:1,msg:'✓ XML syntax is valid'}}
+const CK=new Map,chkC=t=>{if(!CK.has(t)){if(CK.size>6)CK.clear();CK.set(t,chk(t))}return CK.get(t)};
 
 /* ---- Policy list: values and filtering ---- */
-const dv=(e,p)=>p.v[e.id]??(e.t=='enum'?e.o[0]?.v:e.t=='boolean'?'false':'');
+const dv=(e,p)=>p.v[e.id]??(e.t=='enum'?e.o[0]?.v??'':e.t=='boolean'?'false':'');
 const rng=e=>e.min!=null||e.max!=null?`number (${e.min??'min'} to ${e.max??'max'})`:'number';
 const vis=()=>{const q=$('#q').value.toLowerCase(),c=$('#cf').value,s=$('#sf').value;
  return P.map((p,i)=>[p,i]).filter(([p])=>(!q||(p.title+p.name).toLowerCase().includes(q))&&(!c||p.cat==c)&&(!s||(s=='n'?!p.st:s=='c'?!!p.st:p.st==s)))};
@@ -276,38 +283,46 @@ const det=(p,i)=>{const R=rg(p);if(!p.info&&!R.length)return'';
  return`<details class="x" data-o="${i}" ${p.open?'open':''}><summary>Details</summary><div class="xd">${p.info?`<div class="ex">${X(p.info)}</div>`:''}${R.length?`<div style="margin-top:6px">Registry:${R.map(l=>`<code>${X(l)}</code>`).join('')}</div>`:''}</div></details>`};
 
 /* ---- Policy list: row markup ---- */
-const rowHtml=([p,i])=>`<tr><td><input type="checkbox" data-s="${i}" ${sel.has(i)?'checked':''}></td><td>${X(p.title)}<div class="tag">${X(p.name)}${scope(p)=='User'?' · User':''}</div>${det(p,i)}</td><td class="tag">${X(p.cat)}</td>
- <td><select data-i="${i}"><option value="">Not configured</option><option value="e" ${p.st=='e'?'selected':''}>Enabled</option><option value="d" ${p.st=='d'?'selected':''}>Disabled</option></select><span class="wn" id="w${i}"></span>${cf(p)&&p.st?`<div class="scf">⚠ ADMX class ${X(p.cls)} · deploy as <select data-sc="${i}"><option value="Device" ${scope(p)=='Device'?'selected':''}>./Device</option><option value="User" ${scope(p)=='User'?'selected':''}>./User</option></select></div>`:''}</td></tr>`+
- (p.st=='e'&&p.els.length?`<tr class="e"><td></td><td colspan="3">${p.els.map(e=>{const k=`data-i="${i}" data-k="${X(e.id)}"`,x=dv(e,p);
+const wb=p=>{const m=VM.get(p.name);return`<span class="wn" data-w="${X(p.name)}"${m?` title="${X(m.join('\n'))}">⚠`:'>'}</span>`};
+const rowHtml=([p,i])=>`<tr data-r="${i}"><td><input type="checkbox" data-s="${i}" ${sel.has(p.name)?'checked':''}></td><td>${X(p.title)}<div class="tag">${X(p.name)}${scope(p)=='User'?' · User':''}</div>${det(p,i)}</td><td class="tag">${X(p.cat)}</td>
+ <td><select data-i="${i}"><option value="">Not configured</option><option value="e" ${p.st=='e'?'selected':''}>Enabled</option><option value="d" ${p.st=='d'?'selected':''}>Disabled</option></select>${wb(p)}${cf(p)&&p.st?`<div class="scf">⚠ ADMX class ${X(p.cls)} · deploy as <select data-sc="${i}"><option value="Device" ${scope(p)=='Device'?'selected':''}>./Device</option><option value="User" ${scope(p)=='User'?'selected':''}>./User</option></select></div>`:''}</td></tr>`+
+ (p.st=='e'&&p.els.length?`<tr class="e" data-r="${i}"><td></td><td colspan="3">${p.els.map(e=>{const k=`data-i="${i}" data-k="${X(e.id)}"`,x=dv(e,p);
   return`<label>${X(e.id)} <span class="tag">(${e.t})</span>`+(e.t=='enum'?`<select ${k}>${e.o.map(o=>`<option value="${X(o.v)}" ${o.v==x?'selected':''}>${X(o.n)} (${X(o.v)})</option>`).join('')}</select>`:
   e.t=='boolean'?`<select ${k}><option ${x=='true'?'selected':''}>true</option><option ${x=='false'?'selected':''}>false</option></select>`:
   e.t=='list'||e.t=='multiText'?`<textarea rows="3" ${k} placeholder="${e.ex?'name=value, one per line':'one entry per line'}">${X(x)}</textarea>`:`<input ${k} value="${X(x)}" ${e.t.includes('ecimal')?`type="number" placeholder="${X(rng(e))}"`:''}>`)+'</label>'}).join('')}</td></tr>`:'');
 
-/* ---- Policy list: chunked rendering ---- */
-function render(keep){VW=vis();RN=Math.min(keep?Math.max(RN,CH):CH,VW.length);
- $('#cnt').textContent=`${VW.length}/${P.length} shown`;
- $('#sc').textContent=`${sel.size} selected · ${P.filter(p=>p.st).length} configured`;
- $('#tb').innerHTML=VW.slice(0,RN).map(rowHtml).join('');val();more()}
-function more(){if(RN>=VW.length)return;const w=$('#wrap');if(w.scrollHeight-w.scrollTop-w.clientHeight>300)return;
- const n=Math.min(RN+CH,VW.length);$('#tb').insertAdjacentHTML('beforeend',VW.slice(RN,n).map(rowHtml).join(''));RN=n;val();more()}
-$('#wrap').addEventListener('scroll',more);
+/* ---- Policy list: chunked rendering (lazy loaded via a sentinel row) ---- */
+function counts(){$('#cnt').textContent=`${VW.length}/${P.length} shown`;$('#sc').textContent=`${sel.size} selected · ${P.filter(p=>p.st).length} configured`}
+function render(keep){VW=vis();RN=Math.min(keep?Math.max(RN,CH):CH,VW.length);counts();
+ $('#tb').innerHTML=VW.slice(0,RN).map(rowHtml).join('');sentinel()}
+const IO=window.IntersectionObserver?new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting))more()},{root:$('#wrap'),rootMargin:'0px 0px 300px 0px'}):null;
+function sentinel(){IO?.disconnect();if(RN>=VW.length)return;$('#tb').insertAdjacentHTML('beforeend','<tr id="snt"><td colspan="4"></td></tr>');IO?IO.observe($('#snt')):more()}
+function more(){if(RN>=VW.length)return;$('#snt')?.remove();const n=Math.min(RN+CH,VW.length);
+ $('#tb').insertAdjacentHTML('beforeend',VW.slice(RN,n).map(rowHtml).join(''));RN=n;sentinel()}
+
+/* ---- Policy list: re-render a single policy row ---- */
+function rerow(i){const rs=$('#tb').querySelectorAll(`tr[data-r="${i}"]`);
+ if($('#sf').value||!rs.length)return render(true);
+ const f=document.activeElement?.dataset?.sc!=null?`[data-sc="${i}"]`:`select[data-i="${i}"]:not([data-k])`;
+ rs[0].insertAdjacentHTML('beforebegin',rowHtml([P[i],i]));rs.forEach(r=>r.remove());counts();$('#tb').querySelector(f)?.focus()}
 
 /* ---- Policy list: event handlers ---- */
 ['q','cf','sf'].forEach(id=>$('#'+id).oninput=()=>render());
 $('#tb').addEventListener('toggle',e=>{const i=e.target.dataset?.o;if(i!=null)P[i].open=e.target.open},true);
 $('#tb').onchange=e=>{const t=e.target,i=t.dataset.i;
- if(t.dataset.s!=null)t.checked?sel.add(+t.dataset.s):sel.delete(+t.dataset.s);
- else if(t.dataset.k!=null)P[i].v[t.dataset.k]=t.value;
- else if(t.dataset.sc!=null){P[t.dataset.sc].sc=t.value;render(true)}
- else{P[i].st=t.value;render(true)}
- $('#sc').textContent=`${sel.size} selected · ${P.filter(p=>p.st).length} configured`;gen()};
-$('#tb').oninput=e=>{const t=e.target;if(t.dataset.k!=null){P[t.dataset.i].v[t.dataset.k]=t.value;gen()}};
-$('#sa').onclick=()=>{vis().forEach(([,i])=>sel.add(i));render(true)};$('#sn').onclick=()=>{sel.clear();render(true)};
-document.querySelectorAll('[data-b]').forEach(b=>b.onclick=()=>{sel.forEach(i=>P[i].st=b.dataset.b);render(true);gen()});
+ if(t.dataset.s!=null){const n=P[+t.dataset.s].name;t.checked?sel.add(n):sel.delete(n);return counts()}
+ if(t.dataset.k!=null){P[i].v[t.dataset.k]=t.value;return t.tagName=='SELECT'?gen():flush()}
+ if(t.dataset.sc!=null){P[t.dataset.sc].sc=t.value;gen();return rerow(+t.dataset.sc)}
+ P[i].st=t.value;gen();rerow(+i)};
+$('#tb').oninput=e=>{const t=e.target;if(t.dataset.k!=null){P[t.dataset.i].v[t.dataset.k]=t.value;genSoon()}};
+$('#sa').onclick=()=>{vis().forEach(([p])=>sel.add(p.name));render(true)};$('#sn').onclick=()=>{sel.clear();render(true)};
+document.querySelectorAll('[data-b]').forEach(b=>b.onclick=()=>{P.forEach(p=>{if(sel.has(p.name))p.st=b.dataset.b});gen();render(true)});
 
 /* ---- XML generation: CmdIDs and command template ---- */
-const G=new Map,guid=k=>G.get(k)||(G.set(k,crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c=='x'?r:r&3|8).toString(16)})),G.get(k));
-const item=(k,op,uri,data,meta)=>`<${op}>\n\t<CmdID>${guid(k)}</CmdID>\n\t<Item>\n${meta?'\t\t<Meta>\n\t\t\t<Format>chr</Format>\n\t\t\t<Type>text/plain</Type>\n\t\t</Meta>\n':''}\t\t<Target>\n\t\t\t<LocURI>${uri}</LocURI>\n\t\t</Target>\n${data==null?'':data===''?'\t\t<Data></Data>\n':`\t\t<Data><![CDATA[${data}]]></Data>\n`}\t</Item>\n</${op}>`;
+const uuid=()=>crypto.randomUUID?crypto.randomUUID():'10000000-1000-4000-8000-100000000000'.replace(/[018]/g,c=>(c^crypto.getRandomValues(new Uint8Array(1))[0]&15>>c/4).toString(16));
+const G=new Map,guid=k=>G.get(k)||(G.set(k,uuid()),G.get(k));
+const cdata=s=>String(s).replaceAll(']]>',']]]]><![CDATA[>');
+const item=(k,op,uri,data,meta)=>`<${op}>\n\t<CmdID>${guid(k)}</CmdID>\n\t<Item>\n${meta?'\t\t<Meta>\n\t\t\t<Format>chr</Format>\n\t\t\t<Type>text/plain</Type>\n\t\t</Meta>\n':''}\t\t<Target>\n\t\t\t<LocURI>${uri}</LocURI>\n\t\t</Target>\n${data==null?'':data===''?'\t\t<Data></Data>\n':`\t\t<Data><![CDATA[${cdata(data)}]]></Data>\n`}\t</Item>\n</${op}>`;
 
 /* ---- XML generation: policy data ---- */
 const lines=s=>String(s).split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
@@ -316,13 +331,16 @@ function pdata(p){
  return'<enabled/>'+p.els.map(e=>{const x=dv(e,p);let v=e.t=='list'?lines(x).map((l,i)=>{const[k,...q]=l.split('=');return e.ex?`${X(k)}${SEP}${X(q.join('='))}`:`${i+1}${SEP}${X(l)}`}).join(SEP):e.t=='multiText'?lines(x).map(X).join(SEP):X(x);
   return`<data id="${X(e.id)}" value="${v}"/>`}).join('')}
 
+/* ---- XML generation: indented ADMX body (cached until the ADMX changes) ---- */
+let BC={src:null,out:''};
+const admxBody=()=>BC.src===admx?BC.out:(BC={src:admx,out:'\n'+admx.replace(/^\uFEFF?\s*<\?xml[^>]*\?>\s*/,'').trimEnd().split(/\r?\n/).map(l=>'\t\t\t'+l).join('\n')+'\n\t\t'}).out;
+
 /* ---- XML generation: profile output ---- */
-function gen(){
+function gen(){clearTimeout(gt);gt=0;
  const tpl=($('#tpl').value.trim()||'Template').replace(/\s+/g,''),id=$('#aid').value.trim()||tpl+'Admx',base=`./Vendor/MSFT/Policy/ConfigOperations/ADMXInstall/${tpl}/Policy`,cfg=P.filter(p=>p.st),
  uri=p=>`./${scope(p)}/Vendor/MSFT/Policy/Config/${[tpl,'Policy',...p.ch].join('~')}/${p.name}`,
- body='\n'+admx.replace(/^\uFEFF?\s*<\?xml[^>]*\?>\s*/,'').trimEnd().split(/\r?\n/).map(l=>'\t\t\t'+l).join('\n')+'\n\t\t',
  none='<!-- Configure at least one policy -->',load='<!-- Import .admx / .adml files first -->';
- window.O=[admx?item('i','Replace',`${base}/${id}`,body,1):load,admx?item('r','Delete',base,null,1):load,
+ window.O=[admx?item('i','Replace',`${base}/${id}`,admxBody(),1):load,admx?item('r','Delete',base,null,1):load,
   cfg.length?cfg.map(p=>item('c'+p.name,'Replace',uri(p),pdata(p))).join('\n'):none,cfg.length?cfg.map(p=>item('x'+p.name,'Delete',uri(p),'')).join('\n'):none];
  val();chg();updPanel();show()}
 
@@ -332,11 +350,13 @@ function show(){
  $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" data-t="${i}">${t}</button>`).join('');
  $('#pn').value=pn;$('#pn').style.width=`calc(${pn.length}ch + 28px)`;
  $('#o1').value=O[tab*2];$('#o2').value=O[tab*2+1];
- [1,2].forEach(n=>{const r=chk(O[tab*2+n-1]),s=$('#s'+n);s.className='xs'+(r?r.ok?' ok':' bad':'');s.innerHTML=r?`<span>${X(r.msg)}${r.ok&&tab==1&&VN?` <span class="w2">– ⚠ ${VN} ${VN>1?'policies need':'policy needs'} attention</span>`:''}</span>`:''});
+ [1,2].forEach(n=>{const r=chkC(O[tab*2+n-1]),s=$('#s'+n);s.className='xs'+(r?r.ok?' ok':' bad':'');s.innerHTML=r?`<span>${X(r.msg)}${r.ok&&tab==1&&VN?` <span class="w2">– ⚠ ${VN} ${VN>1?'policies need':'policy needs'} attention</span>`:''}</span>`:''});
  $('#hint').textContent=['Profile 1 – Install Policies: make all administrative policies available','Profile 2 – Configure Policies: make all administrative policies configurable'][tab]}
-$('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;show()}};
-$('#tpl').oninput=$('#aid').oninput=gen;$('#rg').onclick=()=>{G.clear();gen()};
-document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const o=$('#'+b.dataset.c);o.select();try{navigator.clipboard.writeText(o.value)}catch(_){}document.execCommand('copy');b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1200)});
+$('#tabs').onclick=e=>{if(e.target.dataset.t){tab=+e.target.dataset.t;gt?gen():show()}};
+$('#tpl').oninput=$('#aid').oninput=genSoon;$('#rg').onclick=()=>{G.clear();gen()};
+document.querySelectorAll('[data-c]').forEach(b=>b.onclick=async()=>{flush();const o=$('#'+b.dataset.c);
+ try{await navigator.clipboard.writeText(o.value)}catch(_){o.select();document.execCommand('copy')}
+ b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1200)});
 
 /* ---- Startup ---- */
 gen();
