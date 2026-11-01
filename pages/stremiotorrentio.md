@@ -9,9 +9,11 @@ Make sure to **only** follow this guide if [streaming copyrighted content is not
 If this is not the case, please follow a [different guide](https://guides.viren070.me/stremio/setup){:target="_blank"} that covers the use of a Debrid service instead.
 
 1. **Register a Stremio account**<br>
-[Register Account](https://www.stremio.com/register){:target="_blank" .btn .btn-blue }
+[Register Account](https://www.stremio.com/register){:target="_blank" .btn .btn-blue }<br>
+*Optional: creating an account makes syncing add-ons with multiple clients easier*
 2. **Download the app and log in**<br>
-[Download Stremio](https://www.stremio.com/downloads){:target="_blank" .btn .btn-blue }
+[Download Stremio](https://www.stremio.com/downloads){:target="_blank" .btn .btn-blue }<br>
+*Or use a guest account if you did not create an account in Step 1*
 3. **Add Torrentio to Stremio**<br>
 [Add Torrentio](stremio://torrentio.strem.fun/providers=yts,eztv,rarbg,1337x,thepiratebay,kickasstorrents,torrentgalaxy,magnetdl,horriblesubs,nyaasi,tokyotosho,anidex,nekobt\|sort=seeders/manifest.json){: .btn .btn-blue }
 4. **Clean up default addons (optional)**<br>
