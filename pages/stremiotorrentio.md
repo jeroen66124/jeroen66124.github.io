@@ -13,7 +13,7 @@ If this is not the case, please follow a [different guide](https://guides.viren0
 *Optional: creating an account makes syncing add-ons with multiple clients easier*
 2. **Download the app and log in**<br>
 [Download Stremio](https://www.stremio.com/downloads){:target="_blank" .btn .btn-blue }<br>
-*Or use a guest account if you did not create an account in Step 1*
+*Or use a guest account if you did not create an account in first step*
 3. **Add Torrentio to Stremio**<br>
 [Add Torrentio](stremio://torrentio.strem.fun/providers=yts,eztv,rarbg,1337x,ext,thepiratebay,kickasstorrents,torrentgalaxy,magnetdl,horriblesubs,nyaasi,tokyotosho,anidex,nekobt|sort=seeders/manifest.json){: .btn .btn-blue }
 4. **Clean up default addons (optional)**<br>
