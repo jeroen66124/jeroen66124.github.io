@@ -6,7 +6,7 @@ last_modified_date: 02-04-2026
 
 This is a quickstart guide to stream everything you want on Stremio in combination with the Torrentio addon.
 Make sure to **only** follow this guide if [streaming copyrighted content is not enforced/allowed in your country](https://upload.wikimedia.org/wikipedia/commons/c/cf/Download_legal_status.png){:target="_blank"}.
-If this is not the case, please follow a [different guide](https://guides.viren070.me/stremio/setup){:target="_blank"} that covers the use of a Debrid service instead.
+If this is not the case, please follow a [different guide](https://guides.viren070.me/stremio/setup#debrid-service){:target="_blank"} that covers the use of a Debrid service instead.
 
 1. **Register a Stremio account**<br>
 [Register Account](https://www.stremio.com/register){:target="_blank" .btn .btn-blue }<br>
@@ -15,7 +15,7 @@ If this is not the case, please follow a [different guide](https://guides.viren0
 [Download Stremio](https://www.stremio.com/downloads){:target="_blank" .btn .btn-blue }<br>
 *Or use a guest account if you did not create an account in Step 1*
 3. **Add Torrentio to Stremio**<br>
-[Add Torrentio](stremio://torrentio.strem.fun/providers=yts,eztv,rarbg,1337x,thepiratebay,kickasstorrents,torrentgalaxy,magnetdl,horriblesubs,nyaasi,tokyotosho,anidex,nekobt\|sort=seeders/manifest.json){: .btn .btn-blue }
+[Add Torrentio](stremio://torrentio.strem.fun/providers=yts,eztv,rarbg,1337x,ext,thepiratebay,kickasstorrents,torrentgalaxy,magnetdl,horriblesubs,nyaasi,tokyotosho,anidex,nekobt|sort=seeders/manifest.json){: .btn .btn-blue }
 4. **Clean up default addons (optional)**<br>
 Remove everything except:<br>
     Torrentio — used to stream shows/movies<br>
