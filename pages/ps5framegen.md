@@ -1,0 +1,51 @@
+---
+title: Console Frame Generation
+layout: default
+last_modified_date: 13-11-2026
+---
+
+Stream PlayStation 5 games that run on 30 FPS to a Windows PC with chiaki-ng and double them to 60 FPS with Lossless Scaling frame generation.
+
+1. **Download the tools**  
+   [chiaki-ng](https://github.com/streetpea/chiaki-ng/releases/latest)  
+   [Lossless Scaling](https://store.steampowered.com/app/993090/Lossless_Scaling/)
+2. **Prepare the setup**
+
+   - Connect both the PS5 and the PC with ***Ethernet***
+   - Connect the DualSense to the PC with ***USB***
+   - Set the Display refresh rate to ***120 Hz*** (or any multiple of 60) to avoid stutters
+   - Enable Remote Play on the PS5 under ***`Settings > System > Remote Play`*** and register the console in chiaki-ng
+3. **Configure chiaki-ng**
+
+   | Tab | Setting | Value |
+   |:----|:--------|:------|
+   | Video | Hardware Decoder | `vulkan` + Zero-Copy (`d3d11va` if you see glitches) |
+   | Video | Window Type | `Fullscreen` (windowed if capture fails) |
+   | Video | Vertical Sync | Off |
+   | Video | Render Preset | `Fast` |
+   | Video | Frame Delivery | `Direct Mapping` |
+   | Video | Renderer Backend | `Vulkan` |
+   | Stream | Resolution | `1080p` |
+   | Stream | FPS | `30 fps` |
+   | Stream | Bitrate | `100 Mbps` |
+   | Stream | Codec | `H265` |
+
+   Match the stream FPS to the game. A 60 FPS stream of a 30 FPS game contains duplicate frames that break frame generation.
+4. **Configure Lossless Scaling**
+
+   | Section | Setting | Value |
+   |:--------|:--------|:------|
+   | Frame Generation | Type | `LSFG 3.1` |
+   | Frame Generation | Mode | `Fixed`, multiplier `2` (`4` for 120 FPS) |
+   | Frame Generation | Flow scale | `100` |
+   | Frame Generation | Performance | Off |
+   | Capture | Capture API | `DXGI` (`WGC` if capture glitches) |
+   | Capture | Queue target | `0` |
+   | Rendering | Sync mode | `Off (Allow tearing)` |
+   | Rendering | Max frame latency | `1` |
+   | Rendering | Draw FPS | On |
+5. **Start streaming**
+
+   - Start the stream in chiaki-ng, then press ***`Ctrl+Alt+S`*** in Lossless Scaling
+   - Check the FPS counter: it should read ***`30/60`***. If the first number is 60, the stream isn't set to 30 FPS
+   - Keep GPU usage well below 100% while playing. A maxed-out GPU queues frames and adds latency; lower ***Flow scale*** or enable ***Performance*** if needed
