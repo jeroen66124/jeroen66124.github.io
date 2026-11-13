@@ -41,7 +41,7 @@ Stream PlayStation 5 games that run on 30 FPS to a Windows PC with **chiaki-ng**
    | Frame Generation | Multiplier | **2** (e.g. times 4x for 120 FPS) |
    | Frame Generation | Flow scale | **100%** |
    | Frame Generation | Performance | **Off** |
-   | Capture | Capture API | **DXGI** (WGC if capture glitches) |
+   | Capture | Capture API | **WGC** (DXGI if capture glitches) |
    | Capture | Queue target | **0** |
    | Rendering | Sync mode | **Off** (Allow tearing) |
    | Rendering | Max frame latency | **1** |
