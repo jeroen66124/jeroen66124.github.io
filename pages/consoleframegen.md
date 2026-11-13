@@ -11,9 +11,9 @@ Stream PlayStation 5 games that run on 30 FPS to a Windows PC with chiaki-ng and
    [Lossless Scaling](https://store.steampowered.com/app/993090/Lossless_Scaling/){:target="_blank"}
 2. **Prepare the setup**
 
-   - Connect both the PS5 and the PC with ***Ethernet***
-   - Connect the DualSense to the PC with ***USB***
-   - Set the Display refresh rate to ***120 Hz*** (or any multiple of 60) to avoid stutters
+   - Connect both the PS5 and the PC with **Ethernet**
+   - Connect the DualSense to the PC with **USB**
+   - Set the Display refresh rate to **120 Hz** (or any multiple of 60) to avoid stutters
    - Enable Remote Play on the PS5 under ***`Settings > System > Remote Play`*** and register the console in chiaki-ng
 3. **Configure chiaki-ng**
 
@@ -48,4 +48,4 @@ Stream PlayStation 5 games that run on 30 FPS to a Windows PC with chiaki-ng and
 
    - Start the stream in chiaki-ng, then press ***`Ctrl+Alt+S`*** in Lossless Scaling
    - Check the FPS counter: it should read ***`30/60`***. If the first number is 60, the stream isn't set to 30 FPS
-   - Keep GPU usage well below 100% while playing. A maxed-out GPU queues frames and adds latency; lower ***Flow scale*** or enable ***Performance*** if needed
+   - Keep GPU usage well below 100% while playing. A maxed-out GPU queues frames and adds latency; lower **Flow scale** or enable **Performance** if needed
