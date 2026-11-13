@@ -31,7 +31,7 @@ Stream PlayStation 5 games that run on 30 FPS to a Windows PC with **chiaki-ng**
    | Stream | Bitrate | **100 Mbps** |
    | Stream | Codec | **H265** |
 
-   Match the stream FPS to the game. A 60 FPS stream of a 30 FPS game contains duplicate frames that break frame generation.
+   Match the FPS of the stream to the FPS of the game. A 60 FPS stream of a 30 FPS game contains duplicate frames that break frame generation.
 4. **Configure Lossless Scaling**
 
    | Section | Setting | Value |
