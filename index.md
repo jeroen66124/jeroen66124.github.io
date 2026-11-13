@@ -13,4 +13,4 @@ nav_order: 1
 [Mac IPSW Restore](/pages/macipswrestore.html)<br>
 [Rclone Docker Compose](/pages/rclonedockercompose.html)<br>
 [Workspace ONE ADMX](/pages/ws1uemadmx.html)<br>
-[Console Frame Generation](/pages/consoleframegen.html)
+[Console Frame Generation](/pages/consoleframegeneration.html)
