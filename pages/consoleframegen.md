@@ -48,5 +48,5 @@ Stream PlayStation 5 games that run on 30 FPS to a Windows PC with **chiaki-ng**
 5. **Start streaming**
 
    - Start the stream in chiaki-ng, then press ***`Ctrl+Alt+S`*** in Lossless Scaling
-   - Check the FPS counter: it should read ***`30/60`***. If the first number is 60, the stream isn't set to 30 FPS
-   - Keep GPU usage well below 100% while playing, a maxed-out GPU queues frames and adds latency. Lower **Flow scale** or enable **Performance** if needed
+   - The FPS counter should read ***`30/60`***. If the first number is 60, the stream isn't set to 30 FPS
+   - If the GPU usage is too high while generating frames, frames will queue and add latency. Lower **Flow scale** or enable **Performance** if needed
