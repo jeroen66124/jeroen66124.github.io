@@ -21,7 +21,7 @@ Stream PlayStation 5 games that run on 30 FPS to a Windows PC with **chiaki-ng**
    | Tab | Setting | Value |
    |:----|:--------|:------|
    | Video | Hardware Decoder | **Vulkan** + **Zero-Copy** (d3d11va if you see glitches) |
-   | Video | Window Type | **Fullscreen** (windowed if capture fails) |
+   | Video | Window Type | **Fullscreen** |
    | Video | Vertical Sync | **Off** |
    | Video | Render Preset | **Fast** |
    | Video | Frame Delivery | **Direct Mapping** |
