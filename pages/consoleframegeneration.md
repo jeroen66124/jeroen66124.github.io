@@ -5,7 +5,7 @@ last_modified_date: 13-11-2026
 ---
 
 Stream PlayStation 5 games that run on 30 FPS to a Windows PC with **chiaki-ng** and double them to 60 FPS with **Lossless Scaling** frame generation.
-This guide can be adjusted to scale higher FPS as well, but the performance gain is obviously smaller.
+This guide can be used to scale higher FPS games as well, but you must adjust the configuration options accordingly.
 
 1. **Download the tools**  
    [chiaki-ng](https://github.com/streetpea/chiaki-ng/releases/latest){:target="_blank"}<br>
