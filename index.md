@@ -12,4 +12,5 @@ nav_order: 1
 [Nginx Proxy Manager](/pages/nginxproxymanager.html)<br>
 [Mac IPSW Restore](/pages/macipswrestore.html)<br>
 [Rclone Docker Compose](/pages/rclonedockercompose.html)<br>
-[Workspace ONE ADMX](/pages/ws1uemadmx.html)
+[Workspace ONE ADMX](/pages/ws1uemadmx.html)<br>
+[Console Framegen](/pages/consoleframegen.html)
