@@ -48,6 +48,6 @@ Stream PlayStation 5 games that run on 30 FPS to a Windows PC with **chiaki-ng**
    | Rendering | Draw FPS | **On** |
 6. **Start streaming**
 
-   - Start the stream in chiaki-ng, then press ***`Ctrl+Alt+S`*** in Lossless Scaling
-   - The FPS counter should read ***`30/60`***. If the first number is 60, the stream isn't set to 30 FPS
-   - Frame generation needs enough GPU headroom. At high usage, frames queue up and add delay, so lower the **Flow scale** and or enable **Performance** mode.
+   - Start the stream in chiaki-ng, then click on **Scale** in Lossless Scaling
+   - The FPS counter should read **30/60**. If the first number is 60, the stream isn't set to 30 FPS
+   - Frame generation needs enough GPU headroom. At higher GPU usage, frames queue up and add delay, so lower the **Flow scale** and or enable **Performance** mode.
