@@ -14,7 +14,8 @@ Stream PlayStation 5 games that run on 30 FPS to a Windows PC with **chiaki-ng**
    - Connect both the PS5 and the PC with **Ethernet**
    - Connect the DualSense to the PC with **USB**
    - Set the Display refresh rate to **120 Hz** (or any multiple of 60) to avoid stutters
-   - Enable Remote Play on the PS5 under ***`Settings > System > Remote Play`*** and register the console in chiaki-ng
+   - Enable Remote Play on the PS5 under ***`Settings > System > Remote Play`***
+   - Register the console in chiaki-ng, it should be discovered automatically
 3. **Configure chiaki-ng**
 
    | Tab | Setting | Value |
