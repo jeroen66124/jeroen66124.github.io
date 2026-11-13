@@ -51,6 +51,6 @@ This guide can be used to scale higher FPS games as well, but you must adjust th
 
    - Start the stream in chiaki-ng, then click on **Scale** in Lossless Scaling
    - The FPS counter should read **30/60**. If the first number is 60, the stream isn't set to 30 FPS
-   - Frame generation needs enough GPU headroom. With lower end GPUs, frames can queue up and add input delay, so lower the **Flow scale** and or enable **Performance** mode.
+   - Frame generation needs enough GPU headroom. With lower-end GPUs, frames can queue up and add input delay, so lower the **Flow scale** and or enable **Performance** mode.
 
 Note: there is an alternative project available called [Veyra-NRVideo](https://github.com/Likely7/Veyra-NRVideo){:target="_blank"} that bundles Streaming and Frame Generation together in one application, I found that LSFG gave me better performance however.
