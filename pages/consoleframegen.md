@@ -4,7 +4,7 @@ layout: default
 last_modified_date: 13-11-2026
 ---
 
-Stream PlayStation 5 games that run on 30 FPS to a Windows PC with chiaki-ng and double them to 60 FPS with Lossless Scaling frame generation.
+Stream PlayStation 5 games that run on 30 FPS to a Windows PC with **chiaki-ng** and double them to 60 FPS with **Lossless Scaling** frame generation.
 
 1. **Download the tools**  
    [chiaki-ng](https://github.com/streetpea/chiaki-ng/releases/latest){:target="_blank"}
@@ -19,7 +19,7 @@ Stream PlayStation 5 games that run on 30 FPS to a Windows PC with chiaki-ng and
 
    | Tab | Setting | Value |
    |:----|:--------|:------|
-   | Video | Hardware Decoder | **vulkan** + Zero-Copy (d3d11va if you see glitches) |
+   | Video | Hardware Decoder | **Vulkan** + **Zero-Copy** (d3d11va if you see glitches) |
    | Video | Window Type | **Fullscreen** (windowed if capture fails) |
    | Video | Vertical Sync | **Off** |
    | Video | Render Preset | **Fast** |
