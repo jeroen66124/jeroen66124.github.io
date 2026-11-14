@@ -4,7 +4,7 @@ layout: default
 last_modified_date: 13-11-2026
 ---
 
-Stream PlayStation 5 games that run at 30 FPS to a PC with **chiaki-ng** and double the framerate to 60 FPS with **Lossless Scaling** frame generation.
+Stream PlayStation 4 and 5 games that run at 30 FPS to a PC with **chiaki-ng** and double the frame rate to 60 FPS with **Lossless Scaling** frame generation.
 This guide can be used to scale higher FPS games as well, but you must adjust the configuration options accordingly.
 
 1. **Download the tools**  
