@@ -9,7 +9,7 @@ This guide can be used to scale higher FPS games as well, but you must adjust th
 
 1. **Download the tools**  
    [chiaki-ng](https://github.com/streetpea/chiaki-ng/releases/latest){:target="_blank"}<br>
-   [Lossless Scaling](https://store.steampowered.com/app/993090/Lossless_Scaling/){:target="_blank"}<br><br>
+   [Lossless Scaling](https://store.steampowered.com/app/993090/Lossless_Scaling/){:target="_blank"}<br>
 **Note:** there is an open source alternative to Lossless Scaling called [MFG Super Motion](https://github.com/NODIX-TECH/MFG-SUPER-MOTION/releases/latest){:target="_blank"}, but you will have to configure it yourself. Most of the settings that are available in LS, are available in MFG too.
 2. **Prepare the setup**
 
