@@ -16,7 +16,7 @@ This guide can be used to scale higher FPS games as well, but you must adjust th
    - Connect the DualSense to the PC with **USB**
    - Set the Display refresh rate to **120 Hz** (or any multiple of 60) to avoid frame time stutters
    - Enable Remote Play on the PS5 under ***`Settings > System > Remote Play`***
-   - Register the console in chiaki-ng, it should be discovered automatically
+   - Register the console in chiaki-ng, it should be discovered automatically within your local network
 3. **Configure chiaki-ng**
 
    | Tab | Setting | Value |
