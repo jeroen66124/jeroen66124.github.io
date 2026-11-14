@@ -29,7 +29,7 @@ This guide can be used to scale higher FPS games as well, but you must adjust th
    | Video | Renderer Backend | **Vulkan** |
    | Stream | Resolution | **1080p** |
    | Stream | FPS | **30 FPS** |
-   | Stream | Bitrate | **100 Mbps** |
+   | Stream | Bitrate | **100 Mbps** (adjust to lower bandwith usage) |
    | Stream | Codec | **H265** |
 
    Match the FPS of the stream to the FPS of the game. A 60 FPS stream of a 30 FPS game contains duplicate frames that break frame generation.
