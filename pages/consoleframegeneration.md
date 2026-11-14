@@ -24,7 +24,7 @@ This guide can be used to scale higher FPS games as well, but you must adjust th
    | Video | Hardware Decoder | **Vulkan** + **Zero-Copy** (d3d11va if you see glitches) |
    | Video | Window Type | **Fullscreen** |
    | Video | Vertical Sync | **Off** |
-   | Video | Render Preset | **Fast** |
+   | Video | Render Preset | **High Quality** (adjust to save bandwith) |
    | Video | Frame Delivery | **Direct Mapping** |
    | Video | Renderer Backend | **Vulkan** |
    | Stream | Resolution | **1080p** |
