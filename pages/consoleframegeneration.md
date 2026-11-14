@@ -53,4 +53,6 @@ This guide can be used to scale higher FPS games as well, but you must adjust th
    - The FPS counter should read **30/60**. If the first number is 60, the stream isn't set to 30 FPS
    - Frame generation needs enough GPU headroom. With lower-end GPUs, frames can queue up and add input delay, so lower the **Flow scale** and or enable **Performance** mode.
 
-Note: there is an alternative project available called [Veyra-NRVideo](https://github.com/Likely7/Veyra-NRVideo){:target="_blank"} that bundles Streaming and Frame Generation together in one application, I found that LSFG gave me better performance however.
+Note: there is an open source alternative to Lossless Scaling called [MFG Super Motion](https://github.com/NODIX-TECH/MFG-SUPER-MOTION/releases/latest){:target="_blank"}, but you will have to configure it yourself.
+
+Second Note: there is an alternative project available called [Veyra-NRVideo](https://github.com/Likely7/Veyra-NRVideo){:target="_blank"} that bundles Streaming and Frame Generation together in one application, I found that LSFG gave me better performance however.
